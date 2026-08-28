@@ -1,0 +1,951 @@
+Work in CU-ESIIL/cubedynamics_test_user.
+
+Read this repository's AGENTS.md first and follow it throughout this task.
+
+This repository has already been established as an independent naive-user
+acceptance-testing environment for CubeDynamics.
+
+Do not turn it into a development copy of CubeDynamics.
+
+Maintain PROMPT_LOG.md according to the repository's established policy,
+recording this prompt, what was attempted, what was actually done, important
+decisions, failures, limitations, and outputs.
+
+==================================================
+PURPOSE OF THIS RUN
+==================================================
+
+We believe CubeDynamics is approaching its first public release.
+
+Internal tests answer questions such as:
+
+    Does the implementation behave as expected?
+    Do known workflows pass?
+    Do release artifacts install?
+    Do documented examples execute?
+
+This repository must answer a different question:
+
+    What actually happens when a competent scientist who has never
+    developed CubeDynamics tries to use it?
+
+We want to discover problems BEFORE a human outside-user test.
+
+This should be a genuine black-box acceptance experiment.
+
+The tester should be scientifically competent and comfortable with Python and
+environmental data, but should have no privileged knowledge of CubeDynamics.
+
+==================================================
+1. VERIFY THE TEST BOUNDARY
+==================================================
+
+Before doing anything else, inspect this repository's AGENTS.md and existing
+documentation.
+
+Confirm that the naive-user boundary is explicit.
+
+During the naive-user phase, the tester must NOT:
+
+- clone CU-ESIIL/cubedynamics
+- inspect its source code
+- inspect its tests
+- inspect its AGENTS.md
+- inspect its PROMPT_LOG.md
+- inspect developer documentation not presented to ordinary users
+- use CubeDynamics repository-local fixtures
+- mount a CubeDynamics checkout
+- search CubeDynamics source to understand an error
+- patch the installed CubeDynamics package
+- use implementation details to discover undocumented behavior
+
+The tester MAY use:
+
+- this cubedynamics_test_user repository
+- an installed CubeDynamics release artifact
+- the public CubeDynamics website
+- the public CubeDynamics README and normal repository landing information
+- normal Python help/introspection available to an installed-package user
+- public environmental data services
+- ordinary scientific Python tools
+
+If the current AGENTS.md already establishes this correctly, preserve it.
+
+Do not weaken this boundary.
+
+==================================================
+2. CREATE A REAL OUTSIDE-USER ENVIRONMENT
+==================================================
+
+Create a clean Linux container for the acceptance test.
+
+The CubeDynamics source repository must not exist inside it.
+
+The environment should begin as close as practical to:
+
+- Linux
+- Python
+- pip
+- ordinary shell utilities
+
+CubeDynamics must be installed as an external package.
+
+Prefer, in this order:
+
+1. a specified CubeDynamics release candidate
+2. a supplied built wheel
+3. another legitimate external installation mechanism
+
+Do not install CubeDynamics editable.
+
+Do not copy the source repository into the container.
+
+Record:
+
+- container image
+- OS
+- architecture
+- Python version
+- pip version
+- CubeDynamics version
+- installation command
+- installed package path
+- package installation warnings/errors
+
+Verify that CubeDynamics is imported from the installed environment rather
+than a checkout.
+
+Freeze this environment description into the test evidence.
+
+==================================================
+3. SEPARATE THE TEST INTO TWO MODES
+==================================================
+
+This is important.
+
+Do NOT begin with an exhaustive scripted checklist.
+
+Run two distinct phases:
+
+    A. NAIVE EXPLORATORY USER
+    B. SYSTEMATIC PUBLIC-SURFACE COVERAGE
+
+The first tells us whether CubeDynamics is understandable.
+
+The second tells us whether CubeDynamics is complete and robust.
+
+Do not allow knowledge gained from CubeDynamics internals in either phase.
+
+==================================================
+PHASE A — NAIVE EXPLORATORY USER
+==================================================
+
+Start with a fresh agent context if possible.
+
+Give the tester only this goal:
+
+    "You are an environmental scientist who has discovered CubeDynamics.
+    Figure out what it does and try to use it for environmental analysis.
+    Explore what you can do with it. Use its public documentation when
+    you need help. Try increasingly ambitious analyses. Keep going when
+    reasonable, and record everything that happens."
+
+Do NOT initially give this agent:
+
+- a list of CubeDynamics nouns
+- a list of CubeDynamics verbs
+- internal architecture
+- known-good examples beyond what it discovers publicly
+- known limitations
+- expected answers
+- our previous CubeDynamics development history
+
+We specifically want to observe DISCOVERY.
+
+Record chronologically:
+
+- where the user starts
+- what documentation they choose
+- what they think CubeDynamics is
+- what they try first
+- what they expect to happen
+- what actually happens
+- where they become confused
+- what terminology they infer correctly
+- what terminology they misunderstand
+- what documentation they search for
+- how they recover from errors
+- where they get stuck
+- what capabilities they discover naturally
+- what capabilities they never discover
+- what they attempt that CubeDynamics does not support
+
+This phase should feel like a real user session rather than a test suite.
+
+Let the tester formulate its own scientific questions.
+
+Encourage increasing complexity:
+
+simple analysis
+→ transformation
+→ composition
+→ multiple transformations
+→ visualization
+→ comparison
+→ more original scientific questions
+→ extension/customization
+
+Do not stop at the first successful example.
+
+Spend substantial time exploring.
+
+Preserve the complete chronological session as evidence.
+
+==================================================
+4. FREEZE THE NAIVE EXPERIENCE
+==================================================
+
+When exploratory testing is finished, freeze its evidence.
+
+Create something like:
+
+artifacts/naive_session.jsonl
+reports/naive_session.md
+
+Do not revise the naive-user history later to make it cleaner.
+
+Failures, wrong guesses, confusion, dead ends, and misunderstandings are
+valuable results.
+
+Clearly distinguish:
+
+    what the user tried
+    what the user expected
+    what actually happened
+    what the user tried next
+
+Only after this evidence is frozen should systematic coverage begin.
+
+==================================================
+PHASE B — SYSTEMATIC PUBLIC-SURFACE COVERAGE
+==================================================
+
+Now determine what the public CubeDynamics user surface actually contains.
+
+Use ONLY:
+
+- public CubeDynamics documentation
+- public README
+- ordinary installed-package introspection
+
+Do not inspect implementation source.
+
+Build a machine-readable public-surface inventory.
+
+At minimum identify documented:
+
+- nouns
+- source flavors
+- verbs
+- pipe/composition functionality
+- result extraction
+- plotting/visualization
+- provenance/inspection
+- lazy/eager behavior
+- extension mechanisms
+- custom nouns
+- custom verbs
+- other explicitly public user-facing functionality
+
+For every discovered item record WHERE the user would have discovered it.
+
+This lets us distinguish:
+
+    implemented
+from
+    documented
+from
+    discoverable.
+
+==================================================
+5. BUILD A COVERAGE MATRIX
+==================================================
+
+Create a coverage matrix BEFORE systematic execution.
+
+We want strong coverage without blindly executing a meaningless Cartesian
+product.
+
+Track at least:
+
+NOUNS
+- discovered
+- attempted
+- successfully created
+- plotted
+- transformed
+- provenance inspected
+
+SOURCE FLAVORS
+- discovered
+- attempted
+- retrieved
+- blocked
+- candidate/experimental
+- compared with another source where applicable
+
+VERBS
+- discovered
+- valid execution attempted
+- valid execution successful
+- edge case attempted
+- plausible misuse attempted
+- composition attempted
+
+COMPOSITION
+- single verb
+- two verbs
+- three-or-more verbs
+- reversed verb order
+- reduction + transformation
+- spatial + temporal
+- transformation + visualization
+- intermediate-result reuse
+- long-pipeline provenance
+- lazy execution where supported
+
+EXTENSION
+- custom noun
+- custom verb
+- custom noun + built-in verb
+- built-in noun + custom verb
+- custom noun + custom verb
+
+ERROR EXPERIENCE
+- invalid dimension
+- invalid source
+- invalid parameter
+- malformed data
+- incompatible operation
+- boundary cases
+
+The matrix should make obvious what has and has not been exercised.
+
+==================================================
+6. TEST EVERY DOCUMENTED NOUN AND SOURCE
+==================================================
+
+For every documented production-supported noun:
+
+figure out how to use it from the public documentation.
+
+Use the smallest practical request.
+
+Attempt to:
+
+- obtain/create it
+- inspect dimensions
+- inspect coordinates
+- inspect units
+- inspect attributes
+- inspect source identity
+- inspect provenance
+- visualize it where appropriate
+- perform meaningful transformations
+
+For every documented source flavor:
+
+attempt it independently.
+
+If multiple sources provide the same noun, compare them as a naive scientist
+might.
+
+Do NOT assume scientifically different sources should produce identical
+results.
+
+Evaluate whether CubeDynamics makes their identity and differences visible.
+
+Candidate, experimental, blocked, deprecated, or unavailable sources must
+remain visibly distinguishable from production-supported sources.
+
+Never fabricate a successful live retrieval.
+
+==================================================
+7. TEST EVERY DOCUMENTED PUBLIC VERB
+==================================================
+
+For every public verb discovered through user-facing material:
+
+1. infer its purpose from documentation
+2. find a reasonable valid input
+3. execute it
+4. inspect the result
+5. evaluate dimensions
+6. evaluate coordinates
+7. evaluate attributes
+8. evaluate provenance where relevant
+9. visualize the result where meaningful
+10. try a reasonable edge case
+
+Every documented verb should receive at least one valid execution attempt.
+
+Where appropriate, also misuse it in a way a normal new user plausibly would.
+
+Evaluate the error experience.
+
+Flag cases where:
+
+- documentation is insufficient
+- arguments are unclear
+- defaults are surprising
+- dimensions disappear unexpectedly
+- metadata disappears unexpectedly
+- provenance becomes unclear
+- operation order becomes scientifically ambiguous
+- an error is cryptic
+- invalid behavior silently succeeds
+
+==================================================
+8. TEST COMPOSITION AGGRESSIVELY
+==================================================
+
+CubeDynamics is a compositional grammar, so individual function success is
+not sufficient.
+
+Exercise many meaningful pipelines.
+
+Include:
+
+noun
+| verb
+
+noun
+| verb
+| verb
+
+noun
+| verb
+| verb
+| verb
+
+and longer pipelines.
+
+For verb pairs where order could reasonably matter, try both:
+
+A | verb1 | verb2
+
+and
+
+A | verb2 | verb1
+
+Do NOT expect them to be equal.
+
+Instead evaluate whether:
+
+- both execute when scientifically valid
+- differences are understandable
+- dimensions remain coherent
+- metadata remains coherent
+- provenance records the sequence
+- the user can understand what the operation order means
+
+Programmatically generate additional plausible combinations.
+
+Do not waste the test on obviously meaningless combinations.
+
+However, include combinations that a reasonable novice might THINK are valid.
+
+Those failures are useful.
+
+==================================================
+9. TRY ALL IMPORTANT CROSS-CATEGORY COMBINATIONS
+==================================================
+
+Make sure systematic coverage includes combinations such as:
+
+- temporal transformation → reduction
+- reduction → transformation
+- anomaly → variance
+- filtering → aggregation
+- threshold → state
+- state → events
+- transformation → plotting
+- source retrieval → transformation → plotting
+- multiple-source comparison
+- lazy operation → materialization
+- intermediate result → new pipeline
+- built-in verb → custom verb
+- custom verb → built-in verb
+
+Use the actual public vocabulary discovered from CubeDynamics rather than
+assuming these exact names exist.
+
+==================================================
+10. CREATE CUSTOM VERBS AS A USER
+==================================================
+
+Using ONLY public documentation, attempt to create several custom verbs.
+
+At minimum try:
+
+1. a simple mathematical transformation
+2. a dimension-reducing transformation
+3. a scientifically meaningful environmental transformation
+
+Then compose them with built-in functionality.
+
+Evaluate:
+
+- how easy the extension mechanism is to discover
+- how easy it is to understand
+- parameters
+- composition
+- return types
+- dimensions
+- metadata
+- provenance
+- error behavior
+
+If implementation knowledge is required to succeed, do not inspect the
+implementation.
+
+Record that as a failure of the public user experience.
+
+==================================================
+11. CREATE CUSTOM NOUNS AS A USER
+==================================================
+
+Using ONLY public documentation, create user-defined scientific inputs.
+
+Try at least:
+
+1. an in-memory xarray environmental object
+2. a small local environmental dataset
+3. a synthetic environmental dataset
+
+Give them realistic:
+
+- dimensions
+- coordinates
+- units
+- attributes
+- provenance/source information where supported
+
+Then use built-in verbs on them.
+
+Also try custom verbs on them.
+
+The question is:
+
+    Can an ordinary user bring their own environmental data into the
+    CubeDynamics grammar without learning CubeDynamics internals?
+
+Record undocumented requirements as findings.
+
+==================================================
+12. TRY REASONABLE NOVICE MISTAKES
+==================================================
+
+Deliberately try things a competent new user might reasonably do incorrectly.
+
+Include relevant cases such as:
+
+- misspelled dimension
+- nonexistent source
+- invalid verb argument
+- missing units
+- missing coordinate
+- NaNs
+- empty subset
+- one timestep
+- one spatial cell
+- irregular temporal spacing
+- reversed coordinates
+- unexpected dtype
+- incompatible operations
+- excessive dimensional reduction
+- plotting a heavily reduced result
+- custom verb returning an unexpected object
+- malformed custom noun
+- requesting unavailable data
+
+The objective is not simply to make CubeDynamics throw exceptions.
+
+Evaluate whether failure is:
+
+EARLY
+SAFE
+CLEAR
+ACTIONABLE
+
+A useful error should help a scientist recover without reading package source.
+
+==================================================
+13. ASK ORIGINAL SCIENTIFIC QUESTIONS
+==================================================
+
+Have the tester invent at least 10 environmental-science questions that are
+not copied from CubeDynamics vignettes.
+
+Use the available nouns and verbs to attempt them.
+
+Prefer questions requiring multiple operations.
+
+Evaluate whether the grammar lets the scientist move naturally from:
+
+scientific question
+→ analytical expression
+→ result
+→ interpretation
+
+Record cases where the user expects a capability that appears conceptually
+natural but cannot find it.
+
+Those are important product findings even if they are not software bugs.
+
+==================================================
+14. RANDOMIZED / EXPLORATORY COMBINATION PASS
+==================================================
+
+After deliberate coverage, perform another exploratory pass.
+
+Generate additional plausible operation sequences.
+
+Vary:
+
+- nouns
+- sources
+- verbs
+- parameters
+- operation order
+- pipeline length
+
+Use scientific/type/dimension reasoning to bias toward plausible combinations.
+
+Do not merely fuzz arbitrary syntax.
+
+We want:
+
+    "What else would a scientist reasonably try?"
+
+not:
+
+    "Can random garbage crash Python?"
+
+Use a fixed random seed for reproducibility, but make the seed configurable so
+future acceptance runs can explore a different region of the interaction space.
+
+==================================================
+15. RECORD EVERY OPERATION
+==================================================
+
+Every meaningful attempted user operation should receive an ID.
+
+Record machine-readable evidence containing at least:
+
+- test ID
+- phase
+- timestamp
+- scientific/user goal
+- documentation consulted
+- exact user code
+- noun
+- source
+- verbs
+- parameters
+- expected behavior
+- actual behavior
+- success/failure
+- warnings
+- exception/traceback
+- output type
+- output dimensions
+- runtime
+- recovery attempt
+- classification
+- severity
+
+Suggested classifications:
+
+SUCCESS
+SUCCESS_WITH_CONFUSION
+DOC_GAP
+API_CONFUSION
+RUNTIME_BUG
+BAD_ERROR
+SCIENTIFIC_AMBIGUITY
+SOURCE_FAILURE
+PLOTTING_FAILURE
+PROVENANCE_FAILURE
+EXTENSION_FAILURE
+
+Severity:
+
+P0 — installation/package unusable
+P1 — major documented workflow broken
+P2 — reasonable valid workflow broken
+P3 — confusing UX/docs/error
+P4 — polish
+
+Preserve enough information to reproduce every non-success.
+
+==================================================
+16. GENERATE THE ACCEPTANCE REPORT
+==================================================
+
+Create:
+
+reports/naive_user_report.md
+
+The report should contain:
+
+# Executive summary
+
+Answer plainly:
+
+Could a new environmental scientist install, understand, extend, and use
+CubeDynamics successfully?
+
+# Environment
+
+# Installation experience
+
+# First 30 minutes
+
+This should be chronological and based on Phase A.
+
+# Discovery
+
+What did the naive user naturally discover?
+
+What did they fail to discover?
+
+# Coverage
+
+Report actual counts for:
+
+- nouns discovered
+- nouns tested
+- source flavors discovered
+- source flavors tested
+- verbs discovered
+- verbs tested
+- valid verb executions
+- multi-verb pipelines
+- reversed-order comparisons
+- custom nouns
+- custom verbs
+- plots
+- intentional misuse cases
+- original scientific questions
+- exploratory combinations
+
+# What worked well
+
+# What was confusing
+
+# What broke
+
+# Documentation gaps
+
+# API problems
+
+# Error-message problems
+
+# Scientific-semantics concerns
+
+# Source/data issues
+
+# Extension-system findings
+
+# Unexpected user behavior
+
+Especially highlight things the naive tester tried that the CubeDynamics
+developers apparently did not anticipate.
+
+# Top 10 findings
+
+Rank by severity and impact on a real first-time user.
+
+# Recommended fixes before human testing
+
+# Verdict
+
+End with exactly:
+
+READY FOR HUMAN OUTSIDE TEST
+
+or
+
+FIX BEFORE HUMAN OUTSIDE TEST
+
+==================================================
+17. FREEZE THE BLACK-BOX REPORT BEFORE TRIAGE
+==================================================
+
+This is critical.
+
+Once the naive-user report and raw evidence are complete:
+
+freeze them.
+
+Do not rewrite the report after learning how CubeDynamics works internally.
+
+The original misunderstanding is evidence.
+
+Only after that may a separate maintainer-triage phase begin.
+
+==================================================
+18. MAINTAINER TRIAGE
+==================================================
+
+Now switch roles.
+
+The naive-user experiment is over.
+
+At this point, and ONLY at this point, repository policy may permit inspection
+of CubeDynamics implementation details for diagnosis.
+
+Do not modify CubeDynamics.
+
+For every finding:
+
+- reproduce it
+- identify likely root cause where possible
+- determine whether it is:
+
+BUG
+DOCS
+API_DESIGN
+EXPECTED_LIMITATION
+SOURCE_LIMITATION
+USER_MISUNDERSTANDING
+DUPLICATE
+
+Several failed user operations may have one root cause.
+
+Deduplicate aggressively.
+
+==================================================
+19. PRODUCE AN ISSUE PLAN
+==================================================
+
+Create:
+
+reports/proposed_issues.md
+
+For every proposed CubeDynamics issue include:
+
+- proposed title
+- severity
+- relevant naive-user test IDs
+- user goal
+- exact reproduction
+- expected behavior
+- actual behavior
+- documentation consulted
+- likely root cause/component
+- acceptance criteria
+
+Do not create dozens of issues for symptoms of the same problem.
+
+Prefer coherent, fixable root-cause issues.
+
+DO NOT submit the issues yet.
+
+DO NOT create CubeDynamics pull requests.
+
+DO NOT fix CubeDynamics.
+
+We want to review the evidence first.
+
+==================================================
+20. MAKE THE HARNESS REUSABLE
+==================================================
+
+This should become a release acceptance system rather than a one-time test.
+
+A future tester should be able to specify:
+
+- CubeDynamics version/artifact
+- Python version
+- random exploration seed
+- perhaps test intensity
+
+and rerun the experiment.
+
+For example:
+
+python acceptance/run_acceptance.py \
+    --version 0.1.0rc1 \
+    --python 3.11 \
+    --seed 42
+
+Exact CLI design may differ.
+
+Do not couple the harness to a CubeDynamics source checkout.
+
+==================================================
+21. DO THE TEST, NOT JUST THE INFRASTRUCTURE
+==================================================
+
+Do not stop after writing Dockerfiles, scripts, prompts, or documentation.
+
+Run the acceptance experiment.
+
+If infrastructure problems prevent a complete run, report those honestly and
+run as much of the real experiment as possible.
+
+Do not manufacture test results.
+
+==================================================
+22. PROMPT LOG
+==================================================
+
+Update PROMPT_LOG.md with:
+
+- this task
+- test design decisions
+- CubeDynamics artifact/version tested
+- environment
+- what was actually executed
+- limitations
+- generated evidence
+- final verdict
+
+Do not put giant raw transcripts into PROMPT_LOG.md.
+
+Link/reference the appropriate artifact/report files instead.
+
+==================================================
+FINAL RESPONSE
+==================================================
+
+Return a concise summary containing:
+
+1. CubeDynamics version/artifact tested
+2. container and Python version
+3. number of naive exploratory operations
+4. total systematic operations
+5. nouns discovered / tested
+6. sources discovered / tested
+7. verbs discovered / tested
+8. custom noun result
+9. custom verb result
+10. original scientific questions attempted
+11. P0 count
+12. P1 count
+13. P2 count
+14. P3 count
+15. P4 count
+16. top findings
+17. naive-session evidence path
+18. coverage matrix path
+19. naive_user_report.md path
+20. proposed_issues.md path
+21. anything that prevented complete coverage
+22. final verdict
+
+Do not fix CubeDynamics in this task.
+Do not submit CubeDynamics issues yet.
+Do not create CubeDynamics PRs yet.

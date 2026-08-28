@@ -1,31 +1,47 @@
-# basic_OASIS
+# CubeDynamics, from a new user's perspective
 
-`basic_OASIS` is a lightweight MkDocs + Material starter for clear project documentation. It is designed to stay minimal, readable, and easy to extend.
+Can a scientist discover, understand, and use CubeDynamics using only what an ordinary package user can see?
 
-[Explore Examples](examples.md){ .md-button .md-button--primary }
-[View Repository](https://github.com/CU-ESIIL/basic_OASIS){ .md-button }
+`cubedynamics_test_user` is an independent workspace for answering that question. We treat CubeDynamics as an external installed package and record the experience of trying environmental analyses through its public documentation and user-facing functions.
+
+[Testing workflow](examples.md){ .md-button .md-button--primary }
+[Evidence and prompt log](evidence.md){ .md-button }
+
+!!! warning "Public surface only"
+    During naive-user testing, do not inspect, clone, or mount the CubeDynamics source repository, or read its tests, agent instructions, developer files, or installed implementation. Use public documentation, the README, ordinary public-package introspection, and observed behavior. If those are insufficient, record a finding.
 
 <div class="grid cards" markdown>
 
-- **Code**
+- **Discover**
 
-  ---
+    ---
 
-  Capture setup steps, scripts, and reproducible snippets in one place.
+    Begin as a new user. Follow public documentation, form scientific questions, and preserve the first attempts without a preloaded API checklist.
 
-- **Data**
+- **Exercise**
 
-  ---
+    ---
 
-  Document data access, formats, and provenance so work stays transparent.
+    After freezing the exploratory session, inventory the public surface and test documented usage, composition, extensions, and plausible mistakes.
 
-- **Docs**
+- **Record**
 
-  ---
+    ---
 
-  Write concise guides that future contributors can quickly understand.
+    Keep requests, decisions, exact attempts, results, errors, and recovery steps traceable. Confusion and unsuccessful attempts are evidence too.
 
 </div>
 
-!!! note "Template-first by design"
-    This site is intentionally minimal. Start simple, then extend only what your project needs.
+## Current status
+
+**Setup documented; acceptance testing not yet run.** No CubeDynamics artifact has been installed or tested in this setup task. There are no measured coverage counts, package findings, or release-readiness verdicts yet.
+
+The [project notes](project.md) distinguish existing files from planned test infrastructure. A successful website build validates this documentation, not CubeDynamics.
+
+## Where the rules and history live
+
+The repository is the source of truth; this website is its rendered documentation.
+
+- [AGENTS.md — operating rules and the naive-user boundary](https://github.com/CU-ESIIL/cubedynamics_test_user/blob/main/AGENTS.md)
+- [PROMPT_LOG.md — what agents were asked to do and what they actually did](https://github.com/CU-ESIIL/cubedynamics_test_user/blob/main/PROMPT_LOG.md)
+- [Repository](https://github.com/CU-ESIIL/cubedynamics_test_user)

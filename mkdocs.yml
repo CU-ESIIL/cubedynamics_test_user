@@ -1,15 +1,21 @@
-site_name: "basic_OASIS"
-site_description: "Minimal project website"
-site_url: "https://cu-esiil.github.io/basic_OASIS/"
+site_name: "CubeDynamics User Testing"
+site_description: "Independent naive-user acceptance testing of CubeDynamics through public documentation and installed-package behavior."
+site_url: "https://cu-esiil.github.io/cubedynamics_test_user/"
 
-repo_name: "CU-ESIIL/basic_OASIS"
-repo_url: "https://github.com/CU-ESIIL/basic_OASIS"
+repo_name: "CU-ESIIL/cubedynamics_test_user"
+repo_url: "https://github.com/CU-ESIIL/cubedynamics_test_user"
 edit_uri: "edit/main/docs/"
 
+# Theme templates are build inputs, not public website pages.
+exclude_docs: |
+  /overrides/
+
 nav:
-  - Site:
+  - User testing:
       - Home: index.md
-      - Examples: examples.md
+      - Testing workflow: examples.md
+      - Evidence and prompt log: evidence.md
+      - Project notes: project.md
 
 theme:
   name: material

@@ -49,3 +49,9 @@ rsconnect/
 
 # macOS
 .DS_Store
+
+# Local Python environments and generated website output
+.venv/
+__pycache__/
+/site/
+/dist/
