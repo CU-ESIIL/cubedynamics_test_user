@@ -1,0 +1,37 @@
+site_name: "basic_OASIS"
+site_description: "Minimal project website"
+site_url: "https://cu-esiil.github.io/basic_OASIS/"
+
+repo_name: "CU-ESIIL/basic_OASIS"
+repo_url: "https://github.com/CU-ESIIL/basic_OASIS"
+edit_uri: "edit/main/docs/"
+
+nav:
+  - Site:
+      - Home: index.md
+      - Examples: examples.md
+
+theme:
+  name: material
+  logo: assets/esiil_content/esiil_oasis_logo.png
+  favicon: assets/esiil_content/favicon.ico
+  custom_dir: docs/overrides
+  features:
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
