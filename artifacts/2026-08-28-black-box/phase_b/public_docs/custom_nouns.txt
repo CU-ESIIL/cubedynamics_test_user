@@ -1,0 +1,137 @@
+
+                
+                  
+
+
+  
+  
+
+
+
+Make a custom noun
+
+A noun answers: what scientific thing enters the analysis? In a project
+package, a noun is usually a small loader wrapper that turns one vetted source
+into a predictable xarray cube with explicit dimensions, units, CRS, and
+provenance.
+
+CubeDynamics does not currently expose a runtime source-registration API.
+Project nouns should therefore live in the project package. A new noun belongs
+in CubeDynamics core only after its provider path, metadata normalization, QA,
+tests, and documentation are ready together.
+
+Wrap a trusted loader
+
+This pattern keeps provider-specific access behind a scientific name. The
+example assumes load_soil_product is your project's tested loader for a real
+observational product.
+
+from collections.abc import Callable
+
+import xarray as xr
+
+
+def soil_moisture(
+    *,
+    load_soil_product: Callable[..., xr.DataArray],
+    bbox,
+    start,
+    end,
+) -> xr.DataArray:
+    """Load and normalize observed volumetric soil moisture."""
+
+    cube = load_soil_product(bbox=bbox, start=start, end=end)
+
+    required = {"time", "y", "x"}
+    if not required.issubset(cube.dims):
+        raise ValueError(f"soil_moisture requires dimensions {sorted(required)}")
+    if not cube.attrs.get("crs"):
+        raise ValueError("soil_moisture requires explicit CRS metadata")
+
+    return cube.rename("soil_moisture").assign_attrs(
+        cube.attrs,
+        units="m3 m-3",
+        scientific_noun="soil_moisture",
+        normalization="provider variable renamed; dimensions preserved",
+    )
+
+
+The wrapper should reject an ambiguous product rather than guessing its spatial
+dimensions, CRS, units, or measurement meaning.
+
+Keep nouns separate from verbs
+
+moisture = soil_moisture(
+    load_soil_product=my_project.load_soil_product,
+    bbox=study_bounds,
+    start="2024-06-01",
+    end="2024-08-31",
+)
+
+result = (
+    pipe(moisture)
+    | v.anomaly(dim="time")
+    | my_project.verbs.drought_state(threshold=-0.08)
+).unwrap()
+
+
+The noun owns acquisition and normalization. Verbs own the analytical
+transformation. That separation lets the project change providers without
+quietly changing its scientific method.
+
+Publication checklist
+
+
+Cite the provider, product, version or asset state, and license.
+
+Record the exact query, retrieval time, units, CRS, and source variables.
+
+Test spatial and temporal bounds, missingness, value ranges, and physical
+   relationships relevant to the product.
+
+Refuse generated fallback data in scientific workflows.
+
+Test the wrapper offline with a checksum-controlled observational extract.
+
+Pair the noun with a vignette that ends in an interpretable plot.
+
+
+See the built-in scientific noun vocabulary, the
+source QA report, and the
+spatial dataset contract before
+proposing a noun for the shared library.
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  
+    
+      
+  
+    
+      
+    
+    2026-08-28
+  
+
+    
+    
+    
+    
+  
+
+
+
+
+
+                
+              

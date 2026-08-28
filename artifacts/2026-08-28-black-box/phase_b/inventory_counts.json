@@ -1,0 +1,10 @@
+{
+  "nouns": 11,
+  "catalog_source_flavors": 7,
+  "noun_source_pairs": 14,
+  "verb_namespace_entries": 51,
+  "implemented_grammar_verbs": 37,
+  "compatibility_grammar_verbs": 4,
+  "implemented_direct_helpers": 8,
+  "reserved_placeholders": 2
+}

@@ -1,0 +1,429 @@
+
+                
+                  
+
+
+  
+  
+
+
+
+Documents · Verb reference
+
+
+Verbs by purpose
+
+Browse implemented operations by what they do. Grammar verbs configure pipe stages; direct helpers take their data arguments immediately. A shared namespace does not make every function a verb factory.
+
+All public callables (A–Z) · Learn: verbs
+
+Transform · State and events · Synchrony and comparison · Spatial and alignment · Visualization · Output and side effects · Other helpers
+
+Transform
+
+
+
+
+Operation
+Callable type
+Purpose
+
+
+
+
+
+anomaly
+Grammar verb / pipe stage
+express values as departures from a mean
+
+
+
+apply
+Grammar verb / pipe stage
+apply a user-supplied function without changing pipe syntax
+
+
+
+flatten_cube
+Grammar verb / pipe stage
+stack non-time dimensions into a sample dimension
+
+
+
+flatten_space
+Grammar verb / pipe stage
+stack spatial dimensions into a pixel dimension
+
+
+
+mean
+Grammar verb / pipe stage
+average values over a named dimension
+
+
+
+month_filter
+Grammar verb / pipe stage
+retain observations from selected calendar months
+
+
+
+ndvi_from_s2
+Grammar verb / pipe stage
+derive NDVI from Sentinel-2 red and near-infrared bands
+
+
+
+variance
+Grammar verb / pipe stage
+measure variation over a named dimension
+
+
+
+zscore
+Grammar verb / pipe stage
+standardize values relative to their mean and spread
+
+
+
+
+State and events
+
+
+
+
+Operation
+Callable type
+Purpose
+
+
+
+
+
+binary_state
+Grammar verb / pipe stage
+normalize a binary mask into the state-cube contract
+
+
+
+change_state
+Grammar verb / pipe stage
+define a condition from lagged change
+
+
+
+detect_events
+Grammar verb / pipe stage
+group consecutive true periods into events
+
+
+
+quantile_state
+Grammar verb / pipe stage
+define a condition relative to an empirical quantile
+
+
+
+threshold_state
+Grammar verb / pipe stage
+turn continuous values into a named true/false condition
+
+
+
+
+Synchrony and comparison
+
+
+
+
+Operation
+Callable type
+Purpose
+
+
+
+
+
+compare_blocks
+Grammar verb / pipe stage
+compare collected spatial-block signatures
+
+
+
+duration_synchrony
+Grammar verb / pipe stage
+compare the duration of detected events
+
+
+
+occurrence_synchrony
+Grammar verb / pipe stage
+compare co-occurrence among state cubes
+
+
+
+overlap
+Grammar verb / pipe stage
+identify coincident truth in two exactly aligned conditions
+
+
+
+rolling_median_split_synchrony
+Grammar verb / pipe stage
+measure rolling median-split synchrony
+
+
+
+rolling_tail_dep_vs_center
+Grammar verb / pipe stage
+compare rolling tail behavior with the center
+
+
+
+severity_synchrony
+Grammar verb / pipe stage
+compare condition magnitude where states co-occur
+
+
+
+sync_with
+Grammar verb / pipe stage
+compare an input cube with another aligned temporal cube
+
+
+
+timing_synchrony
+Grammar verb / pipe stage
+compare the timing of detected events
+
+
+
+
+Spatial and alignment
+
+
+
+
+Operation
+Callable type
+Purpose
+
+
+
+
+
+align_cube
+Grammar verb / pipe stage
+align a field to a reference cube
+
+
+
+block_signature
+Grammar verb / pipe stage
+summarize a cube as a named spatial-block signature
+
+
+
+collect_blocks
+Grammar verb / pipe stage
+collect compatible block signatures
+
+
+
+extract
+Grammar verb / pipe stage
+attach fire-hull climate summaries to a cube
+
+
+
+rasterize_observations
+Direct helper function
+place feature observations onto a reference cube grid
+
+
+
+vase_extract
+Direct helper function
+extract cube values for a VASE geometry
+
+
+
+vase_mask
+Direct helper function
+mask a cube with a VASE geometry
+
+
+
+
+Visualization
+
+
+
+
+Operation
+Callable type
+Purpose
+
+
+
+
+
+climate_hist
+Grammar verb / pipe stage
+render a climate distribution
+
+
+
+diagnostic_panel
+Grammar verb / pipe stage
+render a diagnostic panel
+
+
+
+fire_derivative
+Visualization helper (direct call)
+derive a configured fire-event product
+
+
+
+fire_panel
+Visualization helper (direct call)
+render a compact fire-event diagnostic panel
+
+
+
+fire_plot
+Visualization helper (direct call)
+render one fire event and its climate context
+
+
+
+fire_vase_panel
+Grammar verb / pipe stage
+render a multi-event VASE panel
+
+
+
+landsat_ndvi_plot
+Visualization helper (direct call)
+render a Landsat NDVI view
+
+
+
+plot
+Grammar verb / pipe stage
+render an interactive cube view
+
+
+
+plot_mean
+Grammar verb / pipe stage
+render a spatial-mean time series
+
+
+
+tubes
+Grammar verb / pipe stage
+construct a tube representation from a spatiotemporal cube
+
+
+
+vase
+Grammar verb / pipe stage
+construct a configured fire VASE representation
+
+
+
+
+Output and side effects
+
+
+
+
+Operation
+Callable type
+Purpose
+
+
+
+
+
+show_cube_lexcube
+Grammar verb / pipe stage
+render a cube while preserving it in the pipe
+
+
+
+to_netcdf
+Grammar verb / pipe stage
+write an explicit NetCDF output
+
+
+
+
+Other helpers
+
+
+
+
+Operation
+Callable type
+Purpose
+
+
+
+
+
+landsat8_mpc
+Grammar verb / pipe stage
+load Landsat observations through the MPC integration
+
+
+
+landsat_vis_ndvi
+Direct helper function
+prepare a visualization-friendly Landsat NDVI cube
+
+
+
+
+Other public names
+
+Compatibility and deprecated helpers · Reserved / planned API
+
+These remain documented but are not promoted as new analysis operations.
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  
+    
+      
+  
+    
+      
+    
+    2026-08-28
+  
+
+    
+    
+    
+    
+  
+
+
+
+
+
+                
+              

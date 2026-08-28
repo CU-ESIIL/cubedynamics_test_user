@@ -1,0 +1,65 @@
+[
+  {
+    "name": "nouns",
+    "url": "https://cu-esiil.github.io/cubedynamics/library/",
+    "timestamp": "2026-08-28T18:15:10.190417+00:00",
+    "status": "failed",
+    "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "sources",
+    "url": "https://cu-esiil.github.io/cubedynamics/library/sources/",
+    "timestamp": "2026-08-28T18:15:10.205410+00:00",
+    "status": "failed",
+    "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "verbs",
+    "url": "https://cu-esiil.github.io/cubedynamics/reference/verbs/",
+    "timestamp": "2026-08-28T18:15:10.205720+00:00",
+    "status": "failed",
+    "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "callables",
+    "url": "https://cu-esiil.github.io/cubedynamics/reference/verbs/a-z/",
+    "timestamp": "2026-08-28T18:15:10.205900+00:00",
+    "status": "failed",
+    "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "pipe",
+    "url": "https://cu-esiil.github.io/cubedynamics/api/pipe/",
+    "timestamp": "2026-08-28T18:15:10.206053+00:00",
+    "status": "failed",
+    "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "data",
+    "url": "https://cu-esiil.github.io/cubedynamics/api/data/",
+    "timestamp": "2026-08-28T18:15:10.206203+00:00",
+    "status": "failed",
+    "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "custom_nouns",
+    "url": "https://cu-esiil.github.io/cubedynamics/extending/custom_nouns/",
+    "timestamp": "2026-08-28T18:15:10.206358+00:00",
+    "status": "failed",
+    "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "custom_verbs",
+    "url": "https://cu-esiil.github.io/cubedynamics/extending/custom_verbs/",
+    "timestamp": "2026-08-28T18:15:10.206492+00:00",
+    "status": "failed",
+    "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "learn",
+    "url": "https://cu-esiil.github.io/cubedynamics/learn/",
+    "timestamp": "2026-08-28T18:15:10.206629+00:00",
+    "status": "failed",
+    "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  }
+]

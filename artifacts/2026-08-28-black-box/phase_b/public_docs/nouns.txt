@@ -1,0 +1,224 @@
+
+                
+                  
+
+
+  
+  
+
+
+
+Library · Data directory
+
+
+Library
+
+Find environmental information by scientific noun. Choose a noun, inspect its returned object and source contract, then follow a real-data lesson. Browse by source, or look up an operation in Documents.
+
+Climate & weather
+
+
+
+
+Noun
+Meaning
+Source flavors
+Coverage / resolution / time
+
+
+
+
+
+humidity
+Daily maximum or minimum relative humidity.
+gridmet
+gridmet: Contiguous United States, 4,638.3 m, daily (1979-present)
+
+
+
+precipitation
+Daily precipitation totals.
+gridmet, prism
+gridmet: Contiguous United States, 4,638.3 m, daily total (1979-present); prism: Contiguous United States, approximately 4 km, daily total (1981-present)
+
+
+
+radiation
+Downward surface shortwave radiation.
+gridmet
+gridmet: Contiguous United States, 4,638.3 m, daily (1979-present)
+
+
+
+temperature
+Gridded air temperature, with an explicit daily statistic.
+gridmet, prism
+gridmet: Contiguous United States, 4,638.3 m, daily (1979-present); prism: Contiguous United States, approximately 4 km, daily (1981-present)
+
+
+
+vpd
+Mean daily vapor-pressure deficit.
+gridmet
+gridmet: Contiguous United States, 4,638.3 m, daily mean (1979-present)
+
+
+
+wind
+Wind velocity at 10 m height.
+gridmet
+gridmet: Contiguous United States, 4,638.3 m, daily (1979-present)
+
+
+
+
+Surface observations
+
+
+
+
+Noun
+Meaning
+Source flavors
+Coverage / resolution / time
+
+
+
+
+
+surface_reflectance
+Multispectral surface-reflectance bands.
+sentinel2
+sentinel2: Global land surfaces, 10, 20, or 60 m by band; CubeDynamics default 10 m, scene acquisition; nominal five-day constellation revisit (2015-present)
+
+
+
+
+Vegetation
+
+
+
+
+Noun
+Meaning
+Source flavors
+Coverage / resolution / time
+
+
+
+
+
+vegetation_index
+A derived vegetation index; currently NDVI.
+sentinel2
+sentinel2: Global land surfaces, 10 m, scene acquisition; nominal five-day constellation revisit (2015-present)
+
+
+
+
+Terrain
+
+
+
+
+Noun
+Meaning
+Source flavors
+Coverage / resolution / time
+
+
+
+
+
+elevation
+Surface elevation on a native raster grid.
+usgs_3dep
+CONUS; one fully covering native tile; 1/3 arc-second; native cells; Static tile version, not a time series
+
+
+
+
+Networks & infrastructure
+
+
+
+
+Noun
+Meaning
+Source flavors
+Coverage / resolution / time
+
+
+
+
+
+roads
+Mapped road features with provider-native geometry, identifiers, and classes.
+overture, osm
+Release-covered areas; bounded small-area queries; Native vector segments; Explicit release, e.g. 2026-08-19.0; Small query areas through Overpass; Native OSM way geometry; Rolling snapshot at retrieval; timestamp retained
+
+
+
+
+Water & hydrology
+
+
+
+
+Noun
+Meaning
+Source flavors
+Coverage / resolution / time
+
+
+
+
+
+streamflow
+Observed discharge at an identified streamgage through time.
+usgs
+One supported USGS station per request; Point station; native observation intervals; Provider-available observations; <=31-day requests
+
+
+
+
+Use and extend
+
+Learn about source choice · Custom nouns · Source QA
+
+Source-specific imports and tested limits are shown on each noun page. Inclusion in this library is not a claim that all sources share the same certification or serving history.
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  
+    
+      
+  
+    
+      
+    
+    2026-08-28
+  
+
+    
+    
+    
+    
+  
+
+
+
+
+
+                
+              

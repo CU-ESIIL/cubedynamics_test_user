@@ -1,0 +1,1498 @@
+[
+  {
+    "name": "nouns",
+    "url": "https://cu-esiil.github.io/cubedynamics/library/",
+    "timestamp": "2026-08-28T18:15:21.923997+00:00",
+    "status": 200,
+    "resolved_url": "https://cu-esiil.github.io/cubedynamics/library/",
+    "headers": {
+      "Connection": "close",
+      "Content-Length": "32491",
+      "Server": "GitHub.com",
+      "Content-Type": "text/html; charset=utf-8",
+      "Last-Modified": "Fri, 28 Aug 2026 15:22:08 GMT",
+      "Access-Control-Allow-Origin": "*",
+      "Strict-Transport-Security": "max-age=31556952",
+      "ETag": "\"6a91a7a0-7eeb\"",
+      "expires": "Fri, 28 Aug 2026 18:25:22 GMT",
+      "Cache-Control": "max-age=600",
+      "x-proxy-cache": "MISS",
+      "X-GitHub-Request-Id": "FC9C:BD84C:EC0D:1057B:6A91D039",
+      "x-github-edge-region": "iad",
+      "Accept-Ranges": "bytes",
+      "Age": "0",
+      "Date": "Fri, 28 Aug 2026 18:15:22 GMT",
+      "Via": "1.1 varnish",
+      "X-Served-By": "cache-den-kden1300022-DEN",
+      "X-Cache": "MISS",
+      "X-Cache-Hits": "0",
+      "X-Timer": "S1787940922.060160,VS0,VE79",
+      "Vary": "Accept-Encoding",
+      "X-Fastly-Request-ID": "2df28cfa6d1370d17ec15bbc32c7305165ac66be"
+    },
+    "sha256": "8105e9d48606cb5e040ce483bf67883856b22ba31c31d1a8659413745c31a53c",
+    "tables": [
+      [
+        [
+          "Noun",
+          "Meaning",
+          "Source flavors",
+          "Coverage / resolution / time"
+        ],
+        [
+          "humidity",
+          "Daily maximum or minimum relative humidity.",
+          "gridmet",
+          "gridmet: Contiguous United States, 4,638.3 m, daily (1979-present)"
+        ],
+        [
+          "precipitation",
+          "Daily precipitation totals.",
+          "gridmet, prism",
+          "gridmet: Contiguous United States, 4,638.3 m, daily total (1979-present); prism: Contiguous United States, approximately 4 km, daily total (1981-present)"
+        ],
+        [
+          "radiation",
+          "Downward surface shortwave radiation.",
+          "gridmet",
+          "gridmet: Contiguous United States, 4,638.3 m, daily (1979-present)"
+        ],
+        [
+          "temperature",
+          "Gridded air temperature, with an explicit daily statistic.",
+          "gridmet, prism",
+          "gridmet: Contiguous United States, 4,638.3 m, daily (1979-present); prism: Contiguous United States, approximately 4 km, daily (1981-present)"
+        ],
+        [
+          "vpd",
+          "Mean daily vapor-pressure deficit.",
+          "gridmet",
+          "gridmet: Contiguous United States, 4,638.3 m, daily mean (1979-present)"
+        ],
+        [
+          "wind",
+          "Wind velocity at 10 m height.",
+          "gridmet",
+          "gridmet: Contiguous United States, 4,638.3 m, daily (1979-present)"
+        ]
+      ],
+      [
+        [
+          "Noun",
+          "Meaning",
+          "Source flavors",
+          "Coverage / resolution / time"
+        ],
+        [
+          "surface_reflectance",
+          "Multispectral surface-reflectance bands.",
+          "sentinel2",
+          "sentinel2: Global land surfaces, 10, 20, or 60 m by band; CubeDynamics default 10 m, scene acquisition; nominal five-day constellation revisit (2015-present)"
+        ]
+      ],
+      [
+        [
+          "Noun",
+          "Meaning",
+          "Source flavors",
+          "Coverage / resolution / time"
+        ],
+        [
+          "vegetation_index",
+          "A derived vegetation index; currently NDVI.",
+          "sentinel2",
+          "sentinel2: Global land surfaces, 10 m, scene acquisition; nominal five-day constellation revisit (2015-present)"
+        ]
+      ],
+      [
+        [
+          "Noun",
+          "Meaning",
+          "Source flavors",
+          "Coverage / resolution / time"
+        ],
+        [
+          "elevation",
+          "Surface elevation on a native raster grid.",
+          "usgs_3dep",
+          "CONUS; one fully covering native tile; 1/3 arc-second; native cells; Static tile version, not a time series"
+        ]
+      ],
+      [
+        [
+          "Noun",
+          "Meaning",
+          "Source flavors",
+          "Coverage / resolution / time"
+        ],
+        [
+          "roads",
+          "Mapped road features with provider-native geometry, identifiers, and classes.",
+          "overture, osm",
+          "Release-covered areas; bounded small-area queries; Native vector segments; Explicit release, e.g. 2026-08-19.0; Small query areas through Overpass; Native OSM way geometry; Rolling snapshot at retrieval; timestamp retained"
+        ]
+      ],
+      [
+        [
+          "Noun",
+          "Meaning",
+          "Source flavors",
+          "Coverage / resolution / time"
+        ],
+        [
+          "streamflow",
+          "Observed discharge at an identified streamgage through time.",
+          "usgs",
+          "One supported USGS station per request; Point station; native observation intervals; Provider-available observations; <=31-day requests"
+        ]
+      ]
+    ],
+    "links": [
+      "sources/",
+      "../reference/verbs/",
+      "nouns/humidity/",
+      "nouns/precipitation/",
+      "nouns/radiation/",
+      "nouns/temperature/",
+      "nouns/vpd/",
+      "nouns/wind/",
+      "nouns/surface_reflectance/",
+      "nouns/vegetation_index/",
+      "nouns/elevation/",
+      "nouns/roads/",
+      "nouns/streamflow/",
+      "../learn/provenance/",
+      "../extending/custom_nouns/",
+      "../data/phase1_qa/"
+    ]
+  },
+  {
+    "name": "sources",
+    "url": "https://cu-esiil.github.io/cubedynamics/library/sources/",
+    "timestamp": "2026-08-28T18:15:22.098957+00:00",
+    "status": 200,
+    "resolved_url": "https://cu-esiil.github.io/cubedynamics/library/sources/",
+    "headers": {
+      "Connection": "close",
+      "Content-Length": "28292",
+      "Server": "GitHub.com",
+      "Content-Type": "text/html; charset=utf-8",
+      "Last-Modified": "Fri, 28 Aug 2026 15:22:08 GMT",
+      "Access-Control-Allow-Origin": "*",
+      "Strict-Transport-Security": "max-age=31556952",
+      "ETag": "\"6a91a7a0-6e84\"",
+      "expires": "Fri, 28 Aug 2026 18:25:22 GMT",
+      "Cache-Control": "max-age=600",
+      "x-proxy-cache": "MISS",
+      "X-GitHub-Request-Id": "301A:86FB6:F5E2:10FB7:6A91D03A",
+      "x-github-edge-region": "iad",
+      "Accept-Ranges": "bytes",
+      "Age": "0",
+      "Date": "Fri, 28 Aug 2026 18:15:22 GMT",
+      "Via": "1.1 varnish",
+      "X-Served-By": "cache-den-kden1300063-DEN",
+      "X-Cache": "MISS",
+      "X-Cache-Hits": "0",
+      "X-Timer": "S1787940922.205597,VS0,VE65",
+      "Vary": "Accept-Encoding",
+      "X-Fastly-Request-ID": "7389a14becc6a392e095bf1fdaab90c7b4004fdc"
+    },
+    "sha256": "1a5f90a37839cecceac4f43584c14973b665e0b868de7e9a30d22fa9d89c096d",
+    "tables": [
+      [
+        [
+          "Source",
+          "Provider",
+          "Available nouns"
+        ],
+        [
+          "gridmet",
+          "gridMET / University of California, Merced",
+          "humidity, precipitation, radiation, temperature, vpd, wind"
+        ],
+        [
+          "prism",
+          "PRISM Climate Group, Oregon State University",
+          "precipitation, temperature"
+        ],
+        [
+          "sentinel2",
+          "European Union Copernicus Programme / ESA",
+          "surface_reflectance, vegetation_index"
+        ],
+        [
+          "usgs_3dep",
+          "US Geological Survey",
+          "elevation"
+        ],
+        [
+          "overture",
+          "Overture Maps Foundation",
+          "roads"
+        ],
+        [
+          "osm",
+          "OpenStreetMap contributors",
+          "roads"
+        ],
+        [
+          "usgs",
+          "US Geological Survey",
+          "streamflow"
+        ]
+      ]
+    ],
+    "links": [
+      "../",
+      "gridmet/",
+      "prism/",
+      "sentinel2/",
+      "usgs_3dep/",
+      "overture/",
+      "osm/",
+      "usgs/",
+      "../../datasets/daymet/",
+      "../../api/data/"
+    ]
+  },
+  {
+    "name": "verbs",
+    "url": "https://cu-esiil.github.io/cubedynamics/reference/verbs/",
+    "timestamp": "2026-08-28T18:15:22.310795+00:00",
+    "status": 200,
+    "resolved_url": "https://cu-esiil.github.io/cubedynamics/reference/verbs/",
+    "headers": {
+      "Connection": "close",
+      "Content-Length": "38234",
+      "Server": "GitHub.com",
+      "Content-Type": "text/html; charset=utf-8",
+      "x-origin-cache": "HIT",
+      "Last-Modified": "Fri, 28 Aug 2026 15:22:08 GMT",
+      "Access-Control-Allow-Origin": "*",
+      "Strict-Transport-Security": "max-age=31556952",
+      "ETag": "\"6a91a7a0-955a\"",
+      "expires": "Fri, 28 Aug 2026 18:25:22 GMT",
+      "Cache-Control": "max-age=600",
+      "x-proxy-cache": "MISS",
+      "X-GitHub-Request-Id": "A6CA:B09F1:841A:9CA5:6A91D03A",
+      "x-github-edge-region": "iad",
+      "Accept-Ranges": "bytes",
+      "Age": "0",
+      "Date": "Fri, 28 Aug 2026 18:15:22 GMT",
+      "Via": "1.1 varnish",
+      "X-Served-By": "cache-den-kden1300034-DEN",
+      "X-Cache": "MISS",
+      "X-Cache-Hits": "0",
+      "X-Timer": "S1787940922.400598,VS0,VE72",
+      "Vary": "Accept-Encoding",
+      "X-Fastly-Request-ID": "5886ec1e1c342218e124123e3acaed84d7b32172"
+    },
+    "sha256": "6ebc7cf5a79105a87716898ead7173239e55551cf2997d739641b7211741b592",
+    "tables": [
+      [
+        [
+          "Operation",
+          "Callable type",
+          "Purpose"
+        ],
+        [
+          "anomaly",
+          "Grammar verb / pipe stage",
+          "express values as departures from a mean"
+        ],
+        [
+          "apply",
+          "Grammar verb / pipe stage",
+          "apply a user-supplied function without changing pipe syntax"
+        ],
+        [
+          "flatten_cube",
+          "Grammar verb / pipe stage",
+          "stack non-time dimensions into a sample dimension"
+        ],
+        [
+          "flatten_space",
+          "Grammar verb / pipe stage",
+          "stack spatial dimensions into a pixel dimension"
+        ],
+        [
+          "mean",
+          "Grammar verb / pipe stage",
+          "average values over a named dimension"
+        ],
+        [
+          "month_filter",
+          "Grammar verb / pipe stage",
+          "retain observations from selected calendar months"
+        ],
+        [
+          "ndvi_from_s2",
+          "Grammar verb / pipe stage",
+          "derive NDVI from Sentinel-2 red and near-infrared bands"
+        ],
+        [
+          "variance",
+          "Grammar verb / pipe stage",
+          "measure variation over a named dimension"
+        ],
+        [
+          "zscore",
+          "Grammar verb / pipe stage",
+          "standardize values relative to their mean and spread"
+        ]
+      ],
+      [
+        [
+          "Operation",
+          "Callable type",
+          "Purpose"
+        ],
+        [
+          "binary_state",
+          "Grammar verb / pipe stage",
+          "normalize a binary mask into the state-cube contract"
+        ],
+        [
+          "change_state",
+          "Grammar verb / pipe stage",
+          "define a condition from lagged change"
+        ],
+        [
+          "detect_events",
+          "Grammar verb / pipe stage",
+          "group consecutive true periods into events"
+        ],
+        [
+          "quantile_state",
+          "Grammar verb / pipe stage",
+          "define a condition relative to an empirical quantile"
+        ],
+        [
+          "threshold_state",
+          "Grammar verb / pipe stage",
+          "turn continuous values into a named true/false condition"
+        ]
+      ],
+      [
+        [
+          "Operation",
+          "Callable type",
+          "Purpose"
+        ],
+        [
+          "compare_blocks",
+          "Grammar verb / pipe stage",
+          "compare collected spatial-block signatures"
+        ],
+        [
+          "duration_synchrony",
+          "Grammar verb / pipe stage",
+          "compare the duration of detected events"
+        ],
+        [
+          "occurrence_synchrony",
+          "Grammar verb / pipe stage",
+          "compare co-occurrence among state cubes"
+        ],
+        [
+          "overlap",
+          "Grammar verb / pipe stage",
+          "identify coincident truth in two exactly aligned conditions"
+        ],
+        [
+          "rolling_median_split_synchrony",
+          "Grammar verb / pipe stage",
+          "measure rolling median-split synchrony"
+        ],
+        [
+          "rolling_tail_dep_vs_center",
+          "Grammar verb / pipe stage",
+          "compare rolling tail behavior with the center"
+        ],
+        [
+          "severity_synchrony",
+          "Grammar verb / pipe stage",
+          "compare condition magnitude where states co-occur"
+        ],
+        [
+          "sync_with",
+          "Grammar verb / pipe stage",
+          "compare an input cube with another aligned temporal cube"
+        ],
+        [
+          "timing_synchrony",
+          "Grammar verb / pipe stage",
+          "compare the timing of detected events"
+        ]
+      ],
+      [
+        [
+          "Operation",
+          "Callable type",
+          "Purpose"
+        ],
+        [
+          "align_cube",
+          "Grammar verb / pipe stage",
+          "align a field to a reference cube"
+        ],
+        [
+          "block_signature",
+          "Grammar verb / pipe stage",
+          "summarize a cube as a named spatial-block signature"
+        ],
+        [
+          "collect_blocks",
+          "Grammar verb / pipe stage",
+          "collect compatible block signatures"
+        ],
+        [
+          "extract",
+          "Grammar verb / pipe stage",
+          "attach fire-hull climate summaries to a cube"
+        ],
+        [
+          "rasterize_observations",
+          "Direct helper function",
+          "place feature observations onto a reference cube grid"
+        ],
+        [
+          "vase_extract",
+          "Direct helper function",
+          "extract cube values for a VASE geometry"
+        ],
+        [
+          "vase_mask",
+          "Direct helper function",
+          "mask a cube with a VASE geometry"
+        ]
+      ],
+      [
+        [
+          "Operation",
+          "Callable type",
+          "Purpose"
+        ],
+        [
+          "climate_hist",
+          "Grammar verb / pipe stage",
+          "render a climate distribution"
+        ],
+        [
+          "diagnostic_panel",
+          "Grammar verb / pipe stage",
+          "render a diagnostic panel"
+        ],
+        [
+          "fire_derivative",
+          "Visualization helper (direct call)",
+          "derive a configured fire-event product"
+        ],
+        [
+          "fire_panel",
+          "Visualization helper (direct call)",
+          "render a compact fire-event diagnostic panel"
+        ],
+        [
+          "fire_plot",
+          "Visualization helper (direct call)",
+          "render one fire event and its climate context"
+        ],
+        [
+          "fire_vase_panel",
+          "Grammar verb / pipe stage",
+          "render a multi-event VASE panel"
+        ],
+        [
+          "landsat_ndvi_plot",
+          "Visualization helper (direct call)",
+          "render a Landsat NDVI view"
+        ],
+        [
+          "plot",
+          "Grammar verb / pipe stage",
+          "render an interactive cube view"
+        ],
+        [
+          "plot_mean",
+          "Grammar verb / pipe stage",
+          "render a spatial-mean time series"
+        ],
+        [
+          "tubes",
+          "Grammar verb / pipe stage",
+          "construct a tube representation from a spatiotemporal cube"
+        ],
+        [
+          "vase",
+          "Grammar verb / pipe stage",
+          "construct a configured fire VASE representation"
+        ]
+      ],
+      [
+        [
+          "Operation",
+          "Callable type",
+          "Purpose"
+        ],
+        [
+          "show_cube_lexcube",
+          "Grammar verb / pipe stage",
+          "render a cube while preserving it in the pipe"
+        ],
+        [
+          "to_netcdf",
+          "Grammar verb / pipe stage",
+          "write an explicit NetCDF output"
+        ]
+      ],
+      [
+        [
+          "Operation",
+          "Callable type",
+          "Purpose"
+        ],
+        [
+          "landsat8_mpc",
+          "Grammar verb / pipe stage",
+          "load Landsat observations through the MPC integration"
+        ],
+        [
+          "landsat_vis_ndvi",
+          "Direct helper function",
+          "prepare a visualization-friendly Landsat NDVI cube"
+        ]
+      ]
+    ],
+    "links": [
+      "a-z/",
+      "../../learn/verbs/",
+      "#transform",
+      "#state-and-events",
+      "#synchrony-and-comparison",
+      "#spatial-and-alignment",
+      "#visualization",
+      "#output-and-side-effects",
+      "#other-helpers",
+      "anomaly/",
+      "apply/",
+      "flatten_cube/",
+      "flatten_space/",
+      "mean/",
+      "month_filter/",
+      "ndvi_from_s2/",
+      "variance/",
+      "zscore/",
+      "binary_state/",
+      "change_state/",
+      "detect_events/",
+      "quantile_state/",
+      "threshold_state/",
+      "compare_blocks/",
+      "duration_synchrony/",
+      "occurrence_synchrony/",
+      "overlap/",
+      "rolling_median_split_synchrony/",
+      "rolling_tail_dep_vs_center/",
+      "severity_synchrony/",
+      "sync_with/",
+      "timing_synchrony/",
+      "align_cube/",
+      "block_signature/",
+      "collect_blocks/",
+      "extract/",
+      "rasterize_observations/",
+      "vase_extract/",
+      "vase_mask/",
+      "climate_hist/",
+      "diagnostic_panel/",
+      "fire_derivative/",
+      "fire_panel/",
+      "fire_plot/",
+      "fire_vase_panel/",
+      "landsat_ndvi_plot/",
+      "plot/",
+      "plot_mean/",
+      "tubes/",
+      "vase/",
+      "show_cube_lexcube/",
+      "to_netcdf/",
+      "landsat8_mpc/",
+      "landsat_vis_ndvi/",
+      "compatibility/",
+      "planned/"
+    ]
+  },
+  {
+    "name": "callables",
+    "url": "https://cu-esiil.github.io/cubedynamics/reference/verbs/a-z/",
+    "timestamp": "2026-08-28T18:15:22.438850+00:00",
+    "status": 200,
+    "resolved_url": "https://cu-esiil.github.io/cubedynamics/reference/verbs/a-z/",
+    "headers": {
+      "Connection": "close",
+      "Content-Length": "49777",
+      "Server": "GitHub.com",
+      "Content-Type": "text/html; charset=utf-8",
+      "Last-Modified": "Fri, 28 Aug 2026 15:22:08 GMT",
+      "Access-Control-Allow-Origin": "*",
+      "Strict-Transport-Security": "max-age=31556952",
+      "ETag": "\"6a91a7a0-c271\"",
+      "expires": "Fri, 28 Aug 2026 18:25:22 GMT",
+      "Cache-Control": "max-age=600",
+      "x-proxy-cache": "MISS",
+      "X-GitHub-Request-Id": "DD64:1F9AA9:11042:12AFE:6A91D03A",
+      "x-github-edge-region": "iad",
+      "Accept-Ranges": "bytes",
+      "Age": "0",
+      "Date": "Fri, 28 Aug 2026 18:15:22 GMT",
+      "Via": "1.1 varnish",
+      "X-Served-By": "cache-den-kden1300050-DEN",
+      "X-Cache": "MISS",
+      "X-Cache-Hits": "0",
+      "X-Timer": "S1787940923.528795,VS0,VE71",
+      "Vary": "Accept-Encoding",
+      "X-Fastly-Request-ID": "547e1f274f7b0626da2d20c14c56b0085789d415"
+    },
+    "sha256": "7bda6994b969cc4d2c922eff5d01936b08dd0ccab5e06ec5457fb9b2ac94aed0",
+    "tables": [
+      [
+        [
+          "Name",
+          "Callable type",
+          "Availability",
+          "Meaning"
+        ],
+        [
+          "align_cube",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "align a field to a reference cube"
+        ],
+        [
+          "anomaly",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "express values as departures from a mean"
+        ],
+        [
+          "aoi_signature",
+          "Grammar verb / pipe stage",
+          "compatibility",
+          "Summarize an AOI cube into a named spatial-unit time signature."
+        ],
+        [
+          "apply",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "apply a user-supplied function without changing pipe syntax"
+        ],
+        [
+          "binary_state",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "normalize a binary mask into the state-cube contract"
+        ],
+        [
+          "block_signature",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "summarize a cube as a named spatial-block signature"
+        ],
+        [
+          "change_state",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "define a condition from lagged change"
+        ],
+        [
+          "climate_hist",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "render a climate distribution"
+        ],
+        [
+          "collect_blocks",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "collect compatible block signatures"
+        ],
+        [
+          "compare_aoi_signature",
+          "Grammar verb / pipe stage",
+          "compatibility",
+          "Compare one AOI signature with another over shared time."
+        ],
+        [
+          "compare_blocks",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "compare collected spatial-block signatures"
+        ],
+        [
+          "correlation_cube",
+          "Reserved / planned API",
+          "placeholder",
+          "Factory placeholder for a future correlation cube operation."
+        ],
+        [
+          "detect_events",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "group consecutive true periods into events"
+        ],
+        [
+          "diagnostic_panel",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "render a diagnostic panel"
+        ],
+        [
+          "duration_synchrony",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "compare the duration of detected events"
+        ],
+        [
+          "exceedance",
+          "Grammar verb / pipe stage",
+          "compatibility",
+          "Alias for :func:threshold_state."
+        ],
+        [
+          "extract",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "attach fire-hull climate summaries to a cube"
+        ],
+        [
+          "fire_derivative",
+          "Visualization helper (direct call)",
+          "implemented",
+          "derive a configured fire-event product"
+        ],
+        [
+          "fire_panel",
+          "Visualization helper (direct call)",
+          "implemented",
+          "render a compact fire-event diagnostic panel"
+        ],
+        [
+          "fire_plot",
+          "Visualization helper (direct call)",
+          "implemented",
+          "render one fire event and its climate context"
+        ],
+        [
+          "fire_vase_panel",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "render a multi-event VASE panel"
+        ],
+        [
+          "fit_model",
+          "Reserved / planned API",
+          "placeholder",
+          "Placeholder for upcoming modeling verbs."
+        ],
+        [
+          "flatten_cube",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "stack non-time dimensions into a sample dimension"
+        ],
+        [
+          "flatten_space",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "stack spatial dimensions into a pixel dimension"
+        ],
+        [
+          "landsat8_mpc",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "load Landsat observations through the MPC integration"
+        ],
+        [
+          "landsat_ndvi_plot",
+          "Visualization helper (direct call)",
+          "implemented",
+          "render a Landsat NDVI view"
+        ],
+        [
+          "landsat_vis_ndvi",
+          "Direct helper function",
+          "implemented",
+          "prepare a visualization-friendly Landsat NDVI cube"
+        ],
+        [
+          "mean",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "average values over a named dimension"
+        ],
+        [
+          "month_filter",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "retain observations from selected calendar months"
+        ],
+        [
+          "ndvi_from_s2",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "derive NDVI from Sentinel-2 red and near-infrared bands"
+        ],
+        [
+          "occurrence_synchrony",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "compare co-occurrence among state cubes"
+        ],
+        [
+          "overlap",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "identify coincident truth in two exactly aligned conditions"
+        ],
+        [
+          "plot",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "render an interactive cube view"
+        ],
+        [
+          "plot_mean",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "render a spatial-mean time series"
+        ],
+        [
+          "quantile_state",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "define a condition relative to an empirical quantile"
+        ],
+        [
+          "rasterize_observations",
+          "Direct helper function",
+          "implemented",
+          "place feature observations onto a reference cube grid"
+        ],
+        [
+          "rolling_median_split_synchrony",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "measure rolling median-split synchrony"
+        ],
+        [
+          "rolling_tail_dep_vs_center",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "compare rolling tail behavior with the center"
+        ],
+        [
+          "severity_synchrony",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "compare condition magnitude where states co-occur"
+        ],
+        [
+          "show_cube_lexcube",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "render a cube while preserving it in the pipe"
+        ],
+        [
+          "sync_with",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "compare an input cube with another aligned temporal cube"
+        ],
+        [
+          "threshold_state",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "turn continuous values into a named true/false condition"
+        ],
+        [
+          "timing_synchrony",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "compare the timing of detected events"
+        ],
+        [
+          "to_netcdf",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "write an explicit NetCDF output"
+        ],
+        [
+          "tubes",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "construct a tube representation from a spatiotemporal cube"
+        ],
+        [
+          "variance",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "measure variation over a named dimension"
+        ],
+        [
+          "vase",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "construct a configured fire VASE representation"
+        ],
+        [
+          "vase_demo",
+          "Grammar verb / pipe stage",
+          "compatibility",
+          "Convenience verb: build a demo stacked-polygon vase and plot it."
+        ],
+        [
+          "vase_extract",
+          "Direct helper function",
+          "implemented",
+          "extract cube values for a VASE geometry"
+        ],
+        [
+          "vase_mask",
+          "Direct helper function",
+          "implemented",
+          "mask a cube with a VASE geometry"
+        ],
+        [
+          "zscore",
+          "Grammar verb / pipe stage",
+          "implemented",
+          "standardize values relative to their mean and spread"
+        ]
+      ]
+    ],
+    "links": [
+      "../",
+      "../align_cube/",
+      "../anomaly/",
+      "../aoi_signature/",
+      "../apply/",
+      "../binary_state/",
+      "../block_signature/",
+      "../change_state/",
+      "../climate_hist/",
+      "../collect_blocks/",
+      "../compare_aoi_signature/",
+      "../compare_blocks/",
+      "../correlation_cube/",
+      "../detect_events/",
+      "../diagnostic_panel/",
+      "../duration_synchrony/",
+      "../exceedance/",
+      "../extract/",
+      "../fire_derivative/",
+      "../fire_panel/",
+      "../fire_plot/",
+      "../fire_vase_panel/",
+      "../fit_model/",
+      "../flatten_cube/",
+      "../flatten_space/",
+      "../landsat8_mpc/",
+      "../landsat_ndvi_plot/",
+      "../landsat_vis_ndvi/",
+      "../mean/",
+      "../month_filter/",
+      "../ndvi_from_s2/",
+      "../occurrence_synchrony/",
+      "../overlap/",
+      "../plot/",
+      "../plot_mean/",
+      "../quantile_state/",
+      "../rasterize_observations/",
+      "../rolling_median_split_synchrony/",
+      "../rolling_tail_dep_vs_center/",
+      "../severity_synchrony/",
+      "../show_cube_lexcube/",
+      "../sync_with/",
+      "../threshold_state/",
+      "../timing_synchrony/",
+      "../to_netcdf/",
+      "../tubes/",
+      "../variance/",
+      "../vase/",
+      "../vase_demo/",
+      "../vase_extract/",
+      "../vase_mask/",
+      "../zscore/"
+    ]
+  },
+  {
+    "name": "pipe",
+    "url": "https://cu-esiil.github.io/cubedynamics/api/pipe/",
+    "timestamp": "2026-08-28T18:15:22.574862+00:00",
+    "status": 200,
+    "resolved_url": "https://cu-esiil.github.io/cubedynamics/api/pipe/",
+    "headers": {
+      "Connection": "close",
+      "Content-Length": "36588",
+      "Server": "GitHub.com",
+      "Content-Type": "text/html; charset=utf-8",
+      "x-origin-cache": "HIT",
+      "Last-Modified": "Fri, 28 Aug 2026 15:22:08 GMT",
+      "Access-Control-Allow-Origin": "*",
+      "Strict-Transport-Security": "max-age=31556952",
+      "ETag": "\"6a91a7a0-8eec\"",
+      "expires": "Fri, 28 Aug 2026 18:25:22 GMT",
+      "Cache-Control": "max-age=600",
+      "x-proxy-cache": "MISS",
+      "X-GitHub-Request-Id": "5D1E:9CA14:F0CE:10A9A:6A91D039",
+      "x-github-edge-region": "iad",
+      "Accept-Ranges": "bytes",
+      "Age": "0",
+      "Date": "Fri, 28 Aug 2026 18:15:22 GMT",
+      "Via": "1.1 varnish",
+      "X-Served-By": "cache-den-kden1300090-DEN",
+      "X-Cache": "MISS",
+      "X-Cache-Hits": "0",
+      "X-Timer": "S1787940923.669668,VS0,VE71",
+      "Vary": "Accept-Encoding",
+      "X-Fastly-Request-ID": "ef55bf0c57b2566603de429817b3668efe8c0a08"
+    },
+    "sha256": "9d4eadecaf425ebdf800dc8cfa44da897e1bb676a162931dcf9e49011ad8bb6c",
+    "tables": [
+      [
+        [
+          "Name",
+          "Type",
+          "Description",
+          "Default"
+        ],
+        [
+          "value",
+          "T",
+          "Input object, often an :class:xarray.DataArray, :class:xarray.Dataset, or :class:~cubedynamics.streaming.VirtualCube.",
+          "required"
+        ]
+      ],
+      [
+        [
+          "Type",
+          "Description"
+        ],
+        [
+          "Pipe",
+          "A :class:Pipe carrying value."
+        ]
+      ],
+      [
+        [
+          "Name",
+          "Type",
+          "Description",
+          "Default"
+        ],
+        [
+          "func",
+          "Callable[[T], U]",
+          "Callable representing the verb body.",
+          "required"
+        ]
+      ],
+      [
+        [
+          "Type",
+          "Description"
+        ],
+        [
+          "Verb",
+          "A verb wrapper that can be invoked directly or in a pipe chain."
+        ]
+      ]
+    ],
+    "links": [
+      "../objects/#cubedynamics.piping.Pipe",
+      "../objects/#pipe",
+      "../../learn/pipes/",
+      "../../reference/verbs/",
+      "#cubedynamics.piping.Verb",
+      "../../concepts/semantic_grammar/",
+      "../../extending/custom_verbs/",
+      "../../project/public_api/"
+    ]
+  },
+  {
+    "name": "data",
+    "url": "https://cu-esiil.github.io/cubedynamics/api/data/",
+    "timestamp": "2026-08-28T18:15:22.703390+00:00",
+    "status": 200,
+    "resolved_url": "https://cu-esiil.github.io/cubedynamics/api/data/",
+    "headers": {
+      "Connection": "close",
+      "Content-Length": "81629",
+      "Server": "GitHub.com",
+      "Content-Type": "text/html; charset=utf-8",
+      "Last-Modified": "Fri, 28 Aug 2026 15:22:08 GMT",
+      "Access-Control-Allow-Origin": "*",
+      "Strict-Transport-Security": "max-age=31556952",
+      "ETag": "\"6a91a7a0-13edd\"",
+      "expires": "Fri, 28 Aug 2026 18:25:22 GMT",
+      "Cache-Control": "max-age=600",
+      "x-proxy-cache": "MISS",
+      "X-GitHub-Request-Id": "8436:345E2D:10379:11E59:6A91D03A",
+      "x-github-edge-region": "iad",
+      "Accept-Ranges": "bytes",
+      "Age": "0",
+      "Date": "Fri, 28 Aug 2026 18:15:22 GMT",
+      "Via": "1.1 varnish",
+      "X-Served-By": "cache-den-kden1300024-DEN",
+      "X-Cache": "MISS",
+      "X-Cache-Hits": "0",
+      "X-Timer": "S1787940923.793664,VS0,VE73",
+      "Vary": "Accept-Encoding",
+      "X-Fastly-Request-ID": "d8d0c6e91a65beaf6e4b0fa62242850e3728af4f"
+    },
+    "sha256": "07adf53156f3b160a6fab1ef1a2169827b7c9dad22512d77189f08292d71e17b",
+    "tables": [
+      [
+        [
+          "Name",
+          "Type",
+          "Description",
+          "Default"
+        ],
+        [
+          "lat",
+          "float",
+          "Latitude/longitude of a point of interest. When provided, a small bounding box is generated around the point so that GRIDMET pixels are fetched for the surrounding area.",
+          "None"
+        ],
+        [
+          "lon",
+          "float",
+          "Latitude/longitude of a point of interest. When provided, a small bounding box is generated around the point so that GRIDMET pixels are fetched for the surrounding area.",
+          "None"
+        ],
+        [
+          "bbox",
+          "sequence of float",
+          "Bounding box defined as [min_lon, min_lat, max_lon, max_lat].",
+          "None"
+        ],
+        [
+          "aoi_geojson",
+          "mapping",
+          "GeoJSON Feature/FeatureCollection describing the area of interest. A bounding box is derived from the geometry.",
+          "None"
+        ],
+        [
+          "start",
+          "datetime - like",
+          "Temporal extent for the request.",
+          "None"
+        ],
+        [
+          "end",
+          "datetime - like",
+          "Temporal extent for the request.",
+          "None"
+        ],
+        [
+          "variable",
+          "str",
+          "GRIDMET variable to request. variables may be used to explicitly pass a list.",
+          "None"
+        ],
+        [
+          "freq",
+          "str",
+          "Temporal frequency code. freq overrides time_res when set and defaults to monthly (\"MS\") to mirror the documentation.",
+          "None"
+        ],
+        [
+          "time_res",
+          "str",
+          "Temporal frequency code. freq overrides time_res when set and defaults to monthly (\"MS\") to mirror the documentation.",
+          "None"
+        ],
+        [
+          "chunks",
+          "mapping",
+          "Custom Dask chunk mapping.",
+          "None"
+        ],
+        [
+          "prefer_streaming",
+          "bool",
+          "Retained for compatibility. Both real paths read the authoritative annual gridMET NetCDF assets; the preferred path preserves Dask chunks.",
+          "True"
+        ],
+        [
+          "show_progress",
+          "bool",
+          "Display retrieval progress when available. Set to False to disable progress reporting.",
+          "True"
+        ]
+      ],
+      [
+        [
+          "Name",
+          "Type",
+          "Description",
+          "Default"
+        ],
+        [
+          "lat",
+          "float",
+          "Latitude/longitude of a point of interest. When provided, a small bounding box is generated around the point so that PRISM pixels are fetched for the surrounding area.",
+          "None"
+        ],
+        [
+          "lon",
+          "float",
+          "Latitude/longitude of a point of interest. When provided, a small bounding box is generated around the point so that PRISM pixels are fetched for the surrounding area.",
+          "None"
+        ],
+        [
+          "bbox",
+          "sequence of float",
+          "Bounding box defined as [min_lon, min_lat, max_lon, max_lat].",
+          "None"
+        ],
+        [
+          "aoi",
+          "mapping",
+          "Backward-compatible alias for bbox as a mapping containing min_lon, min_lat, max_lon, and max_lat.",
+          "None"
+        ],
+        [
+          "aoi_geojson",
+          "mapping",
+          "GeoJSON Feature/FeatureCollection describing the area of interest. A bounding box is derived from the geometry.",
+          "None"
+        ],
+        [
+          "start",
+          "datetime - like",
+          "Temporal extent for the request.",
+          "None"
+        ],
+        [
+          "end",
+          "datetime - like",
+          "Temporal extent for the request.",
+          "None"
+        ],
+        [
+          "variable",
+          "str or sequence of str",
+          "PRISM variable(s) to request. variables may also be used for clarity when passing multiple entries. When a single variable is requested through variable, the loader returns an xarray.DataArray.",
+          "\"ppt\""
+        ],
+        [
+          "time_res",
+          "str",
+          "Temporal frequency code. freq overrides time_res when set.",
+          "\"ME\""
+        ],
+        [
+          "freq",
+          "str",
+          "Temporal frequency code. freq overrides time_res when set.",
+          "\"ME\""
+        ],
+        [
+          "chunks",
+          "mapping",
+          "Custom Dask chunk mapping.",
+          "None"
+        ],
+        [
+          "prefer_streaming",
+          "bool",
+          "Whether to use lazy, server-side AOI subsets from the PRISM THREDDS mirror. Daily slices are fetched only when Dask computes them.",
+          "True"
+        ],
+        [
+          "show_progress",
+          "bool",
+          "Display a progress bar while synthetic demo data are generated. Real streaming remains lazy and reports progress through the Dask scheduler.",
+          "True"
+        ]
+      ]
+    ],
+    "links": [
+      "../../library/",
+      "../../library/sources/",
+      "../../dev/source_lifecycle/",
+      "../../data/phase1_qa/",
+      "../../project/public_api/",
+      "../../learn/provenance/"
+    ]
+  },
+  {
+    "name": "custom_nouns",
+    "url": "https://cu-esiil.github.io/cubedynamics/extending/custom_nouns/",
+    "timestamp": "2026-08-28T18:15:22.855966+00:00",
+    "status": 200,
+    "resolved_url": "https://cu-esiil.github.io/cubedynamics/extending/custom_nouns/",
+    "headers": {
+      "Connection": "close",
+      "Content-Length": "30199",
+      "Server": "GitHub.com",
+      "Content-Type": "text/html; charset=utf-8",
+      "x-origin-cache": "HIT",
+      "Last-Modified": "Fri, 28 Aug 2026 15:22:08 GMT",
+      "Access-Control-Allow-Origin": "*",
+      "Strict-Transport-Security": "max-age=31556952",
+      "ETag": "\"6a91a7a0-75f7\"",
+      "expires": "Fri, 28 Aug 2026 18:25:22 GMT",
+      "Cache-Control": "max-age=600",
+      "x-proxy-cache": "MISS",
+      "X-GitHub-Request-Id": "7770:A89D7:D3AC:ED76:6A91D03A",
+      "x-github-edge-region": "iad",
+      "Accept-Ranges": "bytes",
+      "Age": "0",
+      "Date": "Fri, 28 Aug 2026 18:15:23 GMT",
+      "Via": "1.1 varnish",
+      "X-Served-By": "cache-den-kden1300053-DEN",
+      "X-Cache": "MISS",
+      "X-Cache-Hits": "0",
+      "X-Timer": "S1787940923.953070,VS0,VE62",
+      "Vary": "Accept-Encoding",
+      "X-Fastly-Request-ID": "a1183183af9ca83ae81474297a28af2e3297822f"
+    },
+    "sha256": "164df0483fef111ef809c052db3cc096b9ea72e4ebaec32d893b7966780a12ea",
+    "tables": [],
+    "links": [
+      "../../data/",
+      "../../data/phase1_qa/",
+      "../../design/spatial_dataset_contract/"
+    ]
+  },
+  {
+    "name": "custom_verbs",
+    "url": "https://cu-esiil.github.io/cubedynamics/extending/custom_verbs/",
+    "timestamp": "2026-08-28T18:15:22.976371+00:00",
+    "status": 200,
+    "resolved_url": "https://cu-esiil.github.io/cubedynamics/extending/custom_verbs/",
+    "headers": {
+      "Connection": "close",
+      "Content-Length": "33065",
+      "Server": "GitHub.com",
+      "Content-Type": "text/html; charset=utf-8",
+      "x-origin-cache": "HIT",
+      "Last-Modified": "Fri, 28 Aug 2026 15:22:08 GMT",
+      "Access-Control-Allow-Origin": "*",
+      "Strict-Transport-Security": "max-age=31556952",
+      "ETag": "\"6a91a7a0-8129\"",
+      "expires": "Fri, 28 Aug 2026 18:25:23 GMT",
+      "Cache-Control": "max-age=600",
+      "x-proxy-cache": "MISS",
+      "X-GitHub-Request-Id": "5FC8:A89D7:D3DA:EDAA:6A91D03B",
+      "x-github-edge-region": "iad",
+      "Accept-Ranges": "bytes",
+      "Age": "0",
+      "Date": "Fri, 28 Aug 2026 18:15:23 GMT",
+      "Via": "1.1 varnish",
+      "X-Served-By": "cache-den-kden1300048-DEN",
+      "X-Cache": "MISS",
+      "X-Cache-Hits": "0",
+      "X-Timer": "S1787940923.086275,VS0,VE57",
+      "Vary": "Accept-Encoding",
+      "X-Fastly-Request-ID": "37b92bc3fc1b32f6417205cb5a4a6ab2dbaf7b2c"
+    },
+    "sha256": "dd06ac660f2bd3390b3c0516cfbb8ce65e8a96601e394d28ff149fb67345cdf5",
+    "tables": [],
+    "links": [
+      "https://github.com/CU-ESIIL/cubedynamics/tree/main/examples/custom_verb_project",
+      "../../vignettes/custom_verb_project/"
+    ]
+  },
+  {
+    "name": "learn",
+    "url": "https://cu-esiil.github.io/cubedynamics/learn/",
+    "timestamp": "2026-08-28T18:15:23.110497+00:00",
+    "status": 200,
+    "resolved_url": "https://cu-esiil.github.io/cubedynamics/learn/",
+    "headers": {
+      "Connection": "close",
+      "Content-Length": "27684",
+      "Server": "GitHub.com",
+      "Content-Type": "text/html; charset=utf-8",
+      "x-origin-cache": "HIT",
+      "Last-Modified": "Fri, 28 Aug 2026 15:22:08 GMT",
+      "Access-Control-Allow-Origin": "*",
+      "Strict-Transport-Security": "max-age=31556952",
+      "ETag": "\"6a91a7a0-6c24\"",
+      "expires": "Fri, 28 Aug 2026 18:25:23 GMT",
+      "Cache-Control": "max-age=600",
+      "x-proxy-cache": "MISS",
+      "X-GitHub-Request-Id": "0D62:308E65:CC44:E57D:6A91D039",
+      "x-github-edge-region": "iad",
+      "Accept-Ranges": "bytes",
+      "Age": "0",
+      "Date": "Fri, 28 Aug 2026 18:15:23 GMT",
+      "Via": "1.1 varnish",
+      "X-Served-By": "cache-den-kden1300045-DEN",
+      "X-Cache": "MISS",
+      "X-Cache-Hits": "0",
+      "X-Timer": "S1787940923.202892,VS0,VE61",
+      "Vary": "Accept-Encoding",
+      "X-Fastly-Request-ID": "f4008fc53c4def01f8481f088b926146b808e11c"
+    },
+    "sha256": "928971b8a083714625acea8157ab04d71911180c5e6fe429bc00616fd6a110de",
+    "tables": [
+      [
+        [
+          "Lesson",
+          "What you will learn"
+        ],
+        [
+          "1. Nouns are environmental things",
+          "Find data by scientific meaning"
+        ],
+        [
+          "2. Verbs do things",
+          "Turn a cube into an answer"
+        ],
+        [
+          "3. Pipes establish order",
+          "Compose small operations"
+        ],
+        [
+          "4. Order can change meaning",
+          "Distinguish similar-looking questions"
+        ],
+        [
+          "5. Compose a question",
+          "Combine states explicitly"
+        ],
+        [
+          "6. Inspect the result",
+          "Check dimensions, units and computation"
+        ],
+        [
+          "7. Provenance and source choice",
+          "Keep an analysis reproducible"
+        ]
+      ]
+    ],
+    "links": [
+      "nouns/",
+      "verbs/",
+      "pipes/",
+      "order/",
+      "compose/",
+      "inspect/",
+      "provenance/",
+      "../quickstart/",
+      "../getting_started/install/",
+      "../validation/data/",
+      "../library/",
+      "../documentation/",
+      "../vignettes/",
+      "../concepts/cubes/",
+      "../concepts/core_and_projects/"
+    ]
+  }
+]

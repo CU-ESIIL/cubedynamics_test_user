@@ -1,0 +1,10 @@
+{
+  "command": "docker exec cubedynamics-naive-20260828 python -m pip install --only-binary=cubedynamics cubedynamics",
+  "result": {
+    "chunk_id": "73aafc",
+    "wall_time_seconds": 0,
+    "exit_code": 1,
+    "original_token_count": 27,
+    "output": "permission denied while trying to connect to the docker API at unix:///Users/tuff/.docker/run/docker.sock\n"
+  }
+}

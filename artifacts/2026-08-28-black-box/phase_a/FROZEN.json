@@ -1,0 +1,28 @@
+{
+  "frozen_at": "2026-08-28T18:14:08.280180+00:00",
+  "method": "SHA-256 manifest; content is tamper-evident, not filesystem write-protected",
+  "scope": "artifacts/2026-08-28-black-box/phase_a",
+  "included_reports": [
+    "reports/naive_session.md"
+  ],
+  "sha256": {
+    "artifacts/2026-08-28-black-box/phase_a/install_approved_retry.json": "68fa5a00807818e16e4f473de52f3c9b05f73334717a5615772f309b087d4b05",
+    "artifacts/2026-08-28-black-box/phase_a/install_attempt.json": "997101b6a89376c210e9613a2a3656510ad6d18f0f1681af539ecb260cd75c87",
+    "artifacts/2026-08-28-black-box/phase_a/naive_session.jsonl": "e5920b7a630bc551d89e41b7711e4ed7b4c5e2b3c5d831323e89ea9a4cbad660",
+    "artifacts/2026-08-28-black-box/phase_a/public_doc_snapshot_manifest.json": "5902e9dd64b6b6c18755c7264093c9802b694dece7c78fb4038629191470657c",
+    "artifacts/2026-08-28-black-box/phase_a/public_docs/direct_fetch_results.json": "96053ad8843474e3709d34e91296b13334b4ba1802952e26da33b554cbfb4ee0",
+    "artifacts/2026-08-28-black-box/phase_a/public_docs/discovery_web_results.json": "7a9bdd397f1be252a796ec7d8a529969cb7519dddfecf8815ba75e71e6eee7be",
+    "artifacts/2026-08-28-black-box/phase_a/public_docs/install.headers": "55f50625f7fe0a1463461a3d121a17ea13a36c4e1bccf8d323de77ad7c0008a6",
+    "artifacts/2026-08-28-black-box/phase_a/public_docs/install.html": "073b4255e79682a81eb9dd21210fe70c03ab77b94a2260f1854fc289e7e4fd4f",
+    "artifacts/2026-08-28-black-box/phase_a/public_docs/install.txt": "f53249b63ee335863690f4d27915d4ca1fda76292c0f4db343da8df00ebf49c7",
+    "artifacts/2026-08-28-black-box/phase_a/public_docs/installation_quickstart_web_results.json": "11c8110cea1e8d016ec7421d048737d068dac40287af800ad2979dd4b9a4bfc4",
+    "artifacts/2026-08-28-black-box/phase_a/public_docs/quickstart.headers": "8f38e2ec5f01f0ac708eda3088f5060f64bc0d5ee0bf1e65838f0d3d212bd3b1",
+    "artifacts/2026-08-28-black-box/phase_a/public_docs/quickstart.html": "0c7ef5184fed8fc1022cda51324ba25392036800464eba62df4e1377f8d15a4d",
+    "artifacts/2026-08-28-black-box/phase_a/public_docs/quickstart.txt": "b0ae5550c913c8d3a531368987ac1405769ca1a5794da7cee9ce01de3e491f04",
+    "artifacts/2026-08-28-black-box/phase_a/public_docs/readme.headers": "4f4f80053f2fcc8194cb9f8a68de1a22219e61a7b529c040bb476fb974b2d9fe",
+    "artifacts/2026-08-28-black-box/phase_a/public_docs/readme.md": "89031c63407e6677382dbe5681951d1a72eb03c234055fd49dc9df5215386b30",
+    "artifacts/2026-08-28-black-box/phase_a/public_docs/releases.json": "53a68160a5e30cbe9935b855aa394743bbf3095e28a81da70b68e402a37e73e0",
+    "artifacts/2026-08-28-black-box/phase_a/session_command_details.md": "0966041130378d56880527fe09f40cd839d35d3fdc87a290125898213457f5bb",
+    "reports/naive_session.md": "7d7f12ab63a1ef5401738784157577f6414841559aceae28fff857380c59833c"
+  }
+}

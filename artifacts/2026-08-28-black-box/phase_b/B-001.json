@@ -1,0 +1,28 @@
+{
+  "id": "B-001",
+  "phase": "B",
+  "timestamp": "2026-08-28T18:17:11.346174+00:00",
+  "goal": "Install the public package including prereleases without building source",
+  "documentation_consulted": [
+    "https://cu-esiil.github.io/cubedynamics/quickstart/"
+  ],
+  "command": [
+    "docker",
+    "exec",
+    "cubedynamics-naive-20260828",
+    "python",
+    "-m",
+    "pip",
+    "install",
+    "--pre",
+    "--only-binary=cubedynamics",
+    "cubedynamics"
+  ],
+  "expected_behavior": "An external CubeDynamics wheel installs in clean Linux",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "ERROR: Could not find a version that satisfies the requirement cubedynamics (from versions: none)\nERROR: No matching distribution found for cubedynamics\n\n[notice] A new release of pip is available: 24.0 -> 26.2.1\n[notice] To update, run: pip install --upgrade pip\n",
+  "status": "failed",
+  "runtime_seconds": 0.992253,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

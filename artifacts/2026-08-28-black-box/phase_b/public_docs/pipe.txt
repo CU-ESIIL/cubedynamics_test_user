@@ -1,0 +1,316 @@
+
+                
+                  
+
+
+  
+  
+
+
+
+Documents · API reference
+Pipe API
+
+A pipe applies the written operations in order. It does not rearrange the
+analysis or implicitly turn a plot into data.
+
+Usage
+
+from cubedynamics import data, pipe, verbs as v
+
+# Live data request; use the Learn shared setup for an offline fixture.
+cube = data.temperature(
+    source="prism", bbox=[-105.55, 39.85, -105.05, 40.15],
+    start="2024-06-01", end="2024-06-03",
+)
+analysis = pipe(cube) | v.anomaly(dim="time") | v.mean(dim=("y", "x"), keep_dim=False)
+print(analysis.explain())
+result = analysis.unwrap()
+
+
+Inspection methods report semantic state, trace and checks; they do not execute
+new analytical stages. Display a plotting pipe in Jupyter to use its attached
+viewer; unwrapping returns the data rather than the viewer.
+
+pipe
+
+
+
+
+
+
+
+    
+
+        
+Wrap value in a :class:Pipe to enable Pipe | op(...) chaining.
+
+
+
+  Grammar contract
+  
+Pipe infrastructure. pipe is a direct-call helper that returns a
+pipe-ready wrapper and does not modify the underlying object.
+
+
+
+Parameters:
+    
+      
+        
+
+          Name
+          Type
+          Description
+          Default
+        
+      
+      
+          
+
+            
+                value
+            
+            
+                  T
+            
+            
+              
+                
+Input object, often an :class:xarray.DataArray, :class:xarray.Dataset,
+or :class:~cubedynamics.streaming.VirtualCube.
+              
+            
+            
+                required
+            
+          
+      
+    
+
+
+    
+Returns:
+    
+      
+        
+
+          Type
+          Description
+        
+      
+      
+          
+
+            
+                  Pipe
+            
+            
+              
+                
+A :class:Pipe carrying value.
+              
+            
+          
+      
+    
+
+
+
+  Notes
+  
+The wrapper preserves streaming/lazy objects and does not compute data. Use
+:py:meth:Pipe.unwrap to exit the pipe chain and retrieve the value. Any
+viewer objects created by verbs will be attached to the wrapped value for
+rich HTML display in notebooks.
+
+
+
+  See Also
+  
+cubedynamics.piping.Pipe, cubedynamics.piping.Verb
+
+
+    
+
+
+Pipe methods and properties
+
+The object reference renders the Pipe methods from source.
+See the short pipes lesson for a tested, real-data example.
+
+Verb wrapper
+
+Most users call factories in the verbs namespace
+rather than constructing this wrapper directly.
+
+
+
+
+
+
+
+    
+            
+
+              Bases: Generic[T, U]
+
+
+
+        
+Wrap callables so they can participate in pipe grammar.
+
+
+
+  Grammar contract
+  
+Pipe infrastructure. A :class:Verb is pipe-ready and may be called
+directly (Verb(func)(cube)) or inserted into a pipe chain
+(pipe(cube) | Verb(func)). It preserves whatever laziness or chunking
+semantics the underlying callable provides.
+
+
+
+Parameters:
+    
+      
+        
+
+          Name
+          Type
+          Description
+          Default
+        
+      
+      
+          
+
+            
+                func
+            
+            
+                  Callable[[T], U]
+            
+            
+              
+                
+Callable representing the verb body.
+              
+            
+            
+                required
+            
+          
+      
+    
+
+
+    
+Returns:
+    
+      
+        
+
+          Type
+          Description
+        
+      
+      
+          
+
+            
+                  Verb
+            
+            
+              
+                
+A verb wrapper that can be invoked directly or in a pipe chain.
+              
+            
+          
+      
+    
+
+
+
+  Notes
+  
+The wrapper does not alter execution semantics; it simply forwards to
+func. If func sets _cd_passthrough_on_call the original input is
+returned to keep pipe chains flowing without eagerly computing viewers. If a
+verb produces a viewer object, it is attached to the wrapped cube for rich
+notebook displays without forcing computation.
+
+
+
+  See Also
+  
+cubedynamics.piping.Pipe, cubedynamics.piping.pipe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+
+
+See also
+
+Semantic grammar ·
+Custom verbs · API stability
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  
+    
+      
+  
+    
+      
+    
+    2026-08-28
+  
+
+    
+    
+    
+    
+  
+
+
+
+
+
+                
+              

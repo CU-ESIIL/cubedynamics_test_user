@@ -1,0 +1,38 @@
+{
+  "os_release": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"\nNAME=\"Debian GNU/Linux\"\nVERSION_ID=\"13\"\nVERSION=\"13 (trixie)\"\nVERSION_CODENAME=trixie\nDEBIAN_VERSION_FULL=13.6\nID=debian\nHOME_URL=\"https://www.debian.org/\"\nSUPPORT_URL=\"https://www.debian.org/support\"\nBUG_REPORT_URL=\"https://bugs.debian.org/\"\n",
+  "architecture": "aarch64",
+  "platform": "Linux-6.12.72-linuxkit-aarch64-with-glibc2.41",
+  "python": "3.11.16 (main, Aug 25 2026, 01:23:02) [GCC 14.2.0]",
+  "executable": "/usr/local/bin/python",
+  "pip": "pip 24.0 from /usr/local/lib/python3.11/site-packages/pip (python 3.11)",
+  "working_directory": "/work",
+  "work_entries": [],
+  "image_id": "sha256:1042b61448fef4ba92d16a8c7eb4996d027568ce64792a7877fd88511e0af7c6",
+  "image_reference": "python:3.11-slim@sha256:1042b61448fef4ba92d16a8c7eb4996d027568ce64792a7877fd88511e0af7c6",
+  "mounts": [],
+  "container": "cubedynamics-naive-20260828",
+  "cubedynamics_version": null,
+  "installed_package_path": null,
+  "artifact": null,
+  "installation_commands": [
+    [
+      "python",
+      "-m",
+      "pip",
+      "install",
+      "--only-binary=cubedynamics",
+      "cubedynamics"
+    ],
+    [
+      "python",
+      "-m",
+      "pip",
+      "install",
+      "--pre",
+      "--only-binary=cubedynamics",
+      "cubedynamics"
+    ]
+  ],
+  "installation_result": "failed: No matching distribution found for cubedynamics",
+  "seed": 42
+}

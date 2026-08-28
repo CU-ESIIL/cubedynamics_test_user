@@ -1,0 +1,28 @@
+{
+  "id": "B-002",
+  "phase": "B",
+  "timestamp": "2026-08-28T18:17:30.873516+00:00",
+  "goal": "Find any published package version including prereleases",
+  "documentation_consulted": [
+    "https://github.com/CU-ESIIL/cubedynamics"
+  ],
+  "command": [
+    "docker",
+    "exec",
+    "cubedynamics-naive-20260828",
+    "python",
+    "-m",
+    "pip",
+    "index",
+    "versions",
+    "--pre",
+    "cubedynamics"
+  ],
+  "expected_behavior": "The public package index lists an installable release",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "WARNING: pip index is currently an experimental command. It may be removed/changed in a future release without prior warning.\nERROR: No matching distribution found for cubedynamics\n\n[notice] A new release of pip is available: 24.0 -> 26.2.1\n[notice] To update, run: pip install --upgrade pip\n",
+  "status": "failed",
+  "runtime_seconds": 0.993425,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

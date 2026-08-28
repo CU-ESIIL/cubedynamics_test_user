@@ -1,0 +1,24 @@
+{
+  "id": "B-004",
+  "phase": "B",
+  "timestamp": "2026-08-28T18:18:13.936755+00:00",
+  "goal": "Verify installed metadata and attempt the documented public import",
+  "documentation_consulted": [
+    "https://cu-esiil.github.io/cubedynamics/quickstart/"
+  ],
+  "command": [
+    "docker",
+    "exec",
+    "cubedynamics-naive-20260828",
+    "python",
+    "-c",
+    "import importlib.metadata as metadata, importlib.util, json\ntry: version=metadata.version(\"cubedynamics\")\nexcept metadata.PackageNotFoundError: version=None\nspec=importlib.util.find_spec(\"cubedynamics\")\nprint(json.dumps({\"installed_version\":version,\"import_path\":None if spec is None else spec.origin}),flush=True)\nimport cubedynamics"
+  ],
+  "expected_behavior": "CubeDynamics has installed metadata and imports from site-packages",
+  "returncode": 1,
+  "stdout": "{\"installed_version\": null, \"import_path\": null}\n",
+  "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 6, in <module>\nModuleNotFoundError: No module named 'cubedynamics'\n",
+  "status": "failed",
+  "runtime_seconds": 0.208632,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

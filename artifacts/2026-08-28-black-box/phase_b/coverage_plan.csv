@@ -1,0 +1,119 @@
+category,item,planned_checks,status,attempted,successful,operation_ids,blocker
+noun,humidity,create; dimensions; coordinates; units; attributes; source identity; provenance; plot; transform,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun,precipitation,create; dimensions; coordinates; units; attributes; source identity; provenance; plot; transform,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun,radiation,create; dimensions; coordinates; units; attributes; source identity; provenance; plot; transform,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun,temperature,create; dimensions; coordinates; units; attributes; source identity; provenance; plot; transform,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun,vpd,create; dimensions; coordinates; units; attributes; source identity; provenance; plot; transform,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun,wind,create; dimensions; coordinates; units; attributes; source identity; provenance; plot; transform,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun,surface_reflectance,create; dimensions; coordinates; units; attributes; source identity; provenance; plot; transform,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun,vegetation_index,create; dimensions; coordinates; units; attributes; source identity; provenance; plot; transform,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun,elevation,create; dimensions; coordinates; units; attributes; source identity; provenance; plot; transform,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun,roads,create; dimensions; coordinates; units; attributes; source identity; provenance; plot; transform,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun,streamflow,create; dimensions; coordinates; units; attributes; source identity; provenance; plot; transform,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun_source,humidity/gridmet,small valid retrieval; source identity; available-source comparison,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun_source,precipitation/gridmet,small valid retrieval; source identity; available-source comparison,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun_source,precipitation/prism,small valid retrieval; source identity; available-source comparison,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun_source,radiation/gridmet,small valid retrieval; source identity; available-source comparison,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun_source,temperature/gridmet,small valid retrieval; source identity; available-source comparison,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun_source,temperature/prism,small valid retrieval; source identity; available-source comparison,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun_source,vpd/gridmet,small valid retrieval; source identity; available-source comparison,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun_source,wind/gridmet,small valid retrieval; source identity; available-source comparison,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun_source,surface_reflectance/sentinel2,small valid retrieval; source identity; available-source comparison,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun_source,vegetation_index/sentinel2,small valid retrieval; source identity; available-source comparison,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun_source,elevation/usgs_3dep,small valid retrieval; source identity; available-source comparison,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun_source,roads/overture,small valid retrieval; source identity; available-source comparison,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun_source,roads/osm,small valid retrieval; source identity; available-source comparison,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+noun_source,streamflow/usgs,small valid retrieval; source identity; available-source comparison,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+source_candidate,daymet,,excluded_candidate,False,False,,Explicitly not promoted in public source index
+verb,align_cube,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,anomaly,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,aoi_signature,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,apply,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,binary_state,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,block_signature,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,change_state,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,climate_hist,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,collect_blocks,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,compare_aoi_signature,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,compare_blocks,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+helper_or_reserved,correlation_cube,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,excluded_placeholder,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,detect_events,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,diagnostic_panel,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,duration_synchrony,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,exceedance,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,extract,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+helper_or_reserved,fire_derivative,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+helper_or_reserved,fire_panel,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+helper_or_reserved,fire_plot,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,fire_vase_panel,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+helper_or_reserved,fit_model,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,excluded_placeholder,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,flatten_cube,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,flatten_space,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,landsat8_mpc,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+helper_or_reserved,landsat_ndvi_plot,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+helper_or_reserved,landsat_vis_ndvi,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,mean,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,month_filter,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,ndvi_from_s2,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,occurrence_synchrony,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,overlap,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,plot,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,plot_mean,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,quantile_state,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+helper_or_reserved,rasterize_observations,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,rolling_median_split_synchrony,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,rolling_tail_dep_vs_center,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,severity_synchrony,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,show_cube_lexcube,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,sync_with,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,threshold_state,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,timing_synchrony,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,to_netcdf,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,tubes,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,variance,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,vase,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,vase_demo,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+helper_or_reserved,vase_extract,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+helper_or_reserved,vase_mask,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+verb,zscore,valid call; edge; plausible misuse; composition; dimensions; coordinates; metadata; provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+public_surface,pipe,composition,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+public_surface,Verb,composition,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+public_surface,Pipe.unwrap,result extraction,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+public_surface,Pipe.explain,inspection,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+public_surface,lazy object preservation,lazy behavior,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+public_surface,project loader returning xarray,custom noun,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+public_surface,factory returning callable,custom verb,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+public_surface,v.apply,custom verb,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+public_surface,source identity and serving revisions,provenance,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+public_surface,list_sources,discovery,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+public_surface,sources,discovery,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+public_surface,describe,discovery,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+scenario,one/two/three-plus stages,,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+scenario,reversed operation order,,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+scenario,reduction then transformation,,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+scenario,spatial plus temporal,,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+scenario,transformation then visualization,,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+scenario,intermediate reuse,,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+scenario,long-pipeline provenance,,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+scenario,lazy materialization,,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+scenario,custom noun with built-in verb,,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+scenario,built-in noun with custom verb,,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+scenario,custom noun with custom verb,,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+scenario,NaN/empty/single-cell inputs,,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+scenario,misspelled dimension/invalid source/argument,,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+scenario,invalid return type,,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+scenario,fixed-seed plausible randomized sequences,,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+proposed_scientific_question,Q-01: How does daily maximum temperature vary across a small Boulder-area grid?,Formulate and execute only after an external artifact is available,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+proposed_scientific_question,Q-02: How does the temporal-mean temperature differ between gridMET and PRISM?,Formulate and execute only after an external artifact is available,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+proposed_scientific_question,Q-03: Are high-temperature days spatially coincident with high vapor-pressure deficit?,Formulate and execute only after an external artifact is available,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+proposed_scientific_question,Q-04: How sensitive is a hot-spell duration summary to the chosen threshold?,Formulate and execute only after an external artifact is available,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+proposed_scientific_question,Q-05: Does averaging over space before anomaly calculation change the interpretation?,Formulate and execute only after an external artifact is available,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+proposed_scientific_question,Q-06: How does a seasonal precipitation total vary between two nearby areas?,Formulate and execute only after an external artifact is available,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+proposed_scientific_question,Q-07: Does an NDVI change coincide with a hot and dry interval?,Formulate and execute only after an external artifact is available,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+proposed_scientific_question,Q-08: Can a user-defined temperature conversion preserve coordinates and units?,Formulate and execute only after an external artifact is available,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+proposed_scientific_question,Q-09: How do short discharge events vary in timing within one station record?,Formulate and execute only after an external artifact is available,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+proposed_scientific_question,Q-10: Can a user bring a local environmental cube through the same analysis pipeline?,Formulate and execute only after an external artifact is available,not_attempted,False,False,,CubeDynamics unavailable after Phase A installation attempt
+environment_probe,B-001,wheel-only installation including prereleases,planned,False,False,,
+environment_probe,B-002,public pip index discovery,planned,False,False,,
+environment_probe,B-003,public PyPI metadata with connectivity control and GitHub release assets,planned,False,False,,
+environment_probe,B-004,installed distribution metadata and import smoke check,planned,False,False,,

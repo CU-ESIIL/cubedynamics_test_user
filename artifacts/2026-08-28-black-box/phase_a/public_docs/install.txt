@@ -1,0 +1,122 @@
+
+                
+                  
+
+
+  
+  
+
+
+
+Installation & setup
+
+CubeDynamics (cubedynamics) runs anywhere xarray does—laptops, clusters, or hosted notebooks. Use this guide to install the package, configure environments, and find ready-to-run notebooks.
+
+Choose an installation source
+
+Install from GitHub today
+
+Grab the latest commits straight from main. Installing inside a virtual environment (venv, Conda, or uv) is recommended but optional.
+
+pip install "git+https://github.com/CU-ESIIL/cubedynamics.git@main"
+
+
+Install from PyPI once released
+
+The first PyPI release will ship as soon as the streaming loaders stabilize. At that point you can simply run:
+
+pip install cubedynamics
+
+
+Until then, the GitHub install above is the canonical way to pick up fixes and examples.
+
+Environment notes
+
+
+Python version – target Python 3.9+; CI covers Python 3.9 through 3.12.
+
+xarray + dask – both dependencies ship automatically; if you already manage these packages with Conda, install CubeDynamics inside that environment to avoid duplication.
+
+Optional extras – notebooks rely on jupyterlab/notebook, Lexcube visualizations require a live frontend (VS Code, JupyterLab, or Binder).
+
+
+First steps after install
+
+
+Launch a notebook (JupyterLab, VS Code, Colab, Binder, etc.).
+
+Import the helpers and stream a cube:
+
+
+```python
+   import cubedynamics as cd
+   from cubedynamics import pipe, verbs as v
+
+cube = cd.load_prism_cube(
+       lat=40.0,
+       lon=-105.25,
+       start="2000-01-01",
+       end="2020-12-31",
+       variable="ppt",
+   )
+
+pipe(cube) \
+       | v.anomaly(dim="time") \
+       | v.month_filter([6, 7, 8]) \
+       | v.variance(dim="time")
+   ```
+
+
+Continue into the First PRISM cube guide for more context, AOI patterns, and Lexcube screenshots.
+
+
+Documentation + notebooks
+
+
+Read What is a cube? to align vocabulary.
+
+Study Pipe syntax & verbs for the pipe(cube) | verbs grammar.
+
+Open the maintained notebooks:
+
+Quickstart – CubeDynamics
+
+Sentinel-2 NDVI anomaly tutorial
+
+
+These notebooks match the code snippets in the documentation, so you can copy/paste cells or launch them on Binder for a fully hosted workflow.
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  
+    
+      
+  
+    
+      
+    
+    2026-08-28
+  
+
+    
+    
+    
+    
+  
+
+
+
+
+
+                
+              

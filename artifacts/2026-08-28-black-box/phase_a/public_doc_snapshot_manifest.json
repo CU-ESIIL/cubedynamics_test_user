@@ -1,0 +1,62 @@
+[
+  {
+    "path": "artifacts/2026-08-28-black-box/phase_a/public_docs/direct_fetch_results.json",
+    "bytes": 2070,
+    "sha256": "96053ad8843474e3709d34e91296b13334b4ba1802952e26da33b554cbfb4ee0"
+  },
+  {
+    "path": "artifacts/2026-08-28-black-box/phase_a/public_docs/discovery_web_results.json",
+    "bytes": 12058,
+    "sha256": "7a9bdd397f1be252a796ec7d8a529969cb7519dddfecf8815ba75e71e6eee7be"
+  },
+  {
+    "path": "artifacts/2026-08-28-black-box/phase_a/public_docs/install.headers",
+    "bytes": 696,
+    "sha256": "55f50625f7fe0a1463461a3d121a17ea13a36c4e1bccf8d323de77ad7c0008a6"
+  },
+  {
+    "path": "artifacts/2026-08-28-black-box/phase_a/public_docs/install.html",
+    "bytes": 29131,
+    "sha256": "073b4255e79682a81eb9dd21210fe70c03ab77b94a2260f1854fc289e7e4fd4f"
+  },
+  {
+    "path": "artifacts/2026-08-28-black-box/phase_a/public_docs/install.txt",
+    "bytes": 2293,
+    "sha256": "f53249b63ee335863690f4d27915d4ca1fda76292c0f4db343da8df00ebf49c7"
+  },
+  {
+    "path": "artifacts/2026-08-28-black-box/phase_a/public_docs/installation_quickstart_web_results.json",
+    "bytes": 9737,
+    "sha256": "11c8110cea1e8d016ec7421d048737d068dac40287af800ad2979dd4b9a4bfc4"
+  },
+  {
+    "path": "artifacts/2026-08-28-black-box/phase_a/public_docs/quickstart.headers",
+    "bytes": 697,
+    "sha256": "8f38e2ec5f01f0ac708eda3088f5060f64bc0d5ee0bf1e65838f0d3d212bd3b1"
+  },
+  {
+    "path": "artifacts/2026-08-28-black-box/phase_a/public_docs/quickstart.html",
+    "bytes": 27469,
+    "sha256": "0c7ef5184fed8fc1022cda51324ba25392036800464eba62df4e1377f8d15a4d"
+  },
+  {
+    "path": "artifacts/2026-08-28-black-box/phase_a/public_docs/quickstart.txt",
+    "bytes": 1310,
+    "sha256": "b0ae5550c913c8d3a531368987ac1405769ca1a5794da7cee9ce01de3e491f04"
+  },
+  {
+    "path": "artifacts/2026-08-28-black-box/phase_a/public_docs/readme.headers",
+    "bytes": 894,
+    "sha256": "4f4f80053f2fcc8194cb9f8a68de1a22219e61a7b529c040bb476fb974b2d9fe"
+  },
+  {
+    "path": "artifacts/2026-08-28-black-box/phase_a/public_docs/readme.md",
+    "bytes": 14023,
+    "sha256": "89031c63407e6677382dbe5681951d1a72eb03c234055fd49dc9df5215386b30"
+  },
+  {
+    "path": "artifacts/2026-08-28-black-box/phase_a/public_docs/releases.json",
+    "bytes": 4005,
+    "sha256": "53a68160a5e30cbe9935b855aa394743bbf3095e28a81da70b68e402a37e73e0"
+  }
+]

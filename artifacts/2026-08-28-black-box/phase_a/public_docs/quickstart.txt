@@ -1,0 +1,96 @@
+
+                
+                  
+
+
+  
+  
+
+
+
+Quickstart
+
+Install, request one scientific noun, and apply two verbs. This example uses
+live data; for offline learning, use the Learn setup.
+
+Install
+
+python -m pip install cubedynamics
+
+
+See installation options for notebook environments.
+
+Load observed temperature
+
+from cubedynamics import data, pipe, verbs as v
+
+temperature = data.temperature(
+    source="prism", statistic="maximum",
+    bbox=[-105.55, 39.85, -105.05, 40.15],
+    start="2024-01-01", end="2024-01-30",
+)
+
+
+The temperature reference defines returned data
+and source constraints. Network access is required; an outage is not replaced
+by generated observations.
+
+Compose the analysis
+
+spatial_anomaly = (
+    pipe(temperature)
+    | v.anomaly(dim="time")
+    | v.mean(dim=("y", "x"), keep_dim=False)
+).unwrap()
+spatial_anomaly.plot()
+
+
+Subtract each cell's mean for the requested dates, then average over space.
+This is a departure from the selected period, not a multi-decade climatology.
+
+Continue
+
+
+Learn: seven short lessons.
+
+Library: environmental nouns and sources.
+
+Documents: arguments and behavior.
+
+Vignettes: complete reproducible analyses.
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  
+    
+      
+  
+    
+      
+    
+    2026-08-28
+  
+
+    
+    
+    
+    
+  
+
+
+
+
+
+                
+              

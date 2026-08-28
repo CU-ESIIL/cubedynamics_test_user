@@ -1,0 +1,43 @@
+STOP AFTER BLACK-BOX ACCEPTANCE TESTING
+
+This task authorizes ONLY naive-user exploratory testing and systematic
+black-box public-surface testing.
+
+It does NOT authorize maintainer triage.
+
+Do NOT inspect CU-ESIIL/cubedynamics source code, tests, developer files,
+AGENTS.md, PROMPT_LOG.md, implementation modules, or repository fixtures
+at any point in this run.
+
+After the naive exploratory phase and systematic coverage phase are complete:
+
+1. freeze all raw evidence
+2. freeze the naive-user report
+3. create a proposed issue list based ONLY on observable public behavior
+4. do not diagnose internal root causes
+5. do not inspect CubeDynamics implementation
+6. do not create GitHub issues
+7. do not create pull requests
+8. do not fix CubeDynamics
+
+For proposed issues, report only:
+
+- user goal
+- exact reproduction
+- expected behavior
+- actual behavior
+- documentation consulted
+- observed error/traceback
+- severity
+- acceptance criteria from the user's perspective
+
+Do not speculate about internal implementation unless it can be inferred
+strictly from public behavior.
+
+End the run with:
+
+READY FOR HUMAN OUTSIDE TEST
+
+or
+
+FIX BEFORE HUMAN OUTSIDE TEST

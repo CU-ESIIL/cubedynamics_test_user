@@ -1,0 +1,21 @@
+{
+  "id": "ENV-002",
+  "phase": "environment",
+  "timestamp": "2026-08-28T18:11:52.378327+00:00",
+  "goal": "Verify the container has no source mounts",
+  "documentation_consulted": [],
+  "command": [
+    "docker",
+    "inspect",
+    "cubedynamics-naive-20260828",
+    "--format",
+    "{\"image_id\":{{json .Image}},\"image_reference\":{{json .Config.Image}},\"mounts\":{{json .Mounts}},\"working_directory\":{{json .Config.WorkingDir}}}"
+  ],
+  "expected_behavior": "Mounts is an empty list",
+  "returncode": 0,
+  "stdout": "{\"image_id\":\"sha256:1042b61448fef4ba92d16a8c7eb4996d027568ce64792a7877fd88511e0af7c6\",\"image_reference\":\"python:3.11-slim@sha256:1042b61448fef4ba92d16a8c7eb4996d027568ce64792a7877fd88511e0af7c6\",\"mounts\":[],\"working_directory\":\"/work\"}\n",
+  "stderr": "",
+  "status": "succeeded",
+  "runtime_seconds": 0.02749,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

@@ -1,0 +1,7 @@
+{
+  "created_before_operations": "2026-08-28T18:16:47.720325+00:00",
+  "coverage_plan_sha256": "2952b5f6d824d0203d71827a92f0443e3e3cb7a784cb054958d6f7ecff62b6d9",
+  "phase_a_frozen_at": "2026-08-28T18:14:08.280180+00:00",
+  "first_systematic_probe": "2026-08-28T18:17:11.346174+00:00",
+  "execution_status": "blocked for all scientific operations; four distribution/import probes completed"
+}

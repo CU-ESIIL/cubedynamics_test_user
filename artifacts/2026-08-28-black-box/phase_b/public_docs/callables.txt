@@ -1,0 +1,421 @@
+
+                
+                  
+
+
+  
+  
+
+
+
+Documents · Verb reference
+
+
+All public callables (A–Z)
+
+Complete inventory of the public cubedynamics.verbs namespace. Browse implemented operations by purpose.
+
+
+
+
+Name
+Callable type
+Availability
+Meaning
+
+
+
+
+
+align_cube
+Grammar verb / pipe stage
+implemented
+align a field to a reference cube
+
+
+
+anomaly
+Grammar verb / pipe stage
+implemented
+express values as departures from a mean
+
+
+
+aoi_signature
+Grammar verb / pipe stage
+compatibility
+Summarize an AOI cube into a named spatial-unit time signature.
+
+
+
+apply
+Grammar verb / pipe stage
+implemented
+apply a user-supplied function without changing pipe syntax
+
+
+
+binary_state
+Grammar verb / pipe stage
+implemented
+normalize a binary mask into the state-cube contract
+
+
+
+block_signature
+Grammar verb / pipe stage
+implemented
+summarize a cube as a named spatial-block signature
+
+
+
+change_state
+Grammar verb / pipe stage
+implemented
+define a condition from lagged change
+
+
+
+climate_hist
+Grammar verb / pipe stage
+implemented
+render a climate distribution
+
+
+
+collect_blocks
+Grammar verb / pipe stage
+implemented
+collect compatible block signatures
+
+
+
+compare_aoi_signature
+Grammar verb / pipe stage
+compatibility
+Compare one AOI signature with another over shared time.
+
+
+
+compare_blocks
+Grammar verb / pipe stage
+implemented
+compare collected spatial-block signatures
+
+
+
+correlation_cube
+Reserved / planned API
+placeholder
+Factory placeholder for a future correlation cube operation.
+
+
+
+detect_events
+Grammar verb / pipe stage
+implemented
+group consecutive true periods into events
+
+
+
+diagnostic_panel
+Grammar verb / pipe stage
+implemented
+render a diagnostic panel
+
+
+
+duration_synchrony
+Grammar verb / pipe stage
+implemented
+compare the duration of detected events
+
+
+
+exceedance
+Grammar verb / pipe stage
+compatibility
+Alias for :func:threshold_state.
+
+
+
+extract
+Grammar verb / pipe stage
+implemented
+attach fire-hull climate summaries to a cube
+
+
+
+fire_derivative
+Visualization helper (direct call)
+implemented
+derive a configured fire-event product
+
+
+
+fire_panel
+Visualization helper (direct call)
+implemented
+render a compact fire-event diagnostic panel
+
+
+
+fire_plot
+Visualization helper (direct call)
+implemented
+render one fire event and its climate context
+
+
+
+fire_vase_panel
+Grammar verb / pipe stage
+implemented
+render a multi-event VASE panel
+
+
+
+fit_model
+Reserved / planned API
+placeholder
+Placeholder for upcoming modeling verbs.
+
+
+
+flatten_cube
+Grammar verb / pipe stage
+implemented
+stack non-time dimensions into a sample dimension
+
+
+
+flatten_space
+Grammar verb / pipe stage
+implemented
+stack spatial dimensions into a pixel dimension
+
+
+
+landsat8_mpc
+Grammar verb / pipe stage
+implemented
+load Landsat observations through the MPC integration
+
+
+
+landsat_ndvi_plot
+Visualization helper (direct call)
+implemented
+render a Landsat NDVI view
+
+
+
+landsat_vis_ndvi
+Direct helper function
+implemented
+prepare a visualization-friendly Landsat NDVI cube
+
+
+
+mean
+Grammar verb / pipe stage
+implemented
+average values over a named dimension
+
+
+
+month_filter
+Grammar verb / pipe stage
+implemented
+retain observations from selected calendar months
+
+
+
+ndvi_from_s2
+Grammar verb / pipe stage
+implemented
+derive NDVI from Sentinel-2 red and near-infrared bands
+
+
+
+occurrence_synchrony
+Grammar verb / pipe stage
+implemented
+compare co-occurrence among state cubes
+
+
+
+overlap
+Grammar verb / pipe stage
+implemented
+identify coincident truth in two exactly aligned conditions
+
+
+
+plot
+Grammar verb / pipe stage
+implemented
+render an interactive cube view
+
+
+
+plot_mean
+Grammar verb / pipe stage
+implemented
+render a spatial-mean time series
+
+
+
+quantile_state
+Grammar verb / pipe stage
+implemented
+define a condition relative to an empirical quantile
+
+
+
+rasterize_observations
+Direct helper function
+implemented
+place feature observations onto a reference cube grid
+
+
+
+rolling_median_split_synchrony
+Grammar verb / pipe stage
+implemented
+measure rolling median-split synchrony
+
+
+
+rolling_tail_dep_vs_center
+Grammar verb / pipe stage
+implemented
+compare rolling tail behavior with the center
+
+
+
+severity_synchrony
+Grammar verb / pipe stage
+implemented
+compare condition magnitude where states co-occur
+
+
+
+show_cube_lexcube
+Grammar verb / pipe stage
+implemented
+render a cube while preserving it in the pipe
+
+
+
+sync_with
+Grammar verb / pipe stage
+implemented
+compare an input cube with another aligned temporal cube
+
+
+
+threshold_state
+Grammar verb / pipe stage
+implemented
+turn continuous values into a named true/false condition
+
+
+
+timing_synchrony
+Grammar verb / pipe stage
+implemented
+compare the timing of detected events
+
+
+
+to_netcdf
+Grammar verb / pipe stage
+implemented
+write an explicit NetCDF output
+
+
+
+tubes
+Grammar verb / pipe stage
+implemented
+construct a tube representation from a spatiotemporal cube
+
+
+
+variance
+Grammar verb / pipe stage
+implemented
+measure variation over a named dimension
+
+
+
+vase
+Grammar verb / pipe stage
+implemented
+construct a configured fire VASE representation
+
+
+
+vase_demo
+Grammar verb / pipe stage
+compatibility
+Convenience verb: build a demo stacked-polygon vase and plot it.
+
+
+
+vase_extract
+Direct helper function
+implemented
+extract cube values for a VASE geometry
+
+
+
+vase_mask
+Direct helper function
+implemented
+mask a cube with a VASE geometry
+
+
+
+zscore
+Grammar verb / pipe stage
+implemented
+standardize values relative to their mean and spread
+
+
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  
+    
+      
+  
+    
+      
+    
+    2026-08-28
+  
+
+    
+    
+    
+    
+  
+
+
+
+
+
+                
+              

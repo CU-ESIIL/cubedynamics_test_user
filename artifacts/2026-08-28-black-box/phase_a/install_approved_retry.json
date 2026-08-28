@@ -1,0 +1,10 @@
+{
+  "command": "docker exec cubedynamics-naive-20260828 python -m pip install --only-binary=cubedynamics cubedynamics",
+  "result": {
+    "chunk_id": "a24ce3",
+    "wall_time_seconds": 1.049771,
+    "exit_code": 1,
+    "original_token_count": 66,
+    "output": "ERROR: Could not find a version that satisfies the requirement cubedynamics (from versions: none)\nERROR: No matching distribution found for cubedynamics\n\n[notice] A new release of pip is available: 24.0 -> 26.2.1\n[notice] To update, run: pip install --upgrade pip\n"
+  }
+}

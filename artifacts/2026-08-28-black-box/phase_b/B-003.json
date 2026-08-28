@@ -1,0 +1,24 @@
+{
+  "id": "B-003",
+  "phase": "B",
+  "timestamp": "2026-08-28T18:17:34.666173+00:00",
+  "goal": "Check public distribution metadata and a PyPI connectivity control",
+  "documentation_consulted": [
+    "https://cu-esiil.github.io/cubedynamics/getting_started/install/"
+  ],
+  "command": [
+    "docker",
+    "exec",
+    "cubedynamics-naive-20260828",
+    "python",
+    "-c",
+    "import urllib.request, urllib.error, json; urls=[\"https://pypi.org/pypi/cubedynamics/json\", \"https://pypi.org/pypi/pip/json\", \"https://api.github.com/repos/CU-ESIIL/cubedynamics/releases\"]; records=[]\nfor url in urls:\n    try:\n        with urllib.request.urlopen(urllib.request.Request(url, headers={\"User-Agent\":\"CubeDynamics-public-acceptance/1.0\"}),timeout=30) as response:\n            payload=json.load(response); item={\"url\":url,\"status\":response.status}\n        if isinstance(payload,list): item[\"releases\"]=[{\"tag_name\":r[\"tag_name\"],\"name\":r[\"name\"],\"prerelease\":r[\"prerelease\"],\"assets\":[{\"name\":a[\"name\"],\"url\":a[\"browser_download_url\"]} for a in r[\"assets\"]]} for r in payload]\n        else: item[\"package_name\"]=payload[\"info\"][\"name\"]; item[\"version\"]=payload[\"info\"][\"version\"]\n    except urllib.error.HTTPError as error: item={\"url\":url,\"status\":error.code,\"error\":str(error)}\n    records.append(item)\nprint(json.dumps(records,indent=2))"
+  ],
+  "expected_behavior": "CubeDynamics package metadata or a downloadable release wheel is available",
+  "returncode": 0,
+  "stdout": "[\n  {\n    \"url\": \"https://pypi.org/pypi/cubedynamics/json\",\n    \"status\": 404,\n    \"error\": \"HTTP Error 404: Not Found\"\n  },\n  {\n    \"url\": \"https://pypi.org/pypi/pip/json\",\n    \"status\": 200,\n    \"package_name\": \"pip\",\n    \"version\": \"26.2.1\"\n  },\n  {\n    \"url\": \"https://api.github.com/repos/CU-ESIIL/cubedynamics/releases\",\n    \"status\": 200,\n    \"releases\": [\n      {\n        \"tag_name\": \"0.0.1\",\n        \"name\": \"alpha\",\n        \"prerelease\": true,\n        \"assets\": []\n      },\n      {\n        \"tag_name\": \"build\",\n        \"name\": \"1.1.0\",\n        \"prerelease\": true,\n        \"assets\": []\n      }\n    ]\n  }\n]\n",
+  "stderr": "",
+  "status": "succeeded",
+  "runtime_seconds": 0.998993,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

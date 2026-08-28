@@ -1,0 +1,107 @@
+
+                
+                  
+
+
+  
+  
+
+
+
+Library · Source reference
+
+
+Sources
+
+Source flavors for documented scientific nouns. Source-specific support and QA are explained on each page. Scientific nouns remain the primary Library index.
+
+
+
+
+Source
+Provider
+Available nouns
+
+
+
+
+
+gridmet
+gridMET / University of California, Merced
+humidity, precipitation, radiation, temperature, vpd, wind
+
+
+
+prism
+PRISM Climate Group, Oregon State University
+precipitation, temperature
+
+
+
+sentinel2
+European Union Copernicus Programme / ESA
+surface_reflectance, vegetation_index
+
+
+
+usgs_3dep
+US Geological Survey
+elevation
+
+
+
+overture
+Overture Maps Foundation
+roads
+
+
+
+osm
+OpenStreetMap contributors
+roads
+
+
+
+usgs
+US Geological Survey
+streamflow
+
+
+
+
+Daymet candidate is not a promoted source. Other legacy adapters are described in source configuration.
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  
+    
+      
+  
+    
+      
+    
+    2026-08-28
+  
+
+    
+    
+    
+    
+  
+
+
+
+
+
+                
+              
