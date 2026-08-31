@@ -1,0 +1,84 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/usr/local/lib/python3.11/site-packages/xarray/core/dataarray.py", line 4250, in to_netcdf
+    return to_netcdf(  # type: ignore[return-value]  # mypy cannot resolve the overloads:(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/xarray/backends/writers.py", line 441, in to_netcdf
+    dump_to_store(
+  File "/usr/local/lib/python3.11/site-packages/xarray/backends/writers.py", line 491, in dump_to_store
+    store.store(variables, attrs, check_encoding, writer, unlimited_dims=unlimited_dims)
+  File "/usr/local/lib/python3.11/site-packages/xarray/backends/common.py", line 537, in store
+    self.set_variables(
+  File "/usr/local/lib/python3.11/site-packages/xarray/backends/common.py", line 575, in set_variables
+    target, source = self.prepare_variable(
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/xarray/backends/h5netcdf_.py", line 445, in prepare_variable
+    nc4_var.attrs[k] = v
+    ~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.11/site-packages/h5netcdf/attrs.py", line 104, in __setitem__
+    self._check_dtype(dtype)
+  File "/usr/local/lib/python3.11/site-packages/h5netcdf/core.py", line 2005, in _check_valid_netcdf_dtype
+    _invalid_netcdf_feature(
+  File "/usr/local/lib/python3.11/site-packages/h5netcdf/core.py", line 66, in _invalid_netcdf_feature
+    raise CompatibilityError(msg)
+h5netcdf.utils.CompatibilityError: boolean dtypes are not a supported NetCDF feature, and are not allowed by h5netcdf unless invalid_netcdf=True.
+lazy: <xarray.DataArray 'ppt' (time: 5, y: 3, x: 3)> Size: 180B
+dask.array<rechunk-merge, shape=(5, 3, 3), dtype=float32, chunksize=(5, 3, 3), chunktype=numpy.ndarray>
+Coordinates:
+  * time     (time) datetime64[ns] 40B 2024-01-01 2024-01-02 ... 2024-01-05
+  * y        (y) float64 24B 40.04 40.0 39.96
+  * x        (x) float64 24B -105.3 -105.2 -105.2
+Attributes:
+    long_name:           ppt_stable_4kmD2
+    min:                 0.0
+    max:                 62.064697265625
+    units:               mm
+    source:              prism_streaming
+    is_synthetic:        False
+    source_provider:     PRISM Climate Group
+    streaming_service:   NCSCO THREDDS NetCDF Subset Service
+    streaming_protocol:  NcSS
+    freq:                D
+    requested_start:     2024-01-01T00:00:00
+    requested_end:       2024-01-05T00:00:00
+loaded: <xarray.DataArray 'ppt' (time: 5, y: 3, x: 3)> Size: 180B
+array([[[0.        , 0.        , 0.        ],
+        [0.        , 0.        , 0.        ],
+        [0.        , 0.        , 0.        ]],
+
+       [[0.        , 0.        , 0.        ],
+        [0.        , 0.        , 0.        ],
+        [0.        , 0.        , 0.        ]],
+
+       [[0.        , 0.        , 0.        ],
+        [0.        , 0.        , 0.        ],
+        [0.        , 0.        , 0.        ]],
+
+       [[0.        , 0.        , 0.        ],
+        [0.        , 0.0521    , 0.0258    ],
+        [0.        , 0.19919999, 0.1716    ]],
+
+       [[0.        , 0.        , 0.        ],
+        [0.0225    , 0.        , 0.        ],
+        [0.1809    , 0.        , 0.        ]]], dtype=float32)
+Coordinates:
+  * time     (time) datetime64[ns] 40B 2024-01-01 2024-01-02 ... 2024-01-05
+  * y        (y) float64 24B 40.04 40.0 39.96
+  * x        (x) float64 24B -105.3 -105.2 -105.2
+Attributes:
+    long_name:           ppt_stable_4kmD2
+    min:                 0.0
+    max:                 62.064697265625
+    units:               mm
+    source:              prism_streaming
+    is_synthetic:        False
+    source_provider:     PRISM Climate Group
+    streaming_service:   NCSCO THREDDS NetCDF Subset Service
+    streaming_protocol:  NcSS
+    freq:                D
+    requested_start:     2024-01-01T00:00:00
+    requested_end:       2024-01-05T00:00:00
+dims: ('time', 'y', 'x') shape: (5, 3, 3)
+attrs: {'long_name': 'ppt_stable_4kmD2', 'min': 0.0, 'max': 62.064697265625, 'units': 'mm', 'source': 'prism_streaming', 'is_synthetic': False, 'source_provider': 'PRISM Climate Group', 'streaming_service': 'NCSCO THREDDS NetCDF Subset Service', 'streaming_protocol': 'NcSS', 'freq': 'D', 'requested_start': '2024-01-01T00:00:00', 'requested_end': '2024-01-05T00:00:00'}
+range: 0.0 0.19919998943805695
+nan_fraction: 0.0

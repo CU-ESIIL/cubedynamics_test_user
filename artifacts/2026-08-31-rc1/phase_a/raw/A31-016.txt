@@ -1,0 +1,16 @@
+temperature (*, source: 'str' = 'gridmet', statistic: 'str' = 'maximum', bbox: 'Sequence[float] | None' = None, geometry: 'Mapping[str, object] | None' = None, aoi_geojson: 'Mapping[str, object] | None' = None, lat: 'float | None' = None, lon: 'float | None' = None, start: 'Any' = None, end: 'Any' = None, **kwargs: 'Any') -> 'xr.DataArray'
+Load observed gridded air temperature from an implemented source.
+
+``statistic`` is explicit because gridMET does not publish a native daily
+mean temperature field.  The default is daily maximum, which is available
+from both current source flavors.
+
+precipitation (*, source: 'str' = 'gridmet', bbox: 'Sequence[float] | None' = None, geometry: 'Mapping[str, object] | None' = None, aoi_geojson: 'Mapping[str, object] | None' = None, lat: 'float | None' = None, lon: 'float | None' = None, start: 'Any' = None, end: 'Any' = None, **kwargs: 'Any') -> 'xr.DataArray'
+Load daily precipitation from gridMET or PRISM.
+
+vpd (*, source: 'str' = 'gridmet', bbox: 'Sequence[float] | None' = None, geometry: 'Mapping[str, object] | None' = None, aoi_geojson: 'Mapping[str, object] | None' = None, lat: 'float | None' = None, lon: 'float | None' = None, start: 'Any' = None, end: 'Any' = None, **kwargs: 'Any') -> 'xr.DataArray'
+Load mean daily vapor-pressure deficit (currently gridMET).
+
+vegetation_index (*, source: 'str' = 'sentinel2', index: 'str' = 'ndvi', lat: 'float', lon: 'float', start: 'Any', end: 'Any', **kwargs: 'Any') -> 'xr.DataArray'
+Load a documented vegetation index; currently Sentinel-2 NDVI.
+

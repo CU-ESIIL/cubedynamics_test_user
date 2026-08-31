@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0rc1",
+  "pypi_install_succeeded": true,
+  "clean_import_succeeded": false,
+  "import_after_environment_workaround": true,
+  "naive_operations": 17,
+  "successful_real_environmental_analyses": 1,
+  "public_grammar_elements_executed": 6,
+  "original_scientific_questions_attempted": 1,
+  "randomized_cases": 0,
+  "novice_error_suite_cases": 0,
+  "systematic_surface_coverage_complete": false,
+  "findings": {"BLOCKER": 1, "MAJOR": 2, "MINOR": 0, "DOCUMENTATION": 1, "ENHANCEMENT": 0},
+  "verdict": "FIX BEFORE HUMAN OUTSIDE TEST"
+}

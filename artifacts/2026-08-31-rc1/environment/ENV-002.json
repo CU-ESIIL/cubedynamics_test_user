@@ -1,0 +1,21 @@
+{
+  "id": "ENV-002",
+  "phase": "environment",
+  "timestamp": "2026-08-31T19:43:18.083571+00:00",
+  "goal": "Verify isolation and resource settings",
+  "documentation_consulted": [],
+  "command": [
+    "docker",
+    "inspect",
+    "cubedynamics-rc1-naive-20260831",
+    "--format",
+    "{\"image_id\":{{json .Image}},\"image_reference\":{{json .Config.Image}},\"mounts\":{{json .Mounts}},\"working_directory\":{{json .Config.WorkingDir}},\"cap_drop\":{{json .HostConfig.CapDrop}},\"security_opt\":{{json .HostConfig.SecurityOpt}},\"memory\":{{json .HostConfig.Memory}}}"
+  ],
+  "expected_behavior": "No host mounts; pinned image; dropped capabilities; 3 GiB memory limit",
+  "returncode": 0,
+  "stdout": "{\"image_id\":\"sha256:1042b61448fef4ba92d16a8c7eb4996d027568ce64792a7877fd88511e0af7c6\",\"image_reference\":\"python:3.11-slim@sha256:1042b61448fef4ba92d16a8c7eb4996d027568ce64792a7877fd88511e0af7c6\",\"mounts\":[],\"working_directory\":\"/work\",\"cap_drop\":[\"ALL\"],\"security_opt\":[\"no-new-privileges\"],\"memory\":3221225472}\n",
+  "stderr": "",
+  "status": "succeeded",
+  "runtime_seconds": 0.023356,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

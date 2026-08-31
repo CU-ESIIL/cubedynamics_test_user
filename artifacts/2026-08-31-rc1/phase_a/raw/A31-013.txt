@@ -1,0 +1,187 @@
+load_prism_cube signature: (*legacy_args: 'object', lat: 'float | None' = None, lon: 'float | None' = None, bbox: 'Sequence[float] | None' = None, aoi: 'Mapping[str, float] | None' = None, aoi_geojson: 'Mapping[str, object] | None' = None, start: 'str | pd.Timestamp | None' = None, end: 'str | pd.Timestamp | None' = None, variable: 'str | Sequence[str]' = 'ppt', variables: 'Sequence[str] | None' = None, time_res: 'str' = 'ME', freq: 'str | None' = None, chunks: 'Mapping[Hashable, int] | None' = None, prefer_streaming: 'bool' = True, show_progress: 'bool' = True, allow_synthetic: 'bool' = False) -> 'xr.Dataset | xr.DataArray'
+load_prism_cube doc: Load a PRISM climate cube.
+
+Parameters
+----------
+lat, lon : float, optional
+    Latitude/longitude of a point of interest. When provided, a small
+    bounding box is generated around the point so that PRISM pixels are
+    fetched for the surrounding area.
+bbox : sequence of float, optional
+    Bounding box defined as ``[min_lon, min_lat, max_lon, max_lat]``.
+aoi : mapping, optional
+    Backward-compatible alias for ``bbox`` as a mapping containing
+    ``min_lon``, ``min_lat``, ``max_lon``, and ``max_lat``.
+aoi_geojson : mapping, optional
+    GeoJSON Feature/FeatureCollection describing the area of interest. A
+    bounding box is derived from the geometry.
+start, end : datetime-like
+    Temporal extent for the request.
+variable : str or sequence of str, default "ppt"
+    PRISM variable(s) to request. ``variables`` may also be used for
+    clarity when passing multiple entries. When a single variable is
+    requested through ``variable``, the loader returns an ``xarray.DataArray``.
+time_res, freq : str, default "ME"
+    Temporal frequency code. ``freq`` overrides ``time_res`` when set.
+chunks : mapping, optional
+    Custom Dask chunk mapping.
+prefer_streaming : bool, default True
+    Whether to use lazy, server-side AOI subsets from the PRISM THREDDS
+    mirror. Daily slices are fetched only when Dask computes them.
+show_progress : bool, default True
+    Display a progress bar while synthetic demo data are generated. Real
+    streaming remains lazy and reports progress through the Dask scheduler.
+
+Notes
+-----
+The modern API requires keyword arguments and exactly one AOI specification
+(``lat``/``lon``, ``bbox`` or ``aoi_geojson``). Legacy positional usage of
+the form ``load_prism_cube(variables, start, end, aoi, ...)`` is still
+supported but deprecated.
+
+Real streaming currently supports daily ``ppt``, ``tmean``, ``tmin``, and
+``tmax``. Synthetic fallback is disabled unless ``allow_synthetic=True``.
+pipe signature: (value: 'T') -> 'Pipe[T]'
+pipe doc: Wrap ``value`` in a :class:`Pipe` to enable ``Pipe | op(...)`` chaining.
+
+Grammar contract
+----------------
+Pipe infrastructure. ``pipe`` is a direct-call helper that returns a
+pipe-ready wrapper and does not modify the underlying object.
+
+Parameters
+----------
+value : T
+    Input object, often an :class:`xarray.DataArray`, :class:`xarray.Dataset`,
+    or :class:`~cubedynamics.streaming.VirtualCube`.
+
+Returns
+-------
+Pipe
+    A :class:`Pipe` carrying ``value``.
+
+Notes
+-----
+The wrapper preserves streaming/lazy objects and does not compute data. Use
+:py:meth:`Pipe.unwrap` to exit the pipe chain and retrieve the value. Any
+viewer objects created by verbs will be attached to the wrapped value for
+rich HTML display in notebooks.
+
+Examples
+--------
+Direct call:
+>>> from cubedynamics.piping import pipe
+>>> res = (pipe(1) | (lambda x: x + 2)).unwrap()
+>>> assert res == 3
+
+See Also
+--------
+cubedynamics.piping.Pipe, cubedynamics.piping.Verb
+mean signature: (dim: 'str' = 'time', *, over: 'Hashable | Iterable[Hashable] | None' = None, keep_dim: 'bool' = True, skipna: 'bool | None' = True)
+mean doc: Summary
+Compute the mean along a dimension while keeping cubes pipe-ready.
+
+Grammar contract
+Reducer verb (cube → cube with reduced dim). Direct-call and pipe-ready.
+
+Parameters
+dim : str, default "time"
+    Dimension to reduce.
+over : hashable or iterable of hashable, optional
+    Readable alias for ``dim``. Existing ``dim=`` calls remain supported.
+keep_dim : bool, default True
+    Preserve the reduced dimension with length 1 to keep a (time, y, x)
+    layout when applicable.
+skipna : bool | None, default True
+    Whether to ignore NaN values during reduction.
+
+Returns
+xr.Dataset | xr.DataArray | VirtualCube
+    Reduced cube with attrs preserved; VirtualCube inputs stay lazy.
+
+Notes
+Streaming VirtualCube inputs are processed tile-by-tile without forcing a
+full load. Dask-backed arrays remain lazy. When ``keep_dim`` is False the
+reduced dimension is dropped.
+
+Examples
+--------
+>>> import xarray as xr
+>>> import numpy as np
+>>> from cubedynamics import pipe, verbs as v
+>>> da = xr.DataArray(np.random.rand(3, 2, 2), dims=("time", "y", "x"))
+>>> smoothed = pipe(da) | v.mean()
+>>> smoothed.unwrap().dims
+('time', 'y', 'x')
+
+See Also
+--------
+cubedynamics.verbs.stats.variance, cubedynamics.verbs.stats.anomaly
+anomaly signature: (dim: 'str' = 'time', *, over: 'Hashable | Iterable[Hashable] | None' = None, keep_dim: 'bool' = True)
+anomaly doc: Return a pipe verb that subtracts the mean over ``dim``.
+
+``keep_dim`` is accepted for API symmetry; anomalies always preserve the
+input shape so Lexcube visualization remains valid.
+plot signature: (da: 'xr.DataArray | VirtualCube | None' = None, *, title: 'str | None' = None, cmap: 'str' = 'viridis', size_px: 'int | None' = None, thin_time_factor: 'int' = 4, time_dim: 'str | None' = None, clim: 'tuple[float, float] | None' = None, camera: 'dict | None' = None, axis_rig: 'bool | AxisRigSpec' = True, fig_id: 'int | None' = None, fig_title: 'str | None' = None, fig_text: 'str | None' = None)
+plot doc: Plot a cube using the CubePlot grammar and keep the cube flowing.
+
+Grammar contract
+----------------
+Side-effect verb (cube → cube, produces output). When called with ``da`` it
+immediately builds a :class:`~cubedynamics.plotting.cube_plot.CubePlot` and
+returns it while leaving the cube unchanged. When called without ``da`` it
+returns a pipe-ready :class:`~cubedynamics.piping.Verb` so you can write
+``pipe(cube) | v.plot(...)``.
+
+Parameters
+----------
+da : xarray.DataArray or VirtualCube, optional
+    Input cube with dims ``(time, y, x)``. If ``None``, a verb is returned.
+title : str, optional
+    Override the viewer title. Defaults to ``<name> time × y × x cube``.
+cmap : str, default "viridis"
+    Colormap used for the fill scale.
+size_px : int, optional
+    Pixel size for each facet tile. If omitted, the viewer uses responsive sizing.
+thin_time_factor : int, default 4
+    Decimation factor for time frames to keep the viewer responsive.
+time_dim : str, optional
+    Name of the temporal dimension. Inferred when not provided.
+clim : tuple of float, optional
+    Color limits for the continuous scale.
+camera : dict, optional
+    Plotly-style camera configuration used to set the initial cube view.
+    When omitted, a front-right, zoomed-out default is applied.
+fig_id, fig_title, fig_text : optional
+    Caption metadata used by the viewer export helpers.
+
+Returns
+-------
+CubePlot or Verb
+    Viewer ready for notebook display, or a pipe-ready verb when ``da`` is
+    omitted.
+
+Notes
+-----
+The viewer preserves dask-backed arrays and only samples minimal data for
+thumbnails, keeping streaming behavior intact. If a vase is attached in
+``da.attrs['vase']`` a thin outline overlay is attempted. The original cube
+is returned unchanged so pipe chains continue.
+
+Examples
+--------
+Direct call:
+>>> import cubedynamics as cd
+>>> cube = cd.load_gridmet_cube(lat=40.0, lon=-105.0, start="2005-01-01", end="2005-01-05", variable="tmmx")
+>>> viewer = cd.verbs.plot.plot(cube, cmap="magma")
+
+Pipe style:
+>>> from cubedynamics import pipe, verbs as v
+>>> viewer = (pipe(cube) | v.plot(cmap="magma")).unwrap()
+>>> cube  # cube still available
+
+See Also
+--------
+cubedynamics.plotting.cube_plot.CubePlot
+cubedynamics.verbs.plot_mean.plot_mean
+cubedynamics.piping.pipe

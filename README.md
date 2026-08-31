@@ -26,9 +26,9 @@ Freeze the black-box report before any separately authorized maintainer triage. 
 
 ## Current state
 
-The repository has been adapted from a research website template. Agent policy, prompt logging, and the testing protocol are documented. **No CubeDynamics artifact has been installed or tested in this setup task; no acceptance verdict or coverage results exist yet.**
+CubeDynamics `0.1.0rc1` completed its release workflow and installed from PyPI during the first independent public-release black-box acceptance test on 2026-08-31. The clean import failed until a specialist system-library workaround was applied; one real PRISM analysis then succeeded. Exhaustive systematic coverage was not completed. See the [acceptance report](reports/2026-08-31-rc1/naive_user_report.md) and frozen [naive session](reports/2026-08-31-rc1/naive_session.md). Verdict: **FIX BEFORE HUMAN OUTSIDE TEST**.
 
-The [supplied acceptance-run protocol](prompts/2026-08-28-acceptance-protocol.txt) is preserved as a future-run brief, not an executed test. A clean Linux environment, a selected external release artifact, and a fresh exploratory tester context are still needed. There is no acceptance CLI, container definition, or automated package test suite yet.
+An earlier 2026-08-28 pre-release attempt is preserved as historical evidence; it found no public artifact at that time and must not be treated as the `0.1.0rc1` result. The current [acceptance-run protocol](prompts/2026-08-31-rc1-acceptance-protocol.txt) supersedes stale statements that no public release exists.
 
 ## Repository map
 

@@ -1,0 +1,39 @@
+{
+  "frozen_at": "2026-08-31T20:00:42.670236+00:00",
+  "method": "SHA-256 manifest; content is tamper-evident, not filesystem write-protected",
+  "scope": "artifacts/2026-08-31-rc1",
+  "included_reports": [
+    "reports/2026-08-31-rc1/naive_session.md",
+    "reports/2026-08-31-rc1/naive_user_report.md"
+  ],
+  "sha256": {
+    "artifacts/2026-08-31-rc1/environment/ENV-001.json": "840644a1694388879a816e85eb5622dcffd9e9e8254f2af28744e7e52e6c2ba5",
+    "artifacts/2026-08-31-rc1/environment/ENV-002.json": "7a86f0b49d1761ac414fa9ee009ddc6bcaab13c22698dfdce69e14b1717f361b",
+    "artifacts/2026-08-31-rc1/metrics.json": "c7cc137b93360713f13a2340978ea0661be86a5c2007c047679f47c072ce3b0e",
+    "artifacts/2026-08-31-rc1/phase_a/FROZEN.json": "8d4e37754921d44867355585d4e67877af153663113061d365f1230751caef70",
+    "artifacts/2026-08-31-rc1/phase_a/install_pip_verbose.log": "af738fb79cd66eb90651a605923aeb07ba375e605562e101b24932eefb06596f",
+    "artifacts/2026-08-31-rc1/phase_a/naive_session.jsonl": "259061b5c4fdc66fa61706432d13b84794d55c12ea3492af68f7f89dbdc4ab6b",
+    "artifacts/2026-08-31-rc1/phase_a/op_runner.py": "2820a0f371331917f63b6ed04e6f28cce1aeafe6ad99539067f85ddea294ece4",
+    "artifacts/2026-08-31-rc1/phase_a/prism_boulder_mean_daily_ppt.png": "bd450fc013c8a9079cbff4eda6ff0b3e75d00a93f0614be6cac5e86a871a3254",
+    "artifacts/2026-08-31-rc1/phase_a/prism_boulder_ppt_2024-01-01_05.nc": "31b82743bd6a3e8c31b11971fc48f6dbbe1fecfa5b285db493a6ae3ff9ed033d",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-001.txt": "2b1e0729a922b4a8dc700b3761bb168ff59af93b1ad92da5ce8c4013a11aaaf5",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-002.txt": "eeb4e29ebb97e85380acd844165f6437283b140966aadea7c3a51eb3bfef5db8",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-003.txt": "af738fb79cd66eb90651a605923aeb07ba375e605562e101b24932eefb06596f",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-004.txt": "6fdc83999dbac201bf2bea116c99bbd4dad2b0fe0ef1df3db3ebb9db76ae4c14",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-005.txt": "7dce55e0c832578a3eb6c5a01140a848c39e96bac9e127ae37e2180144f64d60",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-006.txt": "6792431f676279a2b3eed9576cf0b7f317c0f8a157e6553f43df89cdfbc35e6f",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-007.txt": "1b90e0e12abc614d5d0ecf0d59a8158d1211e8cabc705798a280ae9025032daf",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-008.txt": "7b4b26ace2018a528275b75fbc7e6296a6cc50f986a676489229b544a7837ff1",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-009.txt": "a4bbba9d5cce725c3b4c5ed205fe2219061ceffeb428c916c191637e3f2a3111",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-010.txt": "462af4a76216acd99ccdcb76bee34677b19228dcc97ff30c4a0baf7b8c54d44e",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-011.txt": "75982323f7e267fce941336a1652d131cf8a5425f5bc28834dbc20ca48278063",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-012.txt": "87a0f0550858dd31d7c3eaed2925eb91d3b6e895d1133b86ec722ca6c404abc5",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-013.txt": "0136c786d36dba3714a7d5ab9509b057be659a1dc7d73d1c6480c382ff49472a",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-014.txt": "609960522f65059c9af2e7142b753d04d108a022cbfd70b69df722cb7dcf435a",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-015.txt": "2bb0ebc157c083e27ec88dcb97751c5b4b408ff6689f9787e16a687706654590",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-016.txt": "455861b1452ba68aa380e611e3a626c9aa97ea4d3ae50c80bc143f02ce85fca3",
+    "artifacts/2026-08-31-rc1/phase_a/raw/A31-017.txt": "c5afa5974f8c883d0ce5f58292e116075450a0438d4d67d87d95355f0f855a88",
+    "reports/2026-08-31-rc1/naive_session.md": "ee74b4dc56e69e226572ec55d75f376a914337096897e45d1dedcf44b62dfc0b",
+    "reports/2026-08-31-rc1/naive_user_report.md": "251044b5d22cde0f99820dced47c624fd8aa16fd3dce59e1678f0ea42e3c727e"
+  }
+}

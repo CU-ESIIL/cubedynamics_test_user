@@ -1,0 +1,4 @@
+  File "<string>", line 1
+    import re,urllib.request as u; s=u.urlopen("https://deb.debian.org/debian/pool/main/e/expat/").read().decode(); names=sorted(set(re.findall(r"href=.[^"]*(libexpat1_[^"]*_arm64\.deb)",s))); print("\n".join(names))
+                                                                                                                                                           ^
+SyntaxError: closing parenthesis ']' does not match opening parenthesis '('

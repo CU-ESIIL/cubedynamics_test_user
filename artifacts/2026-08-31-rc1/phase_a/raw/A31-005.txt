@@ -1,0 +1,51 @@
+E: setgroups 65534 failed - setgroups (1: Operation not permitted)
+E: setegid 65534 failed - setegid (1: Operation not permitted)
+E: seteuid 42 failed - seteuid (1: Operation not permitted)
+E: setgroups 0 failed - setgroups (1: Operation not permitted)
+Hit:1 http://deb.debian.org/debian trixie InRelease
+Ign:2 http://deb.debian.org/debian trixie-updates InRelease
+Ign:3 http://deb.debian.org/debian-security trixie-security InRelease
+Err:4 http://deb.debian.org/debian trixie-updates Release
+  Could not open file /var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie-updates_Release - open (13: Permission denied) [IP: 199.232.66.132 80]
+Err:5 http://deb.debian.org/debian-security trixie-security Release
+  Could not open file /var/lib/apt/lists/partial/deb.debian.org_debian-security_dists_trixie-security_Release - open (13: Permission denied) [IP: 199.232.66.132 80]
+Ign:6 http://deb.debian.org/debian trixie/main arm64 Packages
+Err:6 http://deb.debian.org/debian trixie/main arm64 Packages
+  Could not open file /var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie_main_binary-arm64_Packages.xz - open (13: Permission denied) [IP: 199.232.66.132 80]
+Ign:6 http://deb.debian.org/debian trixie/main arm64 Packages
+Err:6 http://deb.debian.org/debian trixie/main arm64 Packages
+  Could not open file /var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie_main_binary-arm64_Packages.xz - open (13: Permission denied) [IP: 199.232.66.132 80]
+  Could not open file /var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie_main_binary-arm64_Packages.gz - open (13: Permission denied) [IP: 199.232.66.132 80]
+Ign:6 http://deb.debian.org/debian trixie/main arm64 Packages
+Err:6 http://deb.debian.org/debian trixie/main arm64 Packages
+  Could not open file /var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie_main_binary-arm64_Packages.xz - open (13: Permission denied) [IP: 199.232.66.132 80]
+  Could not open file /var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie_main_binary-arm64_Packages.gz - open (13: Permission denied) [IP: 199.232.66.132 80]
+  404  Not Found [IP: 199.232.66.132 80]
+rm: cannot remove '/var/cache/apt/archives/partial/*.deb': Permission denied
+Reading package lists...
+W: chown to _apt:root of directory /var/lib/apt/lists/partial failed - SetupAPTPartialDirectory (1: Operation not permitted)
+W: chmod 0700 of directory /var/lib/apt/lists/partial failed - SetupAPTPartialDirectory (1: Operation not permitted)
+W: chown to _apt:root of directory /var/lib/apt/lists/auxfiles failed - SetupAPTPartialDirectory (1: Operation not permitted)
+W: chmod 0755 of directory /var/lib/apt/lists/auxfiles failed - SetupAPTPartialDirectory (1: Operation not permitted)
+E: setgroups 65534 failed - setgroups (1: Operation not permitted)
+E: setegid 65534 failed - setegid (1: Operation not permitted)
+E: seteuid 42 failed - seteuid (1: Operation not permitted)
+W: Download is performed unsandboxed as root as file '/var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie_InRelease' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)
+E: setgroups 0 failed - setgroups (1: Operation not permitted)
+W: Problem unlinking the file /var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie_InRelease - PrepareFiles (13: Permission denied)
+W: Problem unlinking the file /var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie-updates_InRelease - PrepareFiles (13: Permission denied)
+W: Problem unlinking the file /var/lib/apt/lists/partial/deb.debian.org_debian-security_dists_trixie-security_InRelease - PrepareFiles (13: Permission denied)
+W: Problem unlinking the file /var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie-updates_Release - PrepareFiles (13: Permission denied)
+E: The repository 'http://deb.debian.org/debian trixie-updates Release' no longer has a Release file.
+W: Problem unlinking the file /var/lib/apt/lists/partial/deb.debian.org_debian-security_dists_trixie-security_Release - PrepareFiles (13: Permission denied)
+E: The repository 'http://deb.debian.org/debian-security trixie-security Release' no longer has a Release file.
+W: Problem unlinking the file /var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie_main_binary-arm64_Packages.xz - PrepareFiles (13: Permission denied)
+W: Problem unlinking the file /var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie_main_binary-arm64_Packages.xz - PrepareFiles (13: Permission denied)
+W: Problem unlinking the file /var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie_main_binary-arm64_Packages.gz - PrepareFiles (13: Permission denied)
+W: Problem unlinking the file /var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie_main_binary-arm64_Packages.gz - PrepareFiles (13: Permission denied)
+W: Problem unlinking the file /var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie_main_binary-arm64_Packages - PrepareFiles (13: Permission denied)
+W: Problem unlinking the file /var/lib/apt/lists/partial/deb.debian.org_debian_dists_trixie_main_binary-arm64_Packages - PrepareFiles (13: Permission denied)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+E: Unable to locate package libexpat1

@@ -4,7 +4,7 @@
 
 This repository is the tester's workspace for CubeDynamics. It contains project documentation, agent policy, prompt history, and a saved acceptance-run brief. It does not contain the CubeDynamics implementation.
 
-As of the 2026-08-28 setup task, no CubeDynamics release artifact has been installed or tested here. There is no acceptance runner, Linux test container definition, package test suite, or generated acceptance evidence. Those are future work, not implied capabilities of this website.
+The 2026-08-28 setup and pre-release evidence remain preserved. The separate 2026-08-31 `0.1.0rc1` run installed the PyPI artifact and completed a frozen 17-operation naive session with one real PRISM analysis. Clean import required a specialist system-library workaround, and exhaustive systematic coverage was not completed. Evidence lives under `artifacts/2026-08-31-rc1/`; the primary verdict is **FIX BEFORE HUMAN OUTSIDE TEST**.
 
 ## Repository and website
 

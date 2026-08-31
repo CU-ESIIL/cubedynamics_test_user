@@ -34,9 +34,9 @@ Can a scientist discover, understand, and use CubeDynamics using only what an or
 
 ## Current status
 
-**Setup documented; acceptance testing not yet run.** No CubeDynamics artifact has been installed or tested in this setup task. There are no measured coverage counts, package findings, or release-readiness verdicts yet.
+**First public-release test completed with limited coverage.** CubeDynamics `0.1.0rc1` installed from PyPI, but clean import required a specialist system-library workaround. One real PRISM analysis later succeeded; exhaustive systematic coverage was not completed. Primary verdict: **FIX BEFORE HUMAN OUTSIDE TEST**.
 
-The [project notes](project.md) distinguish existing files from planned test infrastructure. A successful website build validates this documentation, not CubeDynamics.
+The frozen 2026-08-28 run predates this public artifact and remains historical evidence, not the `0.1.0rc1` verdict. The [project notes](project.md) distinguish the two runs.
 
 ## Where the rules and history live
 

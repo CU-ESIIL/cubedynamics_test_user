@@ -1,0 +1,518 @@
+You are conducting the first independent outside-user acceptance test of CubeDynamics.
+
+Repository under test:
+https://github.com/CU-ESIIL/cubedynamics
+
+Public release under test:
+cubedynamics==0.1.0rc1
+
+Test workspace:
+https://github.com/CU-ESIIL/cubedynamics_test_user
+
+IMPORTANT: You are working ONLY in cubedynamics_test_user. This repository exists to evaluate CubeDynamics from the perspective of an external scientist. It must remain independent of the CubeDynamics development repository.
+
+Before doing anything else:
+
+1. Read AGENTS.md in this repository completely.
+2. Follow its naive-user boundary exactly.
+3. Record this task and your work in PROMPT_LOG.md.
+4. Read the existing acceptance protocol and project documentation.
+5. Update any stale administrative text that says no public release exists. CubeDynamics 0.1.0rc1 has now passed its release workflow and has been submitted to PyPI for public installation.
+6. Do NOT add tutorials, installation instructions, hints, or other information that would contaminate the naive-user phase before that phase is complete.
+
+==================================================
+NON-NEGOTIABLE BLACK-BOX BOUNDARY
+==================================================
+
+You are evaluating the public CubeDynamics product, not developing CubeDynamics.
+
+DO NOT:
+
+- clone the CubeDynamics source repository
+- inspect CubeDynamics source files
+- inspect upstream tests
+- inspect upstream AGENTS.md or PROMPT_LOG.md
+- inspect developer-only documentation
+- inspect implementation files in site-packages
+- use inspect.getsource()
+- disassemble package functions
+- follow traceback paths into source files
+- install CubeDynamics in editable mode
+- mount the upstream repository
+- patch CubeDynamics
+- fix CubeDynamics
+- open upstream pull requests
+- modify upstream issues
+- use private knowledge from the CubeDynamics development repository
+
+You MAY use:
+
+- the public PyPI package
+- the public CubeDynamics website
+- the normal public GitHub landing page and README as an ordinary user would encounter them
+- public documentation linked from those surfaces
+- Python help()
+- public docstrings
+- dir()
+- inspect.signature()
+- installed distribution metadata
+- ordinary scientific Python tools
+- public environmental datasets
+- ordinary web/search behavior available to an external scientist
+
+If an exception exposes an implementation path, record the traceback as evidence but do not follow the path or inspect the referenced implementation file.
+
+==================================================
+TEST ENVIRONMENT
+==================================================
+
+Create a genuinely clean external Linux environment.
+
+The environment must:
+
+- contain no CubeDynamics source checkout
+- contain no editable CubeDynamics installation
+- contain no PYTHONPATH pointing to CubeDynamics source
+- have normal internet access if available
+- behave like a competent environmental scientist's fresh Python environment
+
+Record:
+
+- operating system
+- Python version
+- pip version
+- installation command
+- package version actually installed
+- package origin
+- installed distribution metadata
+- installation duration
+- dependency resolution problems, if any
+
+The target artifact is specifically:
+
+cubedynamics==0.1.0rc1
+
+However, preserve the naive-user experiment described below. The naive user should not simply be handed a scripted sequence of CubeDynamics commands.
+
+==================================================
+PHASE A — GENUINELY NAIVE USER
+==================================================
+
+This phase is the most important part of the experiment.
+
+Start a fresh agent/session that has NOT read:
+
+- CubeDynamics source
+- CubeDynamics tests
+- the systematic acceptance matrix
+- expected API names
+- known package capabilities
+- known failure modes
+- maintainer notes about how CubeDynamics is supposed to work
+
+Give that agent only this goal:
+
+"You are an environmental scientist who has discovered CubeDynamics. Figure out what it does, install the public release, and try to use it to perform useful environmental data analysis. Behave as you normally would when evaluating an unfamiliar scientific Python package. Record what you try, what you expect to happen, what actually happens, what confuses you, and what you learn."
+
+Do not give the agent a tutorial.
+
+Do not tell it which documentation page to read first.
+
+Do not give it example commands beyond what an ordinary user can discover from public-facing materials.
+
+Do not tell it the nouns, verbs, sources, or intended grammar in advance.
+
+Let discoverability itself be part of the test.
+
+The naive user should attempt to answer practical questions such as:
+
+- What is CubeDynamics?
+- Why would I use it?
+- Can I install it?
+- What is the first useful thing I can do?
+- How do I discover available environmental data?
+- How do I discover available analytical operations?
+- Can I understand the grammar without maintainer assistance?
+- Can I retrieve real environmental data?
+- Can I transform it?
+- Can I combine observations?
+- Can I inspect what I have done?
+- Can I get back an ordinary scientific Python object?
+- When I make a mistake, does CubeDynamics help me recover?
+
+But DO NOT turn this list into instructions for how to accomplish those tasks.
+
+Allow the naive agent to explore naturally.
+
+Capture the complete chronological session.
+
+At minimum preserve:
+
+artifacts/naive_session.jsonl
+reports/naive_session.md
+
+The report must distinguish:
+
+- what the user discovered independently
+- what documentation led them to
+- successful actions
+- failed actions
+- confusion
+- wrong assumptions
+- recovery paths
+- points where they would plausibly give up
+- things that felt surprisingly easy
+- things that required specialist knowledge
+
+Once Phase A is complete, FREEZE its evidence.
+
+Do not revise or clean it after learning more about CubeDynamics.
+
+==================================================
+PHASE B — SYSTEMATIC PUBLIC-SURFACE ACCEPTANCE
+==================================================
+
+Only after Phase A is frozen, begin systematic testing.
+
+Use ONLY public user-facing CubeDynamics surfaces.
+
+Construct an inventory of the public grammar as a user can discover it.
+
+Test every publicly documented:
+
+- noun
+- source flavor
+- verb
+- modifier/parameter family
+- inspection mechanism
+- unwrap/export mechanism
+- extension mechanism
+
+For each feature determine:
+
+1. Is it discoverable?
+2. Is its purpose understandable?
+3. Can a user construct it correctly?
+4. Does it operate on an appropriate object?
+5. Does semantic state change as expected?
+6. Does the trace preserve what happened?
+7. Does the result remain interoperable with ordinary scientific Python?
+8. Are invalid uses rejected clearly?
+9. Can the user recover from the error without reading source code?
+
+Build a machine-readable coverage matrix.
+
+Do not merely test that functions execute.
+
+Test whether the package communicates scientific meaning.
+
+==================================================
+COMPOSITION AND ORDER
+==================================================
+
+CubeDynamics claims that authored analytical order carries scientific meaning.
+
+Test this explicitly.
+
+Construct analyses in which:
+
+- changing operation order changes the scientific question
+- operations remove dimensions
+- operations create conditions
+- temporal variation is retained or removed
+- an operation becomes invalid after an earlier transformation
+- two observations are combined
+- source identity remains distinguishable
+- unwrap and re-entry into ordinary scientific Python remain possible
+
+Where two orders are both mathematically valid, determine whether their meanings remain understandable.
+
+Where an order should be semantically invalid, determine whether CubeDynamics rejects it with a useful explanation.
+
+Do not assume expected behavior merely because documentation claims it.
+
+Observe and record actual behavior.
+
+==================================================
+REAL ENVIRONMENTAL SCIENCE
+==================================================
+
+The package should be tested as a scientific tool, not merely as an API.
+
+Create at least 10 ORIGINAL environmental science questions that are NOT copied from CubeDynamics documentation.
+
+They should vary across:
+
+- climate
+- weather
+- vegetation
+- disturbance
+- hydrology or water availability where supported
+- remote sensing where supported
+- spatial analysis
+- temporal analysis
+- thresholds
+- anomalies
+- reductions
+- events
+- multi-variable composition
+
+Questions should sound like questions a working environmental scientist might actually ask.
+
+For each question:
+
+1. Write the scientific question in plain language.
+2. Predict how you think CubeDynamics might express it.
+3. Attempt the analysis using only public interfaces.
+4. Record the final expression.
+5. Inspect its semantic state and trace.
+6. Examine the resulting scientific object.
+7. Determine whether the expression still communicates the original scientific question.
+8. Record any scientific assumptions CubeDynamics makes visible.
+9. Record important assumptions CubeDynamics does NOT make visible.
+10. Give the individual analysis a PASS, PASS WITH CAVEATS, or FAIL.
+
+Favor real public data when practical.
+
+Do not silently substitute toy data when a documented public data path is supposed to work.
+
+If live data fail, distinguish:
+
+- CubeDynamics failure
+- provider failure
+- network failure
+- authentication problem
+- data availability problem
+- unclear documentation
+
+==================================================
+RANDOMIZED PLAUSIBLE USE
+==================================================
+
+After deliberate testing, conduct randomized black-box exploration.
+
+Use a fixed random seed and record it.
+
+Generate plausible combinations of publicly discoverable:
+
+noun
+→ source
+→ transformation
+→ transformation
+→ reduction/composition
+
+Do NOT generate arbitrary nonsense merely to produce failures.
+
+Generate combinations that a scientifically competent user might reasonably attempt.
+
+For every randomized case record:
+
+- generated expression
+- scientific interpretation you infer
+- whether construction succeeds
+- whether execution succeeds
+- resulting semantic state
+- trace
+- result type/dimensions
+- warning/error
+- whether the failure is understandable
+- whether the combination reveals a semantic inconsistency
+
+Store machine-readable results.
+
+==================================================
+NOVICE MISTAKES
+==================================================
+
+Deliberately make realistic mistakes.
+
+Examples include:
+
+- wrong parameter names
+- missing required parameters
+- wrong dimensions
+- operations in an inappropriate order
+- incompatible observations
+- incompatible spatial or temporal structures
+- assumptions that similarly named data products are interchangeable
+- attempting event detection after temporal variation has disappeared
+- attempting reductions on unavailable dimensions
+- misunderstanding source-specific behavior
+
+Judge errors from the perspective of a scientist who does NOT know the implementation.
+
+A good error should help the scientist understand:
+
+- what is wrong
+- why it is wrong
+- what scientific object they currently have
+- what kinds of next actions are valid
+
+==================================================
+INSTALLATION AND DISCOVERY VERDICT
+==================================================
+
+Treat public installation as part of the acceptance test.
+
+Explicitly determine:
+
+- Can cubedynamics==0.1.0rc1 be installed from PyPI in a clean environment?
+- Does `import cubedynamics` work?
+- Does the installed version identify itself correctly?
+- Are required runtime dependencies resolved?
+- Does the first documented example work from the installed package?
+- Do public docs correspond to the installed release?
+- Can a user get from "I heard about CubeDynamics" to a meaningful environmental analysis without maintainer assistance?
+
+Record the exact public installation evidence.
+
+==================================================
+EVIDENCE AND REPORTING
+==================================================
+
+Preserve raw evidence wherever practical.
+
+The final acceptance workspace should include:
+
+- environment record
+- installation record
+- naive-session transcript
+- naive-session report
+- public-surface inventory
+- coverage matrix
+- original scientific-question tests
+- randomized exploration results
+- novice-error tests
+- failures with tracebacks
+- screenshots or rendered outputs where useful
+- final acceptance report
+
+Create or update:
+
+reports/naive_user_report.md
+
+The report should be written for CubeDynamics maintainers but from the perspective of an outside scientist.
+
+Organize findings approximately as:
+
+1. Executive summary
+2. Environment and artifact tested
+3. Installation experience
+4. First 30 minutes
+5. What CubeDynamics appears to be
+6. What was immediately intuitive
+7. What was difficult to discover
+8. Grammar comprehension
+9. Data-source experience
+10. Analytical operation experience
+11. Composition and order
+12. Inspection/state/trace
+13. Scientific-question experiments
+14. Randomized exploration
+15. Error quality and recovery
+16. Documentation findings
+17. Scientific trust and provenance
+18. Major failures
+19. Minor friction
+20. What surprised the tester
+21. Would I use this for real science?
+22. Prioritized recommendations
+23. Acceptance verdict
+
+For each important finding include:
+
+- severity
+- exact reproduction
+- expected behavior
+- observed behavior
+- why it matters to a scientist
+- supporting evidence path
+
+Separate:
+
+BLOCKER
+MAJOR
+MINOR
+DOCUMENTATION
+ENHANCEMENT
+
+Do not classify every inconvenience as a software defect.
+
+==================================================
+ACCEPTANCE STANDARD
+==================================================
+
+The question is NOT:
+
+"Does CubeDynamics have bugs?"
+
+The question is:
+
+"Can a competent environmental scientist who did not develop CubeDynamics discover it, install it, understand its analytical grammar, perform meaningful environmental analyses, understand what the package did, recover from reasonable mistakes, and trust the evidence well enough to continue using it?"
+
+At the end give exactly one primary verdict:
+
+READY FOR HUMAN OUTSIDE TEST
+
+or
+
+FIX BEFORE HUMAN OUTSIDE TEST
+
+Then explain the verdict.
+
+A package does not need to be perfect to receive READY FOR HUMAN OUTSIDE TEST.
+
+Use FIX BEFORE HUMAN OUTSIDE TEST only when failures are likely to prevent or seriously mislead a real outside scientist.
+
+==================================================
+FREEZE BEFORE MAINTAINER TRIAGE
+==================================================
+
+Once the complete black-box report is finished:
+
+STOP.
+
+Freeze the report and raw evidence before doing any maintainer-oriented investigation.
+
+Do NOT:
+
+- inspect CubeDynamics source
+- diagnose implementation internals
+- modify CubeDynamics
+- create upstream fixes
+- create upstream PRs
+- rewrite the black-box report based on maintainer knowledge
+
+Maintainer triage is a separate phase and requires explicit authorization.
+
+==================================================
+FINAL REPOSITORY WORK
+==================================================
+
+After completing the test:
+
+1. Make sure all evidence is organized and linked from the report.
+2. Update README/project status to say that the first public-release black-box acceptance test has been completed.
+3. Preserve the exact tested version: cubedynamics==0.1.0rc1.
+4. Preserve dates, environment details, and evidence paths.
+5. Validate internal links and machine-readable files.
+6. Commit all test-user-repository changes.
+
+Do not modify the CubeDynamics repository.
+
+In your final response report:
+
+- exact CubeDynamics version tested
+- whether public PyPI installation succeeded
+- test environment
+- how the naive user discovered and learned the package
+- number of public grammar elements tested
+- number of original scientific questions attempted
+- randomized test count
+- BLOCKER/MAJOR/MINOR counts
+- the primary acceptance verdict
+- most important three findings
+- paths to the frozen reports/evidence
+- test repository commit SHA
+
+Remember: this is an acceptance experiment, not a development task. Protect the independence of the naive-user evidence even when doing so makes the test slower or less convenient.

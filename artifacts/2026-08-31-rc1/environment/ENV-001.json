@@ -1,0 +1,22 @@
+{
+  "id": "ENV-001",
+  "phase": "environment",
+  "timestamp": "2026-08-31T19:43:14.390930+00:00",
+  "goal": "Record the clean Linux runtime before rc1 testing",
+  "documentation_consulted": [],
+  "command": [
+    "docker",
+    "exec",
+    "cubedynamics-rc1-naive-20260831",
+    "python",
+    "-c",
+    "import json, os, platform, sys, subprocess, pathlib; print(json.dumps({\"os_release\": pathlib.Path(\"/etc/os-release\").read_text(),\"architecture\":platform.machine(),\"platform\":platform.platform(),\"python\":sys.version,\"executable\":sys.executable,\"pip\":subprocess.check_output([sys.executable,\"-m\",\"pip\",\"--version\"],text=True).strip(),\"working_directory\":str(pathlib.Path.cwd()),\"work_entries\":[p.name for p in pathlib.Path.cwd().iterdir()],\"pythonpath\":os.environ.get(\"PYTHONPATH\")},indent=2))"
+  ],
+  "expected_behavior": "Linux Python and pip available; work directory empty; no PYTHONPATH",
+  "returncode": 0,
+  "stdout": "{\n  \"os_release\": \"PRETTY_NAME=\\\"Debian GNU/Linux 13 (trixie)\\\"\\nNAME=\\\"Debian GNU/Linux\\\"\\nVERSION_ID=\\\"13\\\"\\nVERSION=\\\"13 (trixie)\\\"\\nVERSION_CODENAME=trixie\\nDEBIAN_VERSION_FULL=13.6\\nID=debian\\nHOME_URL=\\\"https://www.debian.org/\\\"\\nSUPPORT_URL=\\\"https://www.debian.org/support\\\"\\nBUG_REPORT_URL=\\\"https://bugs.debian.org/\\\"\\n\",\n  \"architecture\": \"aarch64\",\n  \"platform\": \"Linux-6.12.72-linuxkit-aarch64-with-glibc2.41\",\n  \"python\": \"3.11.16 (main, Aug 25 2026, 01:23:02) [GCC 14.2.0]\",\n  \"executable\": \"/usr/local/bin/python\",\n  \"pip\": \"pip 24.0 from /usr/local/lib/python3.11/site-packages/pip (python 3.11)\",\n  \"working_directory\": \"/work\",\n  \"work_entries\": [],\n  \"pythonpath\": null\n}\n",
+  "stderr": "",
+  "status": "succeeded",
+  "runtime_seconds": 0.724789,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

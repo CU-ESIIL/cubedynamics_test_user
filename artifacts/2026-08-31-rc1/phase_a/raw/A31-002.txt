@@ -1,0 +1,12 @@
+name: cubedynamics
+version: 0.1.0rc1
+summary: A composable grammar of verbs for streaming spatiotemporal cubes
+requires_python: >=3.9
+project_urls: {
+  "Documentation": "https://cu-esiil.github.io/cubedynamics/",
+  "Homepage": "https://github.com/CU-ESIIL/cubedynamics",
+  "Issues": "https://github.com/CU-ESIIL/cubedynamics/issues",
+  "Repository": "https://github.com/CU-ESIIL/cubedynamics"
+}
+release_versions: ['0.1.0rc1']
+files_for_current: [('cubedynamics-0.1.0rc1-py3-none-any.whl', 'bdist_wheel', 294372, '785b0ef217c7af1c3d869ddc7c0ce6b91abbcbff280160038c46216b698641c0'), ('cubedynamics-0.1.0rc1.tar.gz', 'sdist', 253112, 'd7fd69bf17e483d08fd31a2f498b3ea20e2b78ce739a17c5d12d70c84101e028')]

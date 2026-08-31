@@ -1,0 +1,39 @@
+series: <xarray.DataArray 'ppt' (time: 5)> Size: 20B
+array([0.        , 0.        , 0.        , 0.04985556, 0.0226    ],
+      dtype=float32)
+Coordinates:
+  * time     (time) datetime64[ns] 40B 2024-01-01 2024-01-02 ... 2024-01-05
+Attributes:
+    long_name:           ppt_stable_4kmD2
+    min:                 0.0
+    max:                 62.064697265625
+    units:               mm
+    source:              prism_streaming
+    is_synthetic:        False
+    source_provider:     PRISM Climate Group
+    streaming_service:   NCSCO THREDDS NetCDF Subset Service
+    streaming_protocol:  NcSS
+    freq:                D
+    requested_start:     2024-01-01T00:00:00
+    requested_end:       2024-01-05T00:00:00
+values_mm: [0.0, 0.0, 0.0, 0.0498555563390255, 0.022599998861551285]
+explain: Your analysis
+1. Start with ppt (continuous field).
+2. Average values over ('y', 'x').
+
+Current result
+- Semantic kind: summary
+- Dimensions: time
+- Units: mm
+
+CubeDynamics executed the verbs exactly in the order written; no step was rewritten.
+validate: Semantic validation: ready
+- INFO: Current result is classified as summary.
+- INFO: Tracked dimensions: time.
+- INFO: Time coordinates are ordered.
+- INFO: Units are mm.
+- INFO: Source provenance metadata is present.
+semantic_state: SemanticState(semantic_name='ppt', semantic_kind='summary', category=None, dimensions=('time',), shape=(5,), units='mm', crs=None, geometry_type=None, temporal=True, spatial=False, time_ordered=True, has_time_variation=True, source_flavor=None, source_provider='PRISM Climate Group', provenance=True)
+semantic_trace: (TraceStep(index=1, verb='mean', parameters={'dim': ('y', 'x'), 'keep_dim': False, 'skipna': True}, input_state=SemanticState(semantic_name='ppt', semantic_kind='continuous_field', category=None, dimensions=('time', 'y', 'x'), shape=(5, 3, 3), units='mm', crs=None, geometry_type=None, temporal=True, spatial=True, time_ordered=True, has_time_variation=True, source_flavor=None, source_provider='PRISM Climate Group', provenance=True), output_state=SemanticState(semantic_name='ppt', semantic_kind='summary', category=None, dimensions=('time',), shape=(5,), units='mm', crs=None, geometry_type=None, temporal=True, spatial=False, time_ordered=True, has_time_variation=True, source_flavor=None, source_provider='PRISM Climate Group', provenance=True), messages=()),)
+suggest: ()
+plot:/work/session/prism_boulder_mean_daily_ppt.png

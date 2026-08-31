@@ -1,0 +1,18 @@
+Python 3.11.16
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+VERSION="13 (trixie)"
+VERSION_CODENAME=trixie
+DEBIAN_VERSION_FULL=13.6
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+/work
+total 16
+drwxr-xr-x 3 root root    4096 Aug 31 19:45 .
+drwxr-xr-x 1 root root    4096 Aug 31 19:44 ..
+-rw-r--r-- 1  504 dialout 2309 Aug 31 19:44 op_runner.py
+drwxr-xr-x 3 root root    4096 Aug 31 19:45 session
+WARNING: Package(s) not found: cubedynamics
