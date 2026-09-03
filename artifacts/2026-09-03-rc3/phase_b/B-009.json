@@ -1,0 +1,20 @@
+{
+  "id": "B-009",
+  "phase": "B",
+  "timestamp": "2026-09-03T14:13:53.847169+00:00",
+  "goal": "Preserve structured Q03/Q10 follow-up results",
+  "documentation_consulted": [],
+  "command": [
+    "docker",
+    "cp",
+    "cubedynamics-rc3-naive-20260903:/rc3_phase_b/followups.json",
+    "artifacts/2026-09-03-rc3/phase_b/outputs/followups.json"
+  ],
+  "expected_behavior": "The label-policy and lag semantics JSON is copied into Phase B evidence",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "status": "succeeded",
+  "runtime_seconds": 0.027397,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

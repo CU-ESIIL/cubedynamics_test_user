@@ -1,0 +1,20 @@
+{
+  "id": "A-007",
+  "phase": "A",
+  "timestamp": "2026-09-03T14:04:36.190156+00:00",
+  "goal": "Preserve the standalone HTML produced by the public plot save method",
+  "documentation_consulted": [],
+  "command": [
+    "docker",
+    "cp",
+    "cubedynamics-rc3-naive-20260903:/tmp/rc3-naive-temperature.html",
+    "artifacts/2026-09-03-rc3/phase_a/naive_temperature_viewer.html"
+  ],
+  "expected_behavior": "The generated viewer artifact is copied into the rc3 Phase A evidence directory",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Error response from daemon: Could not find the file /tmp/rc3-naive-temperature.html in container cubedynamics-rc3-naive-20260903\n",
+  "status": "failed",
+  "runtime_seconds": 0.028015,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

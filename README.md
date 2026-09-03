@@ -26,9 +26,9 @@ Freeze the black-box report before any separately authorized maintainer triage. 
 
 ## Current state
 
-CubeDynamics `0.1.0rc1` completed its release workflow and installed from PyPI during the first independent public-release black-box acceptance test on 2026-08-31. The clean import failed until a specialist system-library workaround was applied; one real PRISM analysis then succeeded. Exhaustive systematic coverage was not completed. See the [acceptance report](reports/2026-08-31-rc1/naive_user_report.md) and frozen [naive session](reports/2026-08-31-rc1/naive_session.md). Verdict: **FIX BEFORE HUMAN OUTSIDE TEST**.
+CubeDynamics `0.1.0rc3` completed a strict public-PyPI black-box run on 2026-09-03. The package itself imported without recovery, real PRISM and gridMET access worked, and 11 scientific questions yielded 9 complete and 2 partial answers. Boolean NetCDF export and the requested plotting/event/order/temporal-support workflows ran. Four major runtime and scientific-metadata issues keep the verdict at **FIX BEFORE HUMAN OUTSIDE TEST**. See the [final rc3 report](reports/2026-09-03-rc3/naive_user_report.md), [pre-comparison detailed assessment](reports/2026-09-03-rc3/rc3_assessment_before_comparison.md), and [frozen Phase A narrative](reports/2026-09-03-rc3/naive_session.md).
 
-An earlier 2026-08-28 pre-release attempt is preserved as historical evidence; it found no public artifact at that time and must not be treated as the `0.1.0rc1` result. The current [acceptance-run protocol](prompts/2026-08-31-rc1-acceptance-protocol.txt) supersedes stale statements that no public release exists.
+The earlier 2026-08-31 rc1 and 2026-08-28 pre-release evidence remain preserved. The rc3 assessment was frozen before its explicit rc1 comparison, so earlier findings did not rewrite the new run.
 
 ## Repository map
 
@@ -40,9 +40,12 @@ An earlier 2026-08-28 pre-release attempt is preserved as historical evidence; i
 | `docs/` | Project documentation and website source |
 | `mkdocs.yml` | Website identity, navigation, and build configuration |
 | `requirements.txt` | Website dependencies, not a CubeDynamics test environment |
+| `acceptance/` | Source-boundary-safe evidence recorder, freeze tool, and run scripts |
+| `artifacts/` | Run-specific raw evidence, small outputs, metrics, and freeze manifests |
+| `reports/` | Run-specific narratives and verdicts |
 | `.github/workflows/` | Website deployment and inherited manual template workflows |
 
-Future `acceptance/`, `artifacts/`, and `reports/` directories should be created when they contain real harness code or evidence. See the [project notes](docs/project.md) for workflow limitations and template history.
+See the [project notes](docs/project.md) for workflow limitations and template history.
 
 ## Website
 

@@ -1,0 +1,24 @@
+{
+  "id": "A-001",
+  "phase": "A",
+  "timestamp": "2026-09-03T14:02:17.234944+00:00",
+  "goal": "Follow the search-discovered public Getting Started first-cube example exactly",
+  "documentation_consulted": [
+    "https://cu-esiil.github.io/cubedynamics/quickstart/"
+  ],
+  "command": [
+    "docker",
+    "exec",
+    "cubedynamics-rc3-naive-20260903",
+    "python",
+    "-c",
+    "import cubedynamics as cd; cube=cd.load_prism_cube(lat=40.0, lon=-105.25, start=\"2000-01-01\", end=\"2020-12-31\", variable=\"ppt\"); print(cube.dims); print(cube.shape); print(cube.attrs)"
+  ],
+  "expected_behavior": "The documented default PRISM request returns a precipitation cube whose dimensions shape and attributes can be inspected",
+  "returncode": 0,
+  "stdout": "('time', 'y', 'x')\n(7671, 3, 3)\n{'source': 'prism_streaming', 'is_synthetic': 0, 'units': 'mm', 'long_name': 'Total precipitation', 'source_provider': 'PRISM Climate Group', 'streaming_service': 'NCSCO THREDDS NetCDF Subset Service', 'streaming_protocol': 'NcSS', 'freq': 'D', 'requested_start': '2000-01-01T00:00:00', 'requested_end': '2020-12-31T00:00:00'}\n",
+  "stderr": "/usr/local/lib/python3.11/site-packages/xarray/backends/plugins.py:109: RuntimeWarning: Engine 'rasterio' loading failed:\nlibexpat.so.1: cannot open shared object file: No such file or directory\n  external_backend_entrypoints = backends_dict_from_pkg(entrypoints_unique)\n",
+  "status": "succeeded",
+  "runtime_seconds": 29.572647,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "A-003",
+  "phase": "A",
+  "timestamp": "2026-09-03T14:03:09.278044+00:00",
+  "goal": "Use the public scientific-vocabulary discovery calls advertised in the documentation",
+  "documentation_consulted": [
+    "https://cu-esiil.github.io/cubedynamics/data/"
+  ],
+  "command": [
+    "docker",
+    "exec",
+    "cubedynamics-rc3-naive-20260903",
+    "python",
+    "-c",
+    "from cubedynamics import data; print(\"SOURCES\"); print(data.list_sources()); print(\"TEMPERATURE_PRISM\"); print(data.describe(\"temperature\", \"prism\")); print(\"VPD_GRIDMET\"); print(data.describe(\"vpd\", \"gridmet\"))"
+  ],
+  "expected_behavior": "list_sources and describe expose noun/source choices statistics units support and provenance without data download",
+  "returncode": 0,
+  "stdout": "SOURCES\n{'humidity': ('gridmet',), 'precipitation': ('gridmet', 'prism'), 'radiation': ('gridmet',), 'surface_reflectance': ('sentinel2',), 'temperature': ('gridmet', 'prism'), 'vegetation_index': ('sentinel2',), 'vpd': ('gridmet',), 'wind': ('gridmet',)}\nTEMPERATURE_PRISM\n{'provider': 'PRISM Climate Group, Oregon State University', 'product': 'PRISM AN81d/AN91d daily time series', 'product_version': 'current AN81d/AN91d provider revision', 'source_variables': {'maximum': 'tmax', 'minimum': 'tmin', 'mean': 'tmean'}, 'units': {'maximum': 'degC', 'minimum': 'degC', 'mean': 'degC'}, 'coverage': 'Contiguous United States', 'temporal_coverage': '1981-present', 'temporal_resolution': 'daily', 'spatial_resolution': 'approximately 4 km', 'crs': 'EPSG:4326', 'backend': 'NCSCO THREDDS NetCDF Subset Service', 'streaming': 'server-side daily AOI subsets, requested lazily with Dask', 'limitations': 'Recent grids are revised as station data and quality control mature.', 'source_mode': 'rolling', 'access_backend': 'thredds_ncss', 'update_cadence': 'daily observations with provider historical revisions', 'upstream_identity_strategy': {'kind': 'provider_catalog_and_asset_metadata', 'fields': ['catalog_url', 'dataset_url', 'last_modified', 'time_coverage']}, 'source_endpoint': 'https://thredds.climate.ncsu.edu/thredds/catalog/prism/daily/combo/catalog.html', 'qa_profile': 'climate_continuous_daily', 'temporal_support_type': 'interval', 'temporal_label_convention': 'day_ending', 'temporal_reference_timezone': 'UTC', 'temporal_support_start_offset': '-12h', 'temporal_support_end_offset': '12h', 'temporal_support_known': True, 'temporal_support_evidence': 'https://data.prism.oregonstate.edu/PRISM_datasets.pdf', 'lifecycle_state': 'implemented', 'current_serving_revision': 'temperature.prism@2026-08-26.1', 'revision_status': 'VALIDATED', 'live_health': 'STALE', 'noun': 'temperature', 'source': 'prism', 'source_flavor': 'prism'}\nVPD_GRIDMET\n{'provider': 'gridMET / University of California, Merced', 'product': 'gridMET daily surface meteorology', 'product_version': 'asset status/version supplied by the provider', 'source_variables': {'default': 'vpd'}, 'units': {'default': 'kPa'}, 'coverage': 'Contiguous United States', 'temporal_coverage': '1979-present', 'temporal_resolution': 'daily mean', 'spatial_resolution': '4,638.3 m', 'crs': 'EPSG:4326', 'backend': 'annual NetCDF over HTTPS', 'streaming': 'annual retrieval; AOI/time subset exposed as Dask chunks', 'limitations': 'PRISM VPD is not registered until its daily NcSS path is validated.', 'source_mode': 'rolling', 'access_backend': 'opendap_with_https_fallback', 'update_cadence': 'provider-managed daily observations in annual assets', 'upstream_identity_strategy': {'kind': 'provider_asset_metadata', 'fields': ['source_url', 'asset_etag', 'last_modified', 'time_coverage']}, 'source_endpoint': 'https://thredds.northwestknowledge.net/thredds/dodsC/MET/', 'qa_profile': 'climate_continuous_daily', 'temporal_support_type': 'interval', 'temporal_label_convention': 'calendar_day_starting', 'temporal_reference_timezone': 'UTC', 'temporal_support_start_offset': '7h', 'temporal_support_end_offset': '31h', 'temporal_support_known': True, 'temporal_support_evidence': 'https://www.climatologylab.org/gridmet.html', 'lifecycle_state': 'implemented', 'current_serving_revision': 'vpd.gridmet@2026-08-26.1', 'revision_status': 'VALIDATED', 'live_health': 'STALE', 'noun': 'vpd', 'source': 'gridmet', 'source_flavor': 'gridmet'}\n",
+  "stderr": "/usr/local/lib/python3.11/site-packages/xarray/backends/plugins.py:109: RuntimeWarning: Engine 'rasterio' loading failed:\nlibexpat.so.1: cannot open shared object file: No such file or directory\n  external_backend_entrypoints = backends_dict_from_pkg(entrypoints_unique)\n",
+  "status": "succeeded",
+  "runtime_seconds": 0.66436,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

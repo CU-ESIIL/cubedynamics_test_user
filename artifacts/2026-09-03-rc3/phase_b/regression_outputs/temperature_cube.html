@@ -1,0 +1,1132 @@
+<div class='cube-figure' style=font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background:#ffffff; padding:16px; border-radius:12px; box-shadow:0 16px 40px rgba(0,0,0,0.15); color:rgba(25, 25, 25, 0.9);'><style> .cube-figure{margin:8px auto; max-width: 1200px;} .cube-viewer{padding:10px; background:#ffffff; border-radius: 14px;} .cube-legend-title{font-size: var(--cube-axis-font-size,12px); color: var(--cube-legend-color, #222); margin-bottom:6px;} .cube-caption{margin-top:12px; color: var(--cube-axis-color,#222); font-size: var(--cube-caption-font-size,12px); line-height:1.4;} .cube-caption-label{display:inline-block; margin-right:6px; color: var(--cube-axis-color,#222);} .cube-caption-title{display:inline-block; margin-right:8px; color: var(--cube-title-color,#222);} .cube-caption-text{margin-top:4px; color: var(--cube-axis-color,#222);} .cube-annotations{margin-top:8px; font-size: var(--cube-caption-font-size,12px); color: var(--cube-axis-color,#222);} .cube-annot{margin-top:2px;}</style><div class='cube-viewer' style='--cube-title-font-size: 20px; --cube-title-color: cornflowerblue; --cube-axis-color: rgba(25, 25, 25, 0.9); --cube-legend-color: limegreen; --cube-axis-font-size: 12.0px; --cube-legend-font-size: 12.0px; --cube-bg-color: #ffffff; --cube-panel-color: #ffffff; --cube-shadow-strength: 0.15; --cube-caption-font-size: 9.600000000000001px; --cube-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;'>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+    :root {
+      /* Viewer override hooks:
+         --cd-cube-size
+         --cd-axis-font
+         --cd-axis-tick-l
+         --cd-axis-stroke
+      */
+      /* Drift centering tuning (DYNAMIC DRIFT CENTERING V1):
+         --cd-drift-max-px: maximum horizontal drift in pixels.
+         --cd-drift-rot-range-deg: rotation range (deg) that maps to full drift.
+         --cd-drift-scale-in: scale that cancels drift when zoomed in.
+         --cd-drift-scale-out: scale that enables full drift when zoomed out.
+         --cd-drift-smoothing: easing factor for motion smoothing.
+      */
+      --cd-cube-size: clamp(300px, min(58vh, 58vw), 640px);
+      --cube-size: var(--cd-cube-size);
+      --cd-axis-font: clamp(11px, calc(var(--cd-cube-size) * 0.045), 18px);
+      --cd-axis-pill-px: clamp(4px, calc(var(--cd-cube-size) * 0.010), 8px);
+      --cd-axis-stroke: clamp(2px, calc(var(--cd-cube-size) * 0.006), 4px);
+      --cd-axis-tick-l: clamp(10px, calc(var(--cd-cube-size) * 0.035), 18px);
+      --cd-drift-max-px: 220;
+      --cd-drift-rot-range-deg: 55;
+      --cd-drift-scale-in: 1.25;
+      --cd-drift-scale-out: 0.85;
+      --cd-drift-smoothing: 0.18;
+      --cube-bg-color: #ffffff; --cube-panel-color: #ffffff; --cube-shadow-strength: 0.15; --cube-title-color: cornflowerblue; --cube-axis-color: rgba(25, 25, 25, 0.9); --cube-legend-color: limegreen; --cube-title-font-size: 20px; --cube-axis-font-size: 12.0px; --cube-legend-font-size: 12.0px; --cube-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 28px 14px 32px 14px;
+      width: 100%;
+      height: 100%;
+      background: var(--cube-bg-color);
+      color: var(--cube-axis-color);
+      font-family: var(--cube-font-family);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      overflow: hidden;
+      user-select: none;
+    }
+    .cube-figure {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .cube-title {
+      font-size: var(--cube-title-font-size);
+      letter-spacing: 0.04em;
+      font-weight: 700;
+      text-align: center;
+      color: var(--cube-title-color);
+      margin-bottom: 4px;
+    }
+    .cube-main {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .cube-js-warning {
+      width: min(1180px, 100%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 6px auto 0 auto;
+      padding: 10px 12px;
+      background: #fff4d4;
+      color: #5c4300;
+      border: 1px solid #f2d27c;
+      border-radius: 10px;
+      font-size: var(--cube-axis-font-size, 13px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .cube-js-warning.hidden {
+      display: none;
+    }
+    .cube-js-warning .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #f59e0b;
+      box-shadow: 0 0 0 4px rgba(245,158,11,0.2);
+    }
+    .cube-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .cube-container {
+      position: relative;
+      width: var(--cube-size);
+      height: var(--cube-size);
+      margin: auto;
+    }
+
+    .cube-wrapper {
+      position: relative;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      perspective: 950px;
+      transform-style: preserve-3d;
+      touch-action: none;
+      z-index: 0;
+      --rot-x: 0rad;
+      --rot-y: 0rad;
+      --zoom: 1;
+    }
+
+    .cube-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      pointer-events: none;
+    }
+
+    .cube-rotation {
+      position: absolute;
+      inset: 0;
+      /* The transformed faces are presentation only. Keep pointer events on
+         the dedicated drag surface so rotation works over every visible face. */
+      pointer-events: none;
+      transform-style: preserve-3d;
+      transform:
+        rotateX(var(--rot-x, 0rad))
+        rotateY(var(--rot-y, 0rad))
+        scale3d(calc(1 / var(--zoom, 1)), calc(1 / var(--zoom, 1)), calc(1 / var(--zoom, 1)));
+    }
+
+    .cube-drag-surface {
+      position: absolute;
+      inset: 0;
+      z-index: 999;
+      cursor: grab;
+      background: transparent;
+      touch-action: none;
+      pointer-events: auto;
+    }
+
+    .cube-drag-surface.debug-show {
+      background: rgba(0, 255, 0, 0.1);
+    }
+
+    .cube-scene {
+      position: relative;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      perspective: 950px;
+      transform-style: preserve-3d;
+    }
+
+    .cube-scene .cube-rotation {
+      transform:
+        rotateX(var(--rot-x, 0rad))
+        rotateY(var(--rot-y, 0rad))
+        scale3d(calc(1 / var(--zoom, 1)), calc(1 / var(--zoom, 1)), calc(1 / var(--zoom, 1)));
+    }
+
+    .scene-drag-surface {
+      position: absolute;
+      inset: 0;
+      z-index: 999;
+      cursor: grab;
+      background: transparent;
+      touch-action: none;
+      pointer-events: auto;
+    }
+
+    .cd-drift-center-fallback {
+      --cd-drift-x: 0px;
+      --cd-drift-base-transform: none;
+      transform: translateX(var(--cd-drift-x, 0px)) var(--cd-drift-base-transform, none);
+    }
+
+    .cd-cube {
+      position: absolute;
+      inset: 0;
+      transform-style: preserve-3d;
+      width: 100%;
+      height: 100%;
+      transform: translateZ(calc(var(--cube-size) / -2));
+      pointer-events: none;
+    }
+
+    .cd-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      /* Every pixel is scientific evidence. Fit the complete rectangular
+         texture to the square physical face; `cover` cropped side data. */
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      image-rendering: pixelated;
+      backface-visibility: hidden;
+      border: 1px solid rgba(0,0,0,0.08);
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+      pointer-events: none;
+    }
+
+    .cd-front { transform: translateZ(calc(var(--cube-size) / 2)); }
+    .cd-back { transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2)); }
+    .cd-right { transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2)); }
+    .cd-left { transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2)); }
+    .cd-top { transform: rotateX(90deg) translateZ(calc(var(--cube-size) / 2)); }
+    .cd-bottom { transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2)); }
+
+    .interior-plane {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 100% 100%;
+      background-position: center;
+      opacity: 0.65;
+      mix-blend-mode: normal;
+      border: 1px solid rgba(255,255,255,0.08);
+      pointer-events: none;
+      transform-style: preserve-3d;
+    }
+
+    .cd-vase-panel {
+      position: absolute;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      border-radius: 999px;
+      opacity: 0.9;
+      background: rgba(200, 60, 60, 0.9);
+      box-shadow: 0 0 8px rgba(0, 0, 0, var(--cube-shadow-strength, 0.25));
+      pointer-events: none;
+    }
+
+    .axis-label {
+      position: absolute;
+      font-size: var(--cube-axis-font-size, 13px);
+      color: var(--cube-axis-color);
+      pointer-events: none;
+    }
+
+    .cube-label {
+      position: absolute;
+      font-size: var(--cube-axis-font-size, 13px);
+      color: var(--cube-axis-color);
+      pointer-events: none;
+      letter-spacing: 0.04em;
+    }
+
+    /* Tight to each cube face */
+    .axis-x-min {
+      bottom: 5%;
+      left: 15%;
+    }
+    .axis-x-max {
+      bottom: 5%;
+      right: 15%;
+    }
+    .axis-x-name {
+      bottom: 0%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .axis-y-min {
+      top: 15%;
+      right: 5%;
+      transform: rotate(90deg);
+    }
+    .axis-y-max {
+      bottom: 15%;
+      right: 5%;
+      transform: rotate(90deg);
+    }
+    .axis-y-name {
+      top: 50%;
+      right: 0%;
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    .axis-t-min {
+      left: 5%;
+      top: 75%;
+      transform: rotate(-90deg);
+    }
+    .axis-t-max {
+      left: 5%;
+      top: 25%;
+      transform: rotate(-90deg);
+    }
+    .axis-t-name {
+      left: 0%;
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+    .cube-legend-panel {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 6px;
+    }
+    .cube-legend-card {
+      background: var(--cube-panel-color);
+      padding: 8px 12px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      min-width: min(420px, 90%);
+    }
+    .colorbar-wrapper {
+      width: 100%;
+    }
+    .colorbar-title {
+      font-size: var(--cube-legend-font-size);
+      font-weight: 600;
+      color: var(--cube-legend-color);
+      text-align: center;
+      margin-bottom: 6px;
+      font-family: var(--cube-font-family);
+    }
+    .colorbar-img {
+      width: 100%;
+      height: 14px;
+      border-radius: 4px;
+      border: 1px solid rgba(0,0,0,0.2);
+      display: block;
+    }
+    .colorbar-labels {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-size: var(--cube-legend-font-size);
+      margin-top: 6px;
+      align-self: center;
+      color: var(--cube-legend-color);
+      gap: 6px;
+    }
+    .cb-tick {
+      flex: 1;
+      text-align: center;
+    }
+    
+    [data-axis-rig="true"] .axis-label {
+      display: none;
+    }
+
+    .cd-axis-rig {
+      position: absolute;
+      inset: 0;
+      width: var(--cd-cube-size, var(--cube-size));
+      height: var(--cd-cube-size, var(--cube-size));
+      transform-style: preserve-3d;
+      pointer-events: none;
+      color: var(--cd-axis-color);
+      font-size: var(--cd-axis-font, var(--cube-axis-font-size, 13px));
+      letter-spacing: 0.04em;
+      /* Axis rig lives in cube-local coords; out-z anchors to front face, Y labels shift left for legibility. */
+      --cd-axis-color: var(--cube-axis-color, rgba(25, 25, 25, 0.9));
+      --cd-axis-out-x: 16px;
+      --cd-axis-out-y: 14px;
+      --cd-axis-front-z: calc(0.5 * var(--cd-cube-size, var(--cube-size)));
+      --cd-axis-out-z: calc(var(--cd-axis-front-z) + 6px);
+      --cd-axis-line-w: var(--cd-axis-stroke, 2px);
+      --cd-axis-tick-w: var(--cd-axis-stroke, 1px);
+      --cd-axis-tick-l: var(--cd-axis-tick-l, 8px);
+      --cd-axis-label-gap: 16px;
+      --cd-axis-end-nudge: 6px;
+      --cd-axis-x-name-drop: 18px;
+      --cd-axis-time-name-drop: 24px;
+      --cd-axis-time-label-drop: 18px;
+      --cd-axis-y-extra-left: 22px;
+      --cd-bb-rot-x: 0rad;
+      --cd-bb-rot-y: 0rad;
+    }
+
+    .cd-axis-rig--debug {
+      outline: 1px dashed rgba(0, 255, 255, 0.6);
+    }
+
+    .cd-axis-rig--hide-ticks .cd-axis-ticks {
+      display: none;
+    }
+
+    .cd-axis-rig--hide-end-labels .cd-axis-end {
+      display: none;
+    }
+
+    .cd-axis-rig--hide-names .cd-axis-name {
+      display: none;
+    }
+
+    .cd-axis-group {
+      position: absolute;
+      transform-style: preserve-3d;
+    }
+
+    .cd-axis-line {
+      position: absolute;
+      background: var(--cd-axis-color);
+    }
+
+    .cd-axis-ticks {
+      position: absolute;
+      inset: 0;
+      transform-style: preserve-3d;
+    }
+
+    .cd-axis-tick {
+      position: absolute;
+      transform-style: preserve-3d;
+    }
+
+    .cd-axis-tick-mark {
+      position: absolute;
+      background: var(--cd-axis-color);
+    }
+
+    .cd-axis-label {
+      position: absolute;
+      white-space: nowrap;
+      transform-style: preserve-3d;
+    }
+
+    .cd-axis-tick-label {
+      transform-style: preserve-3d;
+    }
+
+    .cd-axis-label-face {
+      display: inline-block;
+      padding: var(--cd-axis-pill-px, 0px);
+      transform-style: preserve-3d;
+      /* Invert the camera in reverse order: (Rx Ry)^-1 = Ry^-1 Rx^-1. */
+      transform: rotateY(var(--cd-bb-rot-y)) rotateX(var(--cd-bb-rot-x));
+    }
+
+    .cd-axis-label-face--time {
+      /* First cancel the time edge's local 90-degree rotation. */
+      transform: rotateY(-90deg) rotateY(var(--cd-bb-rot-y)) rotateX(var(--cd-bb-rot-x));
+    }
+
+    /* X axis (longitude) - front bottom edge */
+    .cd-axis-x {
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 0;
+      transform: translate3d(0, var(--cd-axis-out-y), var(--cd-axis-out-z));
+    }
+
+    .cd-axis-x .cd-axis-line {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: var(--cd-axis-line-w);
+    }
+
+    .cd-axis-x .cd-axis-tick {
+      top: 0;
+      transform: translateX(-50%);
+    }
+
+    .cd-axis-x .cd-axis-tick-mark {
+      width: var(--cd-axis-tick-w);
+      height: var(--cd-axis-tick-l);
+      left: 50%;
+      top: calc(-0.5 * var(--cd-axis-tick-l) + 0.5 * var(--cd-axis-line-w));
+      transform: translateX(-50%);
+    }
+
+    .cd-axis-x .cd-axis-tick-label {
+      position: absolute;
+      left: 50%;
+      top: calc(-1 * var(--cd-axis-label-gap));
+      transform: translateX(-50%);
+    }
+
+    .cd-axis-x .cd-axis-end--min {
+      left: 0;
+      top: var(--cd-axis-x-name-drop);
+      transform: translateX(calc(-1 * var(--cd-axis-end-nudge)));
+    }
+
+    .cd-axis-x .cd-axis-end--max {
+      left: 100%;
+      top: var(--cd-axis-x-name-drop);
+      transform: translateX(calc(-100% + var(--cd-axis-end-nudge)));
+    }
+
+    .cd-axis-x .cd-axis-name {
+      left: 50%;
+      top: var(--cd-axis-x-name-drop);
+      transform: translateX(-50%);
+    }
+
+    /* Y axis (latitude) - front left edge */
+    .cd-axis-y {
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 100%;
+      transform: translate3d(calc(-1 * var(--cd-axis-out-x)), 0, var(--cd-axis-out-z));
+    }
+
+    .cd-axis-y .cd-axis-line {
+      left: 0;
+      bottom: 0;
+      width: var(--cd-axis-line-w);
+      height: 100%;
+    }
+
+    .cd-axis-y .cd-axis-tick {
+      left: 0;
+      transform: translateY(50%);
+    }
+
+    .cd-axis-y .cd-axis-tick-mark {
+      width: var(--cd-axis-tick-l);
+      height: var(--cd-axis-tick-w);
+      left: calc(-1 * var(--cd-axis-tick-l) + 0.5 * var(--cd-axis-line-w));
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .cd-axis-y .cd-axis-tick-label {
+      position: absolute;
+      left: calc(
+        -1 * (var(--cd-axis-label-gap) + var(--cd-axis-tick-l) + 12px + var(--cd-axis-y-extra-left))
+      );
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .cd-axis-y .cd-axis-end--min {
+      left: calc(
+        -1 * (var(--cd-axis-label-gap) + var(--cd-axis-tick-l) + 12px + var(--cd-axis-y-extra-left))
+      );
+      bottom: 0;
+      transform: translateY(calc(var(--cd-axis-end-nudge)));
+    }
+
+    .cd-axis-y .cd-axis-end--max {
+      left: calc(
+        -1 * (var(--cd-axis-label-gap) + var(--cd-axis-tick-l) + 12px + var(--cd-axis-y-extra-left))
+      );
+      bottom: 100%;
+      transform: translateY(calc(-100% - var(--cd-axis-end-nudge)));
+    }
+
+    .cd-axis-y .cd-axis-name {
+      left: calc(
+        -1 * (var(--cd-axis-label-gap) + var(--cd-axis-tick-l) + 12px + var(--cd-axis-y-extra-left))
+      );
+      bottom: 50%;
+      transform: translateY(50%);
+    }
+
+    .cd-axis-y .cd-axis-label-face {
+      transform-origin: 100% 50%;
+    }
+
+    /* Time axis - bottom right edge, rotated into depth */
+    .cd-axis-time {
+      left: 100%;
+      bottom: 0;
+      width: 100%;
+      height: 0;
+      transform-origin: left center;
+      transform: translate3d(var(--cd-axis-out-x), var(--cd-axis-out-y), var(--cd-axis-out-z)) rotateY(90deg);
+    }
+
+    .cd-axis-time .cd-axis-line {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: var(--cd-axis-line-w);
+    }
+
+    .cd-axis-time .cd-axis-tick {
+      top: 0;
+      transform: translateX(-50%);
+    }
+
+    .cd-axis-time .cd-axis-tick-mark {
+      width: var(--cd-axis-tick-w);
+      height: var(--cd-axis-tick-l);
+      left: 50%;
+      top: calc(-0.5 * var(--cd-axis-tick-l) + 0.5 * var(--cd-axis-line-w));
+      transform: translateX(-50%);
+    }
+
+    .cd-axis-time .cd-axis-tick-label {
+      position: absolute;
+      left: 50%;
+      top: var(--cd-axis-time-label-drop);
+      transform: translateX(-50%);
+    }
+
+    .cd-axis-time .cd-axis-end--min {
+      left: 0;
+      top: var(--cd-axis-time-label-drop);
+      transform: translateX(calc(-1 * var(--cd-axis-end-nudge)));
+    }
+
+    .cd-axis-time .cd-axis-end--max {
+      left: 100%;
+      top: var(--cd-axis-time-label-drop);
+      transform: translateX(calc(-100% + var(--cd-axis-end-nudge)));
+    }
+
+    .cd-axis-time .cd-axis-name {
+      left: 50%;
+      top: var(--cd-axis-time-name-drop);
+      transform: translateX(-50%);
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="cube-figure" id="cube-figure-1a93548c80dd47ceaca3957280faf28e" data-axis-rig="true" data-cb-min="20.04" data-cb-max="33.08" data-rot-x="-10.2" data-rot-y="-39.8" data-zoom="1.8324482712116776"><div class="cube-title">Temperature</div>
+    <div class="cube-main">
+      <div class="cube-inner">
+        <div class="cube-container">
+          <div class="cube-scene" id="cube-scene-1a93548c80dd47ceaca3957280faf28e">
+            <div id="cube-wrapper-1a93548c80dd47ceaca3957280faf28e" class="cube-wrapper" style="--rot-x: -0.1774rad; --rot-y: -0.6947rad; --zoom: 1.8324482712116776;">
+              <canvas class="cube-canvas" id="cube-canvas-1a93548c80dd47ceaca3957280faf28e"></canvas>
+              <div class="cube-rotation" id="cube-rotation-1a93548c80dd47ceaca3957280faf28e">
+                
+        <div class="cd-cube" id="cube-1a93548c80dd47ceaca3957280faf28e">
+          <div class="cd-face cd-front" style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAL0lEQVR4AWNU6uz9/1fyJwMDIwMDE+tnRob//4D4GwsDk/D1vwxMH1gZGH8yMQAAErYNF1ug2ywAAAAASUVORK5CYII=');"></div>
+          <div class="cd-face cd-back" style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAMklEQVR4AQEnANj/AcrgHv/1/wYAyfYjAALj/BIABgD9ANz2FgAE5fsRAOP6EwC82SgAa+0RJXLwEpgAAAAASUVORK5CYII=');"></div>
+          <div class="cd-face cd-left" style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAALElEQVR4AWPsuOr+f9ZWNwaG/wwMLHe+iTGwfmaEcPbc1GCQuPWPgenPfwYAKXwOy5PcJ48AAAAASUVORK5CYII=');"></div>
+          <div class="cd-face cd-right" style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAL0lEQVR4AWOUX9z2n4n5P8NKq5kMLP+/sTD8ZfrP8PiPEAML408mBgYg5+lvQQYALgYOpzCsFC4AAAAASUVORK5CYII=');"></div>
+          <div class="cd-face cd-top" style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAL0lEQVR4AWNUWNL6v8BoHwMT4z8GFonN7AwT3noy/Gf+z8DE9Oc/AwMQMfxjZAAAEn4NRRk0eR0AAAAASUVORK5CYII=');"></div>
+          <div class="cd-face cd-bottom" style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAKklEQVR4AWNU6uz9/1fyJwMDIwMDE4gAM5j/MzB2XHX/b851l4Gb8RcDAMgrChlQ1UZZAAAAAElFTkSuQmCC');"></div>
+        </div>
+    
+                
+                
+                
+      <div class="cd-axis-rig" id="cd-axis-rig-1a93548c80dd47ceaca3957280faf28e" data-viewer-id="1a93548c80dd47ceaca3957280faf28e" data-time-label-max="10" style="--cd-axis-out-x: 6px; --cd-axis-out-y: 8px; --cd-axis-out-z: calc(var(--cd-axis-front-z) + 6px); --cd-axis-line-w: 2px; --cd-axis-tick-w: 1px; --cd-axis-tick-l: 8px; --cd-axis-end-nudge: 6px;">
+        <div class="cd-axis-group cd-axis-x" data-axis="x">
+          <div class="cd-axis-line"></div>
+          <div class="cd-axis-ticks"></div>
+          <div class="cd-axis-label cd-axis-end cd-axis-end--min"><span class="cd-axis-label-face"></span></div>
+          <div class="cd-axis-label cd-axis-end cd-axis-end--max"><span class="cd-axis-label-face"></span></div>
+          <div class="cd-axis-label cd-axis-name"><span class="cd-axis-label-face"></span></div>
+        </div>
+        <div class="cd-axis-group cd-axis-y" data-axis="y">
+          <div class="cd-axis-line"></div>
+          <div class="cd-axis-ticks"></div>
+          <div class="cd-axis-label cd-axis-end cd-axis-end--min"><span class="cd-axis-label-face"></span></div>
+          <div class="cd-axis-label cd-axis-end cd-axis-end--max"><span class="cd-axis-label-face"></span></div>
+          <div class="cd-axis-label cd-axis-name"><span class="cd-axis-label-face"></span></div>
+        </div>
+        <div class="cd-axis-group cd-axis-time" data-axis="time">
+          <div class="cd-axis-line"></div>
+          <div class="cd-axis-ticks"></div>
+          <div class="cd-axis-label cd-axis-end cd-axis-end--min"><span class="cd-axis-label-face cd-axis-label-face--time"></span></div>
+          <div class="cd-axis-label cd-axis-end cd-axis-end--max"><span class="cd-axis-label-face cd-axis-label-face--time"></span></div>
+          <div class="cd-axis-label cd-axis-name"><span class="cd-axis-label-face cd-axis-label-face--time"></span></div>
+        </div>
+      </div>
+    
+              </div>
+              <div class="cube-drag-surface" id="cube-drag-1a93548c80dd47ceaca3957280faf28e" tabindex="0" role="img" aria-label="Interactive cube. Drag or use arrow keys to rotate; scroll or press plus and minus to zoom; Home resets the view."></div>
+            </div>
+
+            <div class="axis-label cube-label cube-label-x axis-x-min"></div>
+            <div class="axis-label cube-label cube-label-x axis-x-max"></div>
+            <div class="axis-label cube-label cube-label-y axis-y-min"></div>
+            <div class="axis-label cube-label cube-label-y axis-y-max"></div>
+            <div class="axis-label cube-label cube-label-time axis-t-min">01.07.2024</div>
+            <div class="axis-label cube-label cube-label-time axis-t-max">10.07.2024</div>
+            <div class="axis-label cube-label cube-label-x axis-x-name"></div>
+            <div class="axis-label cube-label cube-label-y axis-y-name"></div>
+            <div class="axis-label cube-label cube-label-time axis-t-name">Time</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cube-js-warning hidden" id="cube-js-warning-1a93548c80dd47ceaca3957280faf28e" aria-live="polite">
+      <div class="dot"></div>
+      <div class="cube-warning-text"><strong>Interactive controls need JavaScript.</strong> Trust this notebook/output and temporarily disable script blockers to rotate and zoom the cube.</div>
+    </div>
+    <noscript>
+      <div class="cube-js-warning" aria-live="polite">
+        <div class="dot"></div>
+        <div class="cube-warning-text"><strong>Interactive controls need JavaScript.</strong> Trust this notebook/output and temporarily disable script blockers to rotate and zoom the cube.</div>
+      </div>
+    </noscript>
+    <div class="cube-legend-panel">  <div class="cube-legend-card">    <div class="colorbar-title">temperature (degC)</div>    <div class="colorbar-wrapper"><img class="colorbar-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAABCAYAAAAxWXB3AAAAxElEQVR4nI2TQZLEIAwDW+Jr84T5/1PCHGzAkGRrDynZbclwIPro25FARg7FQhLYkBr9mo/M9Fb/9K6vH32ddwnMHz3g5GKx9A2+dPirl91j7pmpOvqqT36OM54z//XfGO/zVff3OXfv2w42VnrO+V6rME3NGYPlU9v0qAFP3vOZ9MlcPJVZHXP0yazrgQVvr31kGis76qYLc6guWuaWrh3hjf3Bw7d45mqdO+rexrhLz7NHDS1/mwY0KWthKRQnN0Y0mR+sDYkJKNzLygAAAABJRU5ErkJggg==" alt="colorbar" /></div>    <div class="colorbar-labels"><span class="cb-tick" data-tick="20.04">20.04</span><span class="cb-tick" data-tick="23.30">23.30</span><span class="cb-tick" data-tick="26.56">26.56</span><span class="cb-tick" data-tick="29.82">29.82</span><span class="cb-tick" data-tick="33.08">33.08</span></div>  </div></div>
+  </div>
+
+  <script>window.__CD_AXIS_META__ = Object.assign({}, window.__CD_AXIS_META__ || {}, {"1a93548c80dd47ceaca3957280faf28e": {"x": {"name": "Longitude", "min_label": "105.29\u00b0W", "max_label": "105.21\u00b0W", "ticks": [{"frac": 0.0, "label": ""}, {"frac": 0.5, "label": ""}, {"frac": 1.0, "label": ""}]}, "y": {"name": "Latitude", "min_label": "39.96\u00b0N", "max_label": "40.04\u00b0N", "ticks": [{"frac": 1.0, "label": ""}, {"frac": 0.5, "label": ""}, {"frac": 0.0, "label": ""}]}, "time": {"name": "Time", "min_label": "01.07.2024", "max_label": "10.07.2024", "ticks": [{"frac": 0.0, "label": "01.07.2024"}, {"frac": 1.0, "label": "10.07.2024"}]}}});</script>
+  
+  <script id="cd-drift-center-v1-js">
+    (function() {
+      // Drift centering defaults (DYNAMIC DRIFT CENTERING V1):
+      // MAX_DRIFT_PX=220, ROT_RANGE_DEG=55, SCALE_IN=1.25, SCALE_OUT=0.85, SMOOTHING=0.18
+      const viewerId = "1a93548c80dd47ceaca3957280faf28e";
+      const defaults = {
+        maxDriftPx: 220,
+        rotRangeDeg: 55,
+        scaleIn: 1.25,
+        scaleOut: 0.85,
+        smoothing: 0.18,
+      };
+
+      const registry = window.__cdDriftCenterV1 || {
+        viewers: new Set(),
+        rafId: null,
+      };
+      window.__cdDriftCenterV1 = registry;
+      window.__cdDriftCenterInstalled = true;
+
+      function readNumber(styles, name, fallback) {
+        const value = parseFloat(styles.getPropertyValue(name));
+        return Number.isFinite(value) ? value : fallback;
+      }
+
+      function resolveConfig(root) {
+        const styles = getComputedStyle(root);
+        return {
+          maxDriftPx: readNumber(styles, "--cd-drift-max-px", defaults.maxDriftPx),
+          rotRangeDeg: readNumber(styles, "--cd-drift-rot-range-deg", defaults.rotRangeDeg),
+          scaleIn: readNumber(styles, "--cd-drift-scale-in", defaults.scaleIn),
+          scaleOut: readNumber(styles, "--cd-drift-scale-out", defaults.scaleOut),
+          smoothing: readNumber(styles, "--cd-drift-smoothing", defaults.smoothing),
+        };
+      }
+
+      function getViewerRoots() {
+        if (viewerId) {
+          const root = document.getElementById("cube-figure-" + viewerId);
+          return root ? [root] : Array.from(document.querySelectorAll(".cube-figure"));
+        }
+        return Array.from(document.querySelectorAll(".cube-figure"));
+      }
+
+      function applyDrift(state, x) {
+        if (state.supportsTranslate) {
+          state.scene.style.translate = `${x}px 0px`;
+          return;
+        }
+        if (!state.fallbackReady) {
+          const baseTransform = getComputedStyle(state.scene).transform;
+          state.scene.style.setProperty(
+            "--cd-drift-base-transform",
+            baseTransform && baseTransform !== "none" ? baseTransform : "none",
+          );
+          state.scene.classList.add("cd-drift-center-fallback");
+          state.fallbackReady = true;
+        }
+        state.scene.style.setProperty("--cd-drift-x", `${x}px`);
+      }
+
+      function updateViewer(state) {
+        const transform = getComputedStyle(state.rotation).transform;
+        const matrix = new DOMMatrixReadOnly(transform === "none" ? undefined : transform);
+        const scale = Math.hypot(matrix.m11, matrix.m12, matrix.m13) || 1;
+        const rotY = Math.atan2(matrix.m13, matrix.m11);
+        const rotDeg = rotY * 180 / Math.PI;
+        const normRot = Math.max(-1, Math.min(1, rotDeg / state.config.rotRangeDeg));
+        const z = Math.max(
+          0,
+          Math.min(
+            1,
+            (scale - state.config.scaleOut) / (state.config.scaleIn - state.config.scaleOut),
+          ),
+        );
+        const strength = 1 - z;
+        state.targetX = -normRot * state.config.maxDriftPx * strength;
+        state.currentX = state.currentX + (state.targetX - state.currentX) * state.config.smoothing;
+        applyDrift(state, state.currentX);
+      }
+
+      function tick() {
+        registry.viewers.forEach((state) => {
+          if (!state.root.isConnected) {
+            registry.viewers.delete(state);
+            return;
+          }
+          updateViewer(state);
+        });
+        if (registry.viewers.size > 0) {
+          registry.rafId = window.requestAnimationFrame(tick);
+        } else {
+          registry.rafId = null;
+        }
+      }
+
+      function registerViewer(root) {
+        if (!root || root.dataset.cdDriftCenterInstalled === "true") return;
+        const rotation = root.querySelector(".cube-rotation");
+        const scene =
+          root.querySelector(".cube-scene")
+          || root.querySelector(".cube-wrapper");
+        if (!rotation || !scene) return;
+        root.dataset.cdDriftCenterInstalled = "true";
+        const state = {
+          root,
+          rotation,
+          scene,
+          config: resolveConfig(root),
+          currentX: 0,
+          targetX: 0,
+          supportsTranslate: "translate" in document.documentElement.style,
+          fallbackReady: false,
+        };
+        registry.viewers.add(state);
+        if (!registry.rafId) {
+          registry.rafId = window.requestAnimationFrame(tick);
+        }
+      }
+
+      getViewerRoots().forEach(registerViewer);
+    })();
+  </script>
+    
+  <script>
+    (function() {
+      const viewerId = "1a93548c80dd47ceaca3957280faf28e";
+      const root = document.getElementById("cube-figure-" + viewerId);
+      if (!root) {
+        console.warn("[CubeViewer] Root element not found for viewerId", viewerId);
+        return;
+      }
+
+      const canvas = document.getElementById("cube-canvas-" + viewerId);
+      const cubeRotation = document.getElementById("cube-rotation-" + viewerId);
+      const cubeWrapper = document.getElementById("cube-wrapper-" + viewerId);
+      const scene = cubeWrapper ? cubeWrapper.closest(".cube-scene") : null;
+      const sceneDragSurface = scene ? scene.querySelector(".scene-drag-surface") : null;
+      const dragSurface =
+        document.getElementById("cube-drag-" + viewerId)
+        || sceneDragSurface
+        || cubeWrapper;
+      const rotationTarget = cubeWrapper || scene;
+      const jsWarning = document.getElementById("cube-js-warning-" + viewerId);
+      const jsWarningText = jsWarning ? jsWarning.querySelector(".cube-warning-text") : null;
+      let updateAxisRigBillboard = null;
+
+      const showWarning = (message) => {
+        if (!jsWarning) return;
+        if (jsWarningText && message) {
+          jsWarningText.innerHTML = message;
+        }
+        jsWarning.classList.remove("hidden");
+      };
+
+      const data = root.dataset || {};
+      let rotationX = (parseFloat(data.rotX) || 0) * Math.PI / 180;
+      let rotationY = (parseFloat(data.rotY) || 0) * Math.PI / 180;
+      let zoom = parseFloat(data.zoom) || 1;
+      const zoomMin = 0.35;
+      const zoomMax = 6.0;
+      
+      const axisRig = document.getElementById("cd-axis-rig-1a93548c80dd47ceaca3957280faf28e");
+      if (axisRig) {
+        const target =
+          (cubeRotation && cubeRotation.querySelector(".cd-cube"))
+          || cubeRotation
+          || cubeWrapper
+          || scene;
+        if (target && axisRig.parentElement !== target) {
+          target.appendChild(axisRig);
+        }
+
+        const axisMeta = (window.__CD_AXIS_META__ || {})["1a93548c80dd47ceaca3957280faf28e"] || null;
+        const labelMax = parseInt(axisRig.dataset.timeLabelMax || "10", 10);
+
+        const readRotationFromMatrix = (el) => {
+          if (!el) return null;
+          const transform = window.getComputedStyle(el).transform;
+          if (!transform || transform === "none") return null;
+          try {
+            const matrix = new DOMMatrixReadOnly(transform);
+            const rotY = Math.atan2(matrix.m13, matrix.m11);
+            const rotX = Math.atan2(matrix.m32, matrix.m33);
+            return { rotX, rotY };
+          } catch (err) {
+            return null;
+          }
+        };
+
+        updateAxisRigBillboard = () => {
+          let rotX = rotationX;
+          let rotY = rotationY;
+          if (!Number.isFinite(rotX) || !Number.isFinite(rotY)) {
+            const fallback = readRotationFromMatrix(cubeRotation || rotationTarget);
+            if (fallback) {
+              rotX = fallback.rotX;
+              rotY = fallback.rotY;
+            } else {
+              rotX = 0;
+              rotY = 0;
+            }
+          }
+          axisRig.style.setProperty("--cd-bb-rot-x", (-rotX) + "rad");
+          axisRig.style.setProperty("--cd-bb-rot-y", (-rotY) + "rad");
+        };
+
+        const renderAxis = (axisKey, axisGroup, meta, options = {}) => {
+          if (!axisGroup || !meta) return;
+          const endMin = axisGroup.querySelector(".cd-axis-end--min .cd-axis-label-face");
+          const endMax = axisGroup.querySelector(".cd-axis-end--max .cd-axis-label-face");
+          const nameEl = axisGroup.querySelector(".cd-axis-name .cd-axis-label-face");
+          if (axisKey === "time") {
+            // Time runs front (max/tN) to back (min/t0) along the depth edge.
+            if (endMin) endMin.textContent = meta.max_label || "";
+            if (endMax) endMax.textContent = meta.min_label || "";
+          } else {
+            if (endMin) endMin.textContent = meta.min_label || "";
+            if (endMax) endMax.textContent = meta.max_label || "";
+          }
+          if (nameEl) nameEl.textContent = meta.name || "";
+
+          const ticksHost = axisGroup.querySelector(".cd-axis-ticks");
+          if (!ticksHost || !Array.isArray(meta.ticks)) return;
+          ticksHost.innerHTML = "";
+
+          const ticks = meta.ticks;
+          let labelStep = 1;
+          if (options.subsampleLabels && labelMax > 0 && ticks.length > labelMax) {
+            labelStep = Math.max(1, Math.ceil(ticks.length / labelMax));
+          }
+
+          ticks.forEach((tick, idx) => {
+            const tickEl = document.createElement("div");
+            tickEl.className = "cd-axis-tick";
+
+            if (axisKey === "y") {
+              tickEl.style.bottom = (tick.frac * 100) + "%";
+            } else if (axisKey === "time") {
+              // Depth axis: frac=1 (newest) is front, so flip to map to left=0%.
+              tickEl.style.left = ((1 - tick.frac) * 100) + "%";
+            } else {
+              tickEl.style.left = (tick.frac * 100) + "%";
+            }
+
+            const mark = document.createElement("div");
+            mark.className = "cd-axis-tick-mark";
+            tickEl.appendChild(mark);
+
+            const hasEndLabel = !axisRig.classList.contains("cd-axis-rig--hide-end-labels")
+              && (tick.frac === 0 || tick.frac === 1);
+            if (tick.label && !hasEndLabel && (!options.subsampleLabels || (idx % labelStep === 0) || idx === ticks.length - 1)) {
+              const label = document.createElement("div");
+              label.className = "cd-axis-tick-label";
+              const labelFace = document.createElement("span");
+              labelFace.className = axisKey === "time" ? "cd-axis-label-face cd-axis-label-face--time" : "cd-axis-label-face";
+              labelFace.textContent = tick.label;
+              label.appendChild(labelFace);
+              tickEl.appendChild(label);
+            }
+
+            ticksHost.appendChild(tickEl);
+          });
+        };
+
+        if (axisMeta) {
+          renderAxis("x", axisRig.querySelector(".cd-axis-x"), axisMeta.x || null);
+          renderAxis("y", axisRig.querySelector(".cd-axis-y"), axisMeta.y || null);
+          renderAxis("time", axisRig.querySelector(".cd-axis-time"), axisMeta.time || null, { subsampleLabels: true });
+        }
+
+        updateAxisRigBillboard();
+      }
+    
+
+      try {
+        if (!canvas || !cubeRotation || !rotationTarget) {
+          showWarning("<strong>Interactive controls unavailable.</strong> Viewer elements failed to initialize.");
+          return;
+        }
+
+        const gl = canvas.getContext("webgl");
+
+        // Maintain a universal reference frame via CSS variables so scenes with
+        // multiple cubes can share rotation/zoom state.
+        function applyCubeRotation() {
+          if (cubeWrapper) {
+            cubeWrapper.style.setProperty("--rot-x", rotationX + "rad");
+            cubeWrapper.style.setProperty("--rot-y", rotationY + "rad");
+            cubeWrapper.style.setProperty("--zoom", zoom);
+          }
+          if (!cubeWrapper && rotationTarget) {
+            rotationTarget.style.setProperty("--rot-x", rotationX + "rad");
+            rotationTarget.style.setProperty("--rot-y", rotationY + "rad");
+            rotationTarget.style.setProperty("--zoom", zoom);
+          }
+          if (updateAxisRigBillboard) {
+            updateAxisRigBillboard();
+          }
+        }
+
+        applyCubeRotation();
+
+        const controlView = (action) => {
+          if (action === "reset") {
+            rotationX = (parseFloat(data.rotX) || 0) * Math.PI / 180;
+            rotationY = (parseFloat(data.rotY) || 0) * Math.PI / 180;
+            zoom = parseFloat(data.zoom) || 1;
+          } else if (action === "in" || action === "out") {
+            zoom = Math.min(zoomMax, Math.max(zoomMin, zoom * (action === "in" ? 0.85 : 1.18)));
+          }
+          applyCubeRotation();
+        };
+        root.querySelectorAll("[data-cube-control]").forEach(button => {
+          button.addEventListener("click", () => controlView(button.dataset.cubeControl));
+        });
+
+        let dragging = false;
+        let activePointerId = null;
+        let startX = 0, startY = 0;
+        let startRotX = rotationX, startRotY = rotationY;
+
+        const handlePointerMove = (e) => {
+          if (!dragging || (activePointerId !== null && e.pointerId !== activePointerId)) {
+            return;
+          }
+          const dx = e.clientX - startX;
+          const dy = e.clientY - startY;
+          rotationY = startRotY + dx * 0.01;
+          rotationX = startRotX + dy * 0.01;
+          applyCubeRotation();
+        };
+
+        function stopDragging(e) {
+          if (!dragging) return;
+          if (activePointerId !== null && e && e.pointerId !== activePointerId) return;
+          dragging = false;
+          window.removeEventListener("pointermove", handlePointerMove);
+          if (dragSurface && activePointerId !== null && dragSurface.hasPointerCapture(activePointerId)) {
+            dragSurface.releasePointerCapture(activePointerId);
+          }
+          if (dragSurface) {
+            dragSurface.style.cursor = "grab";
+          }
+          activePointerId = null;
+        }
+
+        if (dragSurface) {
+          dragSurface.style.cursor = "grab";
+          dragSurface.style.touchAction = "none";
+          dragSurface.addEventListener("keydown", e => {
+            const actions = {Home: "reset", "+": "in", "=": "in", "-": "out"};
+            if (actions[e.key]) {
+              e.preventDefault();
+              controlView(actions[e.key]);
+            } else if (["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(e.key)) {
+              e.preventDefault();
+              rotationY += e.key === "ArrowLeft" ? -0.12 : e.key === "ArrowRight" ? 0.12 : 0;
+              rotationX += e.key === "ArrowUp" ? -0.12 : e.key === "ArrowDown" ? 0.12 : 0;
+              applyCubeRotation();
+            }
+          });
+
+          dragSurface.addEventListener("pointerdown", e => {
+            e.preventDefault();
+            e.stopPropagation();
+            dragging = true;
+            activePointerId = e.pointerId;
+            startX = e.clientX;
+            startY = e.clientY;
+            startRotX = rotationX;
+            startRotY = rotationY;
+            dragSurface.setPointerCapture(e.pointerId);
+            dragSurface.style.cursor = "grabbing";
+            window.addEventListener("pointermove", handlePointerMove);
+          });
+
+          dragSurface.addEventListener("pointerup", endEvent => {
+            stopDragging(endEvent);
+          });
+
+          dragSurface.addEventListener("pointercancel", endEvent => {
+            stopDragging(endEvent);
+          });
+
+          dragSurface.addEventListener("wheel", e => {
+            e.preventDefault();
+            const delta = e.deltaY;
+            const zoomFactor = Math.exp(delta * 0.0015);
+            zoom = Math.min(zoomMax, Math.max(zoomMin, zoom * zoomFactor));
+            applyCubeRotation();
+          }, { passive: false });
+        } else {
+          showWarning("<strong>Interactive controls unavailable.</strong> Drag surface missing.");
+        }
+
+        window.addEventListener("pointerup", endEvent => stopDragging(endEvent));
+        window.addEventListener("pointercancel", endEvent => stopDragging(endEvent));
+
+        if (!gl) {
+          console.warn("[CubeViewer] WebGL unavailable; rendering CSS cube only for viewerId", viewerId);
+          showWarning('<strong>WebGL unavailable.</strong> Falling back to CSS-only cube rendering (rotation and zoom still work).');
+        }
+      } catch (err) {
+        console.error("[CubeViewer] Failed to initialize viewer", viewerId, err);
+        showWarning("<strong>Interactive controls unavailable.</strong> Failed to initialize viewer script.");
+      }
+
+      const cbMin = root.getAttribute("data-cb-min");
+      const cbMax = root.getAttribute("data-cb-max");
+      if (cbMin !== null) {
+        const minEl = document.getElementById("cb-min-" + viewerId);
+        if (minEl) minEl.innerText = cbMin;
+      }
+      if (cbMax !== null) {
+        const maxEl = document.getElementById("cb-max-" + viewerId);
+        if (maxEl) maxEl.innerText = cbMax;
+      }
+    })();
+  </script>
+</body>
+</html>
+</div></div>

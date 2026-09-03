@@ -1,0 +1,20 @@
+{
+  "id": "B-004",
+  "phase": "B",
+  "timestamp": "2026-09-03T14:11:32.238362+00:00",
+  "goal": "Place the public-surface rc3 scientific-question script in the isolated container",
+  "documentation_consulted": [],
+  "command": [
+    "docker",
+    "cp",
+    "acceptance/rc3_scientific_questions.py",
+    "cubedynamics-rc3-naive-20260903:/rc3_scientific_questions.py"
+  ],
+  "expected_behavior": "The source-only acceptance script is copied without mounting this repository or CubeDynamics source",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "status": "succeeded",
+  "runtime_seconds": 0.029643,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

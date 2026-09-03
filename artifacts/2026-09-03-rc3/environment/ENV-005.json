@@ -1,0 +1,22 @@
+{
+  "id": "ENV-005",
+  "phase": "environment",
+  "timestamp": "2026-09-03T14:01:34.531641+00:00",
+  "goal": "Verify public distribution and imported version plus import location",
+  "documentation_consulted": [],
+  "command": [
+    "docker",
+    "exec",
+    "cubedynamics-rc3-naive-20260903",
+    "python",
+    "-c",
+    "import cubedynamics as cd, importlib.metadata as m, json; print(json.dumps({\"distribution_version\": m.version(\"cubedynamics\"), \"package_version\": getattr(cd, \"__version__\", None), \"import_path\": cd.__file__}, indent=2))"
+  ],
+  "expected_behavior": "Both distribution and package-facing versions identify 0.1.0rc3 and import resolves from site-packages",
+  "returncode": 0,
+  "stdout": "{\n  \"distribution_version\": \"0.1.0rc3\",\n  \"package_version\": \"0.1.0rc3\",\n  \"import_path\": \"/usr/local/lib/python3.11/site-packages/cubedynamics/__init__.py\"\n}\n",
+  "stderr": "/usr/local/lib/python3.11/site-packages/xarray/backends/plugins.py:109: RuntimeWarning: Engine 'rasterio' loading failed:\nlibexpat.so.1: cannot open shared object file: No such file or directory\n  external_backend_entrypoints = backends_dict_from_pkg(entrypoints_unique)\n",
+  "status": "succeeded",
+  "runtime_seconds": 0.640461,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

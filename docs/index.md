@@ -34,9 +34,9 @@ Can a scientist discover, understand, and use CubeDynamics using only what an or
 
 ## Current status
 
-**First public-release test completed with limited coverage.** CubeDynamics `0.1.0rc1` installed from PyPI, but clean import required a specialist system-library workaround. One real PRISM analysis later succeeded; exhaustive systematic coverage was not completed. Primary verdict: **FIX BEFORE HUMAN OUTSIDE TEST**.
+**CubeDynamics 0.1.0rc3 black-box test completed.** The exact PyPI release imported without recovery, real PRISM and gridMET data worked, and 11 scientific questions produced 9 complete and 2 partial answers. Plotting, Boolean NetCDF export, operation order, local/regional events, and temporal-support checks ran. Four major runtime and scientific-metadata issues remain. Primary verdict: **FIX BEFORE HUMAN OUTSIDE TEST**.
 
-The frozen 2026-08-28 run predates this public artifact and remains historical evidence, not the `0.1.0rc1` verdict. The [project notes](project.md) distinguish the two runs.
+Read the [final rc3 report](https://github.com/CU-ESIIL/cubedynamics_test_user/blob/main/reports/2026-09-03-rc3/naive_user_report.md). The frozen rc1 and 2026-08-28 runs remain historical evidence; the [project notes](project.md) distinguish all three.
 
 ## Where the rules and history live
 

@@ -1,0 +1,26 @@
+{
+  "frozen_at": "2026-09-03T14:07:23.241536+00:00",
+  "method": "SHA-256 manifest; content is tamper-evident, not filesystem write-protected",
+  "scope": "artifacts/2026-09-03-rc3/phase_a",
+  "included_reports": [
+    "reports/2026-09-03-rc3/naive_session.md"
+  ],
+  "sha256": {
+    "artifacts/2026-09-03-rc3/phase_a/A-001.json": "2aa82b29da303ccaa49c7a341920ffb17c68dfe813108e6b2df8aabc3f3fb1c3",
+    "artifacts/2026-09-03-rc3/phase_a/A-002.json": "4048ceb97aafba70e39f234a238beece71104a6d4a7b839c90f0bf7d1dd7a24d",
+    "artifacts/2026-09-03-rc3/phase_a/A-003.json": "93077efcaa3e8d878ca9e72c31d7de522fd12cee5ebb996f966bafd245eb9ef7",
+    "artifacts/2026-09-03-rc3/phase_a/A-004.json": "bceb263f1611a7ea02de119688cfb323a0b28ad0a5949fbef4ca1736f8a6115c",
+    "artifacts/2026-09-03-rc3/phase_a/A-005.json": "1d2550e788f6ae6bcd44ce80571004356213c53566bb8342aaee07fbf00b5edc",
+    "artifacts/2026-09-03-rc3/phase_a/A-006.json": "5db5fd119fa6116a82292a1e4936f8684706b6ff803e6537a499c53d0480601e",
+    "artifacts/2026-09-03-rc3/phase_a/A-007.json": "765f1f95deb4ca2ae98e609b0fad7d269fcbc74eb48b2f10f17884aad83db3b7",
+    "artifacts/2026-09-03-rc3/phase_a/A-008.json": "51e8b0ee2ba9985071d8bc572780bd6d7d1db1a0072c679b6c5b5f285b916ce3",
+    "artifacts/2026-09-03-rc3/phase_a/A-009.json": "334365423e6c3705f5c3c6835068bd5ccfa7d2398f529662db446a6981dced79",
+    "artifacts/2026-09-03-rc3/phase_a/A-010.json": "32f8192ef20f7510bbac168541cce17e749f1a96a2a8054dd94184cfed3cacc1",
+    "artifacts/2026-09-03-rc3/phase_a/A-011.json": "4320b7a38b6806861dd04468221bdfb6428125198a761e07435284b4573d55a7",
+    "artifacts/2026-09-03-rc3/phase_a/A-012.json": "34928561aa34b9412365e93f71ec3a59513516fed699264a2a66953f31fb6e65",
+    "artifacts/2026-09-03-rc3/phase_a/A-013.json": "95637571ba5ce150b503f315c7b14fca30e1f269752d436f17d8404beb62b2d6",
+    "artifacts/2026-09-03-rc3/phase_a/naive_prism_mean.nc": "59e5b02a084c95f1ad4030a7be36c4f09bd7d585583dfa325fd204ab1e1467c5",
+    "artifacts/2026-09-03-rc3/phase_a/naive_temperature_viewer.html": "a968c43c48baa416d1cb8f885da3377596aad838abf5a97a406ff93330a90e15",
+    "reports/2026-09-03-rc3/naive_session.md": "871aa738140743e8262293c88df4927af2cddc843e8a3a51967a0665b992f71b"
+  }
+}

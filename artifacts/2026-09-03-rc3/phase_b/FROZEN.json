@@ -1,0 +1,32 @@
+{
+  "frozen_at": "2026-09-03T14:19:17.831853+00:00",
+  "method": "SHA-256 manifest; content is tamper-evident, not filesystem write-protected",
+  "scope": "artifacts/2026-09-03-rc3/phase_b",
+  "included_reports": [
+    "reports/2026-09-03-rc3/rc3_assessment_before_comparison.md"
+  ],
+  "sha256": {
+    "artifacts/2026-09-03-rc3/phase_b/B-000.json": "f56f2aa88443af83d7f851b167bdfc392877c0da6c1299a6f8dff0e8835b68ab",
+    "artifacts/2026-09-03-rc3/phase_b/B-001.json": "71e334e34adeb902de18a17c63928488c5b6a528f168b487227e7f153a95c5fd",
+    "artifacts/2026-09-03-rc3/phase_b/B-002.json": "152a876401a96c89e2ba22403bfbb739ee85c2747c912eb9d2fd1e959ada42ef",
+    "artifacts/2026-09-03-rc3/phase_b/B-003.json": "b7619be768a6f5095fe119dbfa1348d613208d481e63d662b30f4fe09f2a8b22",
+    "artifacts/2026-09-03-rc3/phase_b/B-004.json": "4f32afd8397ced2051d2fffd81553fa7b6c2b50841676bc71d223a20f77cd26a",
+    "artifacts/2026-09-03-rc3/phase_b/B-005.json": "28b220bfe6e30d0fa1bed148420d25788b6ba4278e20fe4a9791eca76412688a",
+    "artifacts/2026-09-03-rc3/phase_b/B-006.json": "2aebdba0f09dc48cffd255dcf1e6a849873cdf228276ee531e1e08958fe4225d",
+    "artifacts/2026-09-03-rc3/phase_b/B-007.json": "3e43dd0b8b7f2201bbb2faac662f6d350fd9d2acca1a68bc12c7916388057e08",
+    "artifacts/2026-09-03-rc3/phase_b/B-008.json": "86eacaa0309c5d50252538e04b3d9ea56c3c430d378b9d8adc617575442c7f0b",
+    "artifacts/2026-09-03-rc3/phase_b/B-009.json": "6e0bcf6f65bf7ceaab3b09541e3f658e21c18aa0c6999e3f4f1f100025f2ad01",
+    "artifacts/2026-09-03-rc3/phase_b/B-010.json": "dbc89b67f9aae7309e67ea0e85b31bfb696994abaf16623af769ca6447734efb",
+    "artifacts/2026-09-03-rc3/phase_b/B-011.json": "58f92949a1f7c7e1ef17e53e5c682c4e9be88a766970356f83c8bbe32fa6ee77",
+    "artifacts/2026-09-03-rc3/phase_b/B-012.json": "83d1f21cf73765e9c2f4b0fa002c1a91b02626579bb35405ddc776dca3c3cb37",
+    "artifacts/2026-09-03-rc3/phase_b/outputs/followups.json": "7bd5abd54e8fd82dcddd4c1ec1169322ce2432b65610fcbf683707c20da859ea",
+    "artifacts/2026-09-03-rc3/phase_b/outputs/scientific_questions.json": "179d58b27c54920de418f87b65f181f96cd9ab32a6192aea435f1aea3f5462e9",
+    "artifacts/2026-09-03-rc3/phase_b/regression_outputs/hot_boolean.html": "2dcc5598b15da1005756b876ea695cb7513a75d81552b1667db21fc272d2e186",
+    "artifacts/2026-09-03-rc3/phase_b/regression_outputs/hot_condition.html": "e282ed32f4cf3c0ead0ceaafd1b6d2b6def0a9c3aabea2e6e4fe211476a48c46",
+    "artifacts/2026-09-03-rc3/phase_b/regression_outputs/hot_condition.nc": "abddc4fa24038bcf27ff91763208bed52c177d94151e15ba7365821975e7b733",
+    "artifacts/2026-09-03-rc3/phase_b/regression_outputs/regression_results.json": "820b310d2068c7492d6678aff542e900033b3b6fc86d1438af1cd8f27f1fc451",
+    "artifacts/2026-09-03-rc3/phase_b/regression_outputs/selected_temperature.html": "8077f10d2ba478f34859bddbaac6a548a190ca82ab47d399f032c960a658e21d",
+    "artifacts/2026-09-03-rc3/phase_b/regression_outputs/temperature_cube.html": "4ddfd93d300433a540dcef611d64cda6667b63e0ff304c9d87bf573b09dd5a9b",
+    "reports/2026-09-03-rc3/rc3_assessment_before_comparison.md": "7cab8a04045b4a1707e4ee98a23fa5fa82c944695ec623a92d0b26f6231f0bd7"
+  }
+}

@@ -1,0 +1,3 @@
+# Generated acceptance products are immutable binary evidence, not source text.
+artifacts/**/*.html binary
+artifacts/**/*.nc binary

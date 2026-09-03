@@ -1,0 +1,25 @@
+{
+  "id": "B-002",
+  "phase": "B",
+  "timestamp": "2026-09-03T14:08:25.402604+00:00",
+  "goal": "Load a short real gridMET VPD series for cross-process and temporal-support tests",
+  "documentation_consulted": [
+    "https://cu-esiil.github.io/cubedynamics/datasets/gridmet/",
+    "https://cu-esiil.github.io/cubedynamics/data/"
+  ],
+  "command": [
+    "docker",
+    "exec",
+    "cubedynamics-rc3-naive-20260903",
+    "python",
+    "-c",
+    "from cubedynamics import data; cube=data.vpd(source=\"gridmet\",bbox=[-105.30,39.95,-105.20,40.05],start=\"2024-07-01\",end=\"2024-07-10\"); print(type(cube).__name__,dict(cube.sizes),cube.name,cube.attrs); print(\"RANGE\",float(cube.min().compute()),float(cube.max().compute()))"
+  ],
+  "expected_behavior": "A bounded daily VPD cube loads from the documented gridMET source without synthetic fallback and reports kPa units and support metadata",
+  "returncode": 0,
+  "stdout": "DataArray {'time': 10, 'y': 2, 'x': 2} vpd {'units': 'kPa', 'description': 'mean vapor presure deficit', 'long_name': 'vpd', 'standard_name': 'vpd', 'dimensions': 'lon lat time', 'grid_mapping': 'crs', 'coordinate_system': 'WGS84,EPSG:4326', 'scientific_noun': 'vpd', 'semantic_name': 'vpd', 'semantic_kind': 'continuous_field', 'semantic_category': 'climate', 'semantic_temporal': 1, 'semantic_dimensions': '[\"time\", \"y\", \"x\"]', 'source_flavor': 'gridmet', 'source_provider': 'gridMET / University of California, Merced', 'source_product': 'gridMET daily surface meteorology', 'product_version': 'asset status/version supplied by the provider', 'serving_revision': 'vpd.gridmet@2026-08-26.1', 'source_mode': 'rolling', 'source_endpoint': 'https://thredds.northwestknowledge.net/thredds/dodsC/MET/', 'access_backend': 'opendap_with_https_fallback', 'update_cadence': 'provider-managed daily observations in annual assets', 'qa_profile': 'climate_continuous_daily', 'revision_status': 'VALIDATED', 'live_health': 'STALE', 'adapter_version': '0.1.0rc3', 'upstream_identity': '{\"endpoint\": \"https://thredds.northwestknowledge.net/thredds/dodsC/MET/\", \"observed\": {}, \"product\": \"gridMET daily surface meteorology\", \"provider\": \"gridMET / University of California, Merced\", \"retrieved_at\": \"2026-09-03T14:08:44.167880+00:00\", \"strategy\": {\"fields\": [\"source_url\", \"asset_etag\", \"last_modified\", \"time_coverage\"], \"kind\": \"provider_asset_metadata\"}}', 'upstream_identity_status': 'strategy_declared_identity_not_exposed_by_adapter', 'source_variables': '[\"vpd\"]', 'spatial_query': '{\"bbox\": [-105.3, 39.95, -105.2, 40.05]}', 'temporal_query': '{\"end\": \"2024-07-10\", \"start\": \"2024-07-01\"}', 'crs': 'EPSG:4326', 'spatial_resolution': '4,638.3 m', 'temporal_resolution': 'daily mean', 'temporal_support_type': 'interval', 'temporal_label_convention': 'calendar_day_starting', 'temporal_reference_timezone': 'UTC', 'temporal_support_start_offset': '7h', 'temporal_support_end_offset': '31h', 'temporal_support_known': 1, 'temporal_support_evidence': 'https://www.climatologylab.org/gridmet.html', 'streaming_protocol': 'annual NetCDF over HTTPS', 'normalization': \"renamed 'vpd' to scientific noun 'vpd'\", 'data_state': 'normalized', 'access_state': 'remote_lazy', 'bounded_access': 1, 'retrieved_at': '2026-09-03T14:08:44.167880+00:00', 'is_synthetic': 0, 'schema_fingerprint': 'sha256:7c378859e915fab1a2e5b2df6385b0ed21181efbf7bdca83c65551cba6f33293'}\nRANGE 1.19 2.4\n",
+  "stderr": "/usr/local/lib/python3.11/site-packages/xarray/backends/plugins.py:109: RuntimeWarning: Engine 'rasterio' loading failed:\nlibexpat.so.1: cannot open shared object file: No such file or directory\n  external_backend_entrypoints = backends_dict_from_pkg(entrypoints_unique)\n",
+  "status": "succeeded",
+  "runtime_seconds": 18.937423,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

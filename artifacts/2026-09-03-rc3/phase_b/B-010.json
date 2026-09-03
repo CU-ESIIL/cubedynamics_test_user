@@ -1,0 +1,20 @@
+{
+  "id": "B-010",
+  "phase": "B",
+  "timestamp": "2026-09-03T14:15:03.675278+00:00",
+  "goal": "Place the focused rc3 regression script in the isolated container",
+  "documentation_consulted": [],
+  "command": [
+    "docker",
+    "cp",
+    "acceptance/rc3_regression_checks.py",
+    "cubedynamics-rc3-naive-20260903:/rc3_regression_checks.py"
+  ],
+  "expected_behavior": "The public-interface regression script is copied without package changes",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "status": "succeeded",
+  "runtime_seconds": 0.026383,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

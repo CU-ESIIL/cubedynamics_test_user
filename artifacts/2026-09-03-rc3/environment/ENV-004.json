@@ -1,0 +1,24 @@
+{
+  "id": "ENV-004",
+  "phase": "environment",
+  "timestamp": "2026-09-03T14:01:23.556738+00:00",
+  "goal": "Attempt the first clean import with no recovery or runtime-library intervention",
+  "documentation_consulted": [
+    "https://pypi.org/project/cubedynamics/0.1.0rc3/"
+  ],
+  "command": [
+    "docker",
+    "exec",
+    "cubedynamics-rc3-naive-20260903",
+    "python",
+    "-c",
+    "import cubedynamics; print(\"IMPORT_OK\")"
+  ],
+  "expected_behavior": "import cubedynamics succeeds immediately after pip installation",
+  "returncode": 0,
+  "stdout": "IMPORT_OK\n",
+  "stderr": "/usr/local/lib/python3.11/site-packages/xarray/backends/plugins.py:109: RuntimeWarning: Engine 'rasterio' loading failed:\nlibexpat.so.1: cannot open shared object file: No such file or directory\n  external_backend_entrypoints = backends_dict_from_pkg(entrypoints_unique)\n",
+  "status": "succeeded",
+  "runtime_seconds": 0.747609,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

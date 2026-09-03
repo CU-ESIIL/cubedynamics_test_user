@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0rc3",
+  "pypi_install_succeeded": true,
+  "cubedynamics_clean_import_succeeded": true,
+  "clean_import_warning": "rasterio backend failed to load because libexpat.so.1 was unavailable",
+  "rasterio_import_succeeded": false,
+  "first_use_prism_succeeded": true,
+  "gridmet_vpd_succeeded": true,
+  "netcdf_mean_export_succeeded": true,
+  "netcdf_boolean_export_succeeded": true,
+  "plotting_matrix_succeeded": true,
+  "scientific_questions_attempted": 11,
+  "scientific_questions_successfully_answered": 9,
+  "scientific_questions_partially_answered": 2,
+  "scientific_questions_failed": 0,
+  "initial_question_attempt_failures_preserved": 2,
+  "findings": {
+    "BLOCKER": 0,
+    "MAJOR": 4,
+    "MODERATE": 3,
+    "MINOR": 1
+  },
+  "verdict": "FIX BEFORE HUMAN OUTSIDE TEST"
+}

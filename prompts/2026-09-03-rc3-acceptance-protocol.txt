@@ -1,0 +1,66 @@
+CubeDynamics 0.1.0rc3 outside-user acceptance protocol
+
+Original request supplied as a Codex text attachment on 2026-09-03. This
+repository copy is a faithful operational summary; the complete user message
+remains in the task transcript.
+
+Act as an outside-user acceptance tester for the exact PyPI release
+`cubedynamics==0.1.0rc3`. Read and obey this repository's `AGENTS.md`. Maintain
+a strict black-box boundary: use only PyPI, public-facing CubeDynamics material,
+the installed distribution's public metadata/import path, and normal user
+introspection (`help`, `dir`, signatures, and public docstrings). Never inspect,
+clone, mount, or use the upstream source repository, tests, fixtures, developer
+files, installed implementation source, disassembly, editable installs, or
+package patches.
+
+Preserve all earlier evidence and create a separate rc3 area. Start from a
+fresh environment; install the exact release from PyPI; record the OS,
+architecture, Python, pip, installation command, package and relevant
+dependency versions; preserve first-import failure before any normal-user
+recovery.
+
+Phase A must chronologically capture a scientifically competent new user's
+attempt to discover what CubeDynamics is and how to acquire data; understand
+nouns, sources, verbs, and pipelines; inspect state/trace/provenance; plot and
+export; identify units, source, temporal and spatial support; discover public
+operations; and understand order-dependent operations. Record obvious points,
+searches, confusing terminology, dead ends, misleading examples, assumptions,
+and good experiences. Freeze Phase A before systematic inventory or testing.
+
+Phase B must attempt at least ten increasingly complex environmental-science
+questions where the public interface naturally supports them: regional
+temperature, anomalous warmth, compound hot/dry conditions, operation order,
+multi-variable comparison, time events, local versus regional events, event
+metrics, synchrony among locations, and lagged relationships without implying
+causality. Use real public data where practical and do not force unsupported
+analyses.
+
+Explicitly regression-test: clean installation/import and runtime libraries;
+the most obvious first-use/default PRISM path; legitimate-result NetCDF export
+and metadata retention; threshold-then-mean versus mean-then-threshold; units
+for mean, variance, threshold, and a compound/overlap operation; metadata/state
+truthfulness; plots for DataArray-like, Dataset-like, Boolean, and aggregated
+results; temporal support/alignment; local versus regional events; and public
+provenance/inspectability. Test the central scientific claim in both directions:
+whether expressions communicate questions and whether results preserve product,
+query, variable, units, supports, thresholds, operation order, trace, and QA.
+
+Never silently fix or work around a package defect. For each problem record
+expected behavior, actual behavior, reproduction, scientific consequence, and
+severity, while distinguishing package, documentation, environment,
+data-source, and user-understanding failures.
+
+Produce and freeze a detailed report titled "CubeDynamics 0.1.0rc3 Outside-User
+Acceptance Report" with one of four verdicts: PASS FOR OUTSIDE TESTING; PASS
+WITH DOCUMENTATION FIXES; FIX BEFORE HUMAN OUTSIDE TEST; RELEASE-BLOCKING
+FAILURE. Include environment, install/import, Phase A, Phase B per-question
+results, a compact regression table, scientific inspectability, documentation,
+severity-classified bugs, recommended fixes, and a final verdict. Only after
+the rc3 evidence is frozen, compare it with previous outside-user evidence.
+Keep scripts, small outputs, errors, figures, and exported products sufficient
+for reproduction, but do not commit large downloaded data.
+
+Stop after the black-box report is frozen. Do not inspect or modify the upstream
+package, file issues, open pull requests, or propose implementation patches.
+Commit the rc3 assessment in this repository and report installed version,
+question counts, issue counts, verdict, evidence/report paths, and commit SHA.

@@ -1,0 +1,25 @@
+{
+  "id": "A-006",
+  "phase": "A",
+  "timestamp": "2026-09-03T14:04:16.922856+00:00",
+  "goal": "Plot a real three-dimensional PRISM cube using the documented pipe style and save the returned viewer",
+  "documentation_consulted": [
+    "https://cu-esiil.github.io/cubedynamics/reference/verbs/",
+    "https://cu-esiil.github.io/cubedynamics/viz/cube_viewer/"
+  ],
+  "command": [
+    "docker",
+    "exec",
+    "cubedynamics-rc3-naive-20260903",
+    "python",
+    "-c",
+    "from cubedynamics import data,pipe,verbs as v; import os; cube=data.temperature(source=\"prism\",statistic=\"maximum\",bbox=[-105.30,39.95,-105.20,40.05],start=\"2024-01-01\",end=\"2024-01-03\"); plotted=pipe(cube)|v.plot(title=\"Naive PRISM temperature\"); viewer=plotted.unwrap(); print(\"PIPE\",type(plotted).__name__); print(\"UNWRAP\",type(viewer).__name__); print(\"HAS_SAVE\",hasattr(viewer,\"save\")); viewer.save(\"/tmp/rc3-naive-temperature.html\"); print(\"HTML_BYTES\",os.path.getsize(\"/tmp/rc3-naive-temperature.html\"))"
+  ],
+  "expected_behavior": "The plotting pipe returns a viewer object that saves a nonempty standalone HTML file",
+  "returncode": 0,
+  "stdout": "PIPE Pipe\nUNWRAP CubePlot\nHAS_SAVE True\n\nPreparing cube\u2026 00%\nPreparing cube\u2026 50%\nPreparing cube\u2026 100%\nPreparing cube\u2026 100%\nHTML_BYTES 42771\n",
+  "stderr": "/usr/local/lib/python3.11/site-packages/xarray/backends/plugins.py:109: RuntimeWarning: Engine 'rasterio' loading failed:\nlibexpat.so.1: cannot open shared object file: No such file or directory\n  external_backend_entrypoints = backends_dict_from_pkg(entrypoints_unique)\n",
+  "status": "succeeded",
+  "runtime_seconds": 9.232061,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

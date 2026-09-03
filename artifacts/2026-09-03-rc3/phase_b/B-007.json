@@ -1,0 +1,20 @@
+{
+  "id": "B-007",
+  "phase": "B",
+  "timestamp": "2026-09-03T14:13:20.528419+00:00",
+  "goal": "Place the explicit Q03/Q10 recovery script in the isolated container",
+  "documentation_consulted": [],
+  "command": [
+    "docker",
+    "cp",
+    "acceptance/rc3_phase_b_followups.py",
+    "cubedynamics-rc3-naive-20260903:/rc3_phase_b_followups.py"
+  ],
+  "expected_behavior": "The follow-up script is copied without altering CubeDynamics or prior evidence",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "status": "succeeded",
+  "runtime_seconds": 0.02566,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

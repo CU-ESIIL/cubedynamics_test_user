@@ -1,0 +1,17 @@
+{
+  "frozen_at": "2026-09-03T14:19:13.273556+00:00",
+  "method": "SHA-256 manifest; content is tamper-evident, not filesystem write-protected",
+  "scope": "artifacts/2026-09-03-rc3/environment",
+  "included_reports": [],
+  "sha256": {
+    "artifacts/2026-09-03-rc3/environment/ENV-001.json": "84ac15a6cbd7237c22124b5b7440131da71df2f11a09498129101b95a6309e46",
+    "artifacts/2026-09-03-rc3/environment/ENV-002.json": "9df737f96b01093cf5d06bb2509b977265174407aba3a5a50fff7b74e0c1d6cb",
+    "artifacts/2026-09-03-rc3/environment/ENV-003.json": "ca361cdd821f8c7c9be14de91b1dbc1a3e024b83627a952e902b1243a51f78ec",
+    "artifacts/2026-09-03-rc3/environment/ENV-004.json": "42e482079cf6a328a17545c2b75da3242933bb3ab205a58d6e1dd88f0bd5ca8a",
+    "artifacts/2026-09-03-rc3/environment/ENV-005.json": "66a88819eeafa7c496b1158b61c3945360afd2de521094e87ce38dc2e5c7ff19",
+    "artifacts/2026-09-03-rc3/environment/ENV-006.json": "49b22be139c51b0d5370b53ee146ce2a87cd9998749b17f81f201743f3d46a71",
+    "artifacts/2026-09-03-rc3/environment/ENV-007.json": "7dc398da0c045bfb270ed9b4b914b83e06eb89740a2a692639ede8334542dfb8",
+    "artifacts/2026-09-03-rc3/environment/ENV-008.json": "9517d06490841be183ef532cbec68f44787c1751ba44fe4a9af9770d4fc4e606",
+    "artifacts/2026-09-03-rc3/environment/ENV-009.json": "bb5f7ab87532e0e2c7f9562adc31d21737ce87c4b012f112832a7d9c16dcbe0c"
+  }
+}

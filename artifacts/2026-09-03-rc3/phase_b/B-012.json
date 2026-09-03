@@ -1,0 +1,20 @@
+{
+  "id": "B-012",
+  "phase": "B",
+  "timestamp": "2026-09-03T14:15:34.000794+00:00",
+  "goal": "Preserve focused regression JSON NetCDF and plot artifacts",
+  "documentation_consulted": [],
+  "command": [
+    "docker",
+    "cp",
+    "cubedynamics-rc3-naive-20260903:/rc3_regression",
+    "artifacts/2026-09-03-rc3/phase_b/regression_outputs"
+  ],
+  "expected_behavior": "All small regression outputs are copied into Phase B evidence",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "status": "succeeded",
+  "runtime_seconds": 0.031079,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

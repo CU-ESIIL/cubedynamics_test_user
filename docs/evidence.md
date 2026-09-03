@@ -35,7 +35,7 @@ Assign an operation ID to each meaningful attempt. Separate what the tester expe
 
 Use explicit states such as **not attempted**, **succeeded**, **failed**, or **blocked**. Missing credentials, unavailable data, and documentation gaps must remain visible; none counts as a successful test. Synthetic or local data must never stand in for a claimed successful live retrieval.
 
-The following paths are **planned conventions, not existing results**. For repeated runs, use a separate run directory or equivalent immutable snapshot so evidence is never overwritten.
+The following paths are conventions. Completed runs use dated, release-specific subdirectories so evidence is never overwritten; the rc3 run is under `artifacts/2026-09-03-rc3/` and `reports/2026-09-03-rc3/`.
 
 | Planned path | Contents |
 | --- | --- |

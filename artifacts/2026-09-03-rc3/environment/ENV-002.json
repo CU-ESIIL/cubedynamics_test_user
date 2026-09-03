@@ -1,0 +1,22 @@
+{
+  "id": "ENV-002",
+  "phase": "environment",
+  "timestamp": "2026-09-03T14:00:16.070686+00:00",
+  "goal": "Record clean guest OS architecture Python pip and Python-path state before installation",
+  "documentation_consulted": [],
+  "command": [
+    "docker",
+    "exec",
+    "cubedynamics-rc3-naive-20260903",
+    "python",
+    "-c",
+    "import importlib.metadata as m, json, os, platform, sys; print(json.dumps({\"platform\": platform.platform(), \"machine\": platform.machine(), \"python\": sys.version, \"executable\": sys.executable, \"pip\": m.version(\"pip\"), \"PYTHONPATH\": os.environ.get(\"PYTHONPATH\"), \"cwd\": os.getcwd()}, indent=2))"
+  ],
+  "expected_behavior": "The container reports Linux arm64 Python 3.11 and no inherited development path",
+  "returncode": 0,
+  "stdout": "{\n  \"platform\": \"Linux-6.12.72-linuxkit-aarch64-with-glibc2.41\",\n  \"machine\": \"aarch64\",\n  \"python\": \"3.11.16 (main, Aug 25 2026, 01:23:02) [GCC 14.2.0]\",\n  \"executable\": \"/usr/local/bin/python\",\n  \"pip\": \"24.0\",\n  \"PYTHONPATH\": null,\n  \"cwd\": \"/\"\n}\n",
+  "stderr": "",
+  "status": "succeeded",
+  "runtime_seconds": 0.22981,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

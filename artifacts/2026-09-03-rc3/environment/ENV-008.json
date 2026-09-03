@@ -1,0 +1,22 @@
+{
+  "id": "ENV-008",
+  "phase": "environment",
+  "timestamp": "2026-09-03T14:15:57.516196+00:00",
+  "goal": "Record exact guest distribution metadata after completing black-box execution",
+  "documentation_consulted": [],
+  "command": [
+    "docker",
+    "exec",
+    "cubedynamics-rc3-naive-20260903",
+    "python",
+    "-c",
+    "import json,platform; print(json.dumps(platform.freedesktop_os_release(),indent=2,sort_keys=True))"
+  ],
+  "expected_behavior": "The clean container reports its Debian release without inspecting CubeDynamics implementation",
+  "returncode": 0,
+  "stdout": "{\n  \"BUG_REPORT_URL\": \"https://bugs.debian.org/\",\n  \"DEBIAN_VERSION_FULL\": \"13.6\",\n  \"HOME_URL\": \"https://www.debian.org/\",\n  \"ID\": \"debian\",\n  \"NAME\": \"Debian GNU/Linux\",\n  \"PRETTY_NAME\": \"Debian GNU/Linux 13 (trixie)\",\n  \"SUPPORT_URL\": \"https://www.debian.org/support\",\n  \"VERSION\": \"13 (trixie)\",\n  \"VERSION_CODENAME\": \"trixie\",\n  \"VERSION_ID\": \"13\"\n}\n",
+  "stderr": "",
+  "status": "succeeded",
+  "runtime_seconds": 0.090004,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

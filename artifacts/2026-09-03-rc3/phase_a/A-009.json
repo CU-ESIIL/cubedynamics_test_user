@@ -1,0 +1,22 @@
+{
+  "id": "A-009",
+  "phase": "A",
+  "timestamp": "2026-09-03T14:05:03.911886+00:00",
+  "goal": "Move the verified viewer out of the container tmpfs for host preservation",
+  "documentation_consulted": [],
+  "command": [
+    "docker",
+    "exec",
+    "cubedynamics-rc3-naive-20260903",
+    "cp",
+    "/tmp/rc3-naive-temperature.html",
+    "/rc3-naive-temperature.html"
+  ],
+  "expected_behavior": "A byte-for-byte copy is placed on the container root filesystem",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "status": "succeeded",
+  "runtime_seconds": 0.068327,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

@@ -1,0 +1,3126 @@
+{
+  "attempted": 11,
+  "failed": 2,
+  "results": {
+    "Q01": {
+      "detail": {
+        "data": "PRISM maximum temperature, Boulder-area 3x3 cells, July 2024",
+        "input_sizes": {
+          "time": 31,
+          "x": 3,
+          "y": 3
+        },
+        "input_source": "prism",
+        "input_units": "degC",
+        "pipe": {
+          "explain": "Your analysis\n1. Start with temperature (continuous field) from prism.\n2. Average values over ('time', 'y', 'x').\n\nCurrent result\n- Semantic kind: summary\n- Dimensions: not declared\n- Units: degC\n\nCubeDynamics executed the verbs exactly in the order written; no step was rewritten.",
+          "state": {
+            "category": "summary",
+            "crs": "EPSG:4326",
+            "dimensions": [],
+            "event_row_meaning": null,
+            "event_scope": null,
+            "geometry_type": null,
+            "has_time_variation": false,
+            "lag_semantics": null,
+            "positive_lag_meaning": null,
+            "provenance": true,
+            "quantile_reference_population": null,
+            "semantic_kind": "summary",
+            "semantic_name": "mean of temperature",
+            "shape": [],
+            "source_flavor": "prism",
+            "source_provider": "PRISM Climate Group, Oregon State University",
+            "spatial": false,
+            "temporal": false,
+            "temporal_alignment_coordinates": null,
+            "temporal_alignment_note": null,
+            "temporal_alignment_support": null,
+            "temporal_label_convention": null,
+            "temporal_reference_timezone": null,
+            "temporal_resolution": null,
+            "temporal_support_end_offset": null,
+            "temporal_support_known": null,
+            "temporal_support_start_offset": null,
+            "temporal_support_type": null,
+            "time_ordered": null,
+            "units": "degC"
+          },
+          "trace": [
+            {
+              "index": 1,
+              "input": {
+                "category": "climate",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": null,
+                "semantic_kind": "continuous_field",
+                "semantic_name": "temperature",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "degC"
+              },
+              "messages": [],
+              "output": {
+                "category": "summary",
+                "crs": "EPSG:4326",
+                "dimensions": [],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": false,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": null,
+                "semantic_kind": "summary",
+                "semantic_name": "mean of temperature",
+                "shape": [],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": false,
+                "temporal": false,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": null,
+                "temporal_reference_timezone": null,
+                "temporal_resolution": null,
+                "temporal_support_end_offset": null,
+                "temporal_support_known": null,
+                "temporal_support_start_offset": null,
+                "temporal_support_type": null,
+                "time_ordered": null,
+                "units": "degC"
+              },
+              "parameters": {
+                "dim": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "keep_dim": false,
+                "skipna": true
+              },
+              "verb": "mean"
+            }
+          ],
+          "validate": "Semantic validation: ready\n- INFO: Current result is classified as summary.\n- INFO: Tracked dimensions: not declared.\n- INFO: Units are degC.\n- INFO: Source provenance metadata is present."
+        },
+        "regional_period_mean": 30.950485229492188,
+        "result_units": "degC"
+      },
+      "question": "What was temperature over a small region during a short period?",
+      "status": "worked"
+    },
+    "Q02": {
+      "detail": {
+        "condition_attrs": {
+          "access_backend": "thredds_ncss",
+          "access_state": "remote_lazy",
+          "adapter_version": "0.1.0rc3",
+          "analysis": "state_cube",
+          "bounded_access": 1,
+          "crs": "EPSG:4326",
+          "data_state": "normalized",
+          "direction": "above",
+          "freq": "D",
+          "is_synthetic": 0,
+          "live_health": "STALE",
+          "long_name": "tmax_stable_4kmD2",
+          "normalization": "renamed 'tmax' to scientific noun 'temperature'",
+          "product_version": "current AN81d/AN91d provider revision",
+          "qa_profile": "climate_continuous_daily",
+          "quantile": 0.8,
+          "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+          "requested_end": "2024-07-31T00:00:00",
+          "requested_start": "2024-07-01T00:00:00",
+          "retrieved_at": "2026-09-03T14:11:45.992427+00:00",
+          "revision_status": "VALIDATED",
+          "rolling_window": null,
+          "schema_fingerprint": "sha256:f5ae8ff2d55fc2a3fa9845f2dcf3a7e09bd40127741ad4a0e68cd38d7e86e9bc",
+          "scientific_noun": "temperature",
+          "semantic_category": "state",
+          "semantic_dimensions": "[\"time\", \"y\", \"x\"]",
+          "semantic_kind": "condition",
+          "semantic_name": "unusually_warm",
+          "semantic_temporal": 1,
+          "semantic_units": "boolean",
+          "serving_revision": "temperature.prism@2026-08-26.1",
+          "source": "prism_streaming",
+          "source_backend": "prism_streaming",
+          "source_endpoint": "https://thredds.climate.ncsu.edu/thredds/catalog/prism/daily/combo/catalog.html",
+          "source_flavor": "prism",
+          "source_mode": "rolling",
+          "source_product": "PRISM AN81d/AN91d daily time series",
+          "source_provider": "PRISM Climate Group, Oregon State University",
+          "source_variable": "temperature",
+          "source_variables": "[\"tmax\"]",
+          "spatial_query": "{\"bbox\": [-105.3, 39.95, -105.2, 40.05]}",
+          "spatial_resolution": "approximately 4 km",
+          "state_name": "unusually_warm",
+          "streaming_protocol": "NCSCO THREDDS NetCDF Subset Service",
+          "streaming_service": "NCSCO THREDDS NetCDF Subset Service",
+          "temporal_label_convention": "day_ending",
+          "temporal_query": "{\"end\": \"2024-07-31\", \"start\": \"2024-07-01\"}",
+          "temporal_reference_timezone": "UTC",
+          "temporal_resolution": "daily",
+          "temporal_support_end_offset": "12h",
+          "temporal_support_evidence": "https://data.prism.oregonstate.edu/PRISM_datasets.pdf",
+          "temporal_support_known": 1,
+          "temporal_support_start_offset": "-12h",
+          "temporal_support_type": "interval",
+          "threshold_method": "quantile",
+          "time_dim": "time",
+          "units": "degC",
+          "update_cadence": "daily observations with provider historical revisions",
+          "upstream_identity": "{\"endpoint\": \"https://thredds.climate.ncsu.edu/thredds/catalog/prism/daily/combo/catalog.html\", \"observed\": {}, \"product\": \"PRISM AN81d/AN91d daily time series\", \"provider\": \"PRISM Climate Group, Oregon State University\", \"retrieved_at\": \"2026-09-03T14:11:45.992427+00:00\", \"strategy\": {\"fields\": [\"catalog_url\", \"dataset_url\", \"last_modified\", \"time_coverage\"], \"kind\": \"provider_catalog_and_asset_metadata\"}}",
+          "upstream_identity_status": "strategy_declared_identity_not_exposed_by_adapter"
+        },
+        "method": "cell-wise upper 0.8 quantile over the selected 31 days",
+        "occurrence_fraction_range": [
+          0.22580645161290322,
+          0.22580645161290322
+        ],
+        "pipe": {
+          "explain": "Your analysis\n1. Start with temperature (continuous field) from prism.\n2. Define a condition using quantile 0.8. Reference population: all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate.\n\nCurrent result\n- Semantic kind: condition\n- Dimensions: time, y, x\n- Units: boolean\n- Temporal support: interval (day_ending)\n- Quantile reference population: all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate\n\nCubeDynamics executed the verbs exactly in the order written; no step was rewritten.",
+          "state": {
+            "category": "state",
+            "crs": "EPSG:4326",
+            "dimensions": [
+              "time",
+              "y",
+              "x"
+            ],
+            "event_row_meaning": null,
+            "event_scope": null,
+            "geometry_type": null,
+            "has_time_variation": true,
+            "lag_semantics": null,
+            "positive_lag_meaning": null,
+            "provenance": true,
+            "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+            "semantic_kind": "condition",
+            "semantic_name": "unusually warm",
+            "shape": [
+              31,
+              3,
+              3
+            ],
+            "source_flavor": "prism",
+            "source_provider": "PRISM Climate Group, Oregon State University",
+            "spatial": true,
+            "temporal": true,
+            "temporal_alignment_coordinates": null,
+            "temporal_alignment_note": null,
+            "temporal_alignment_support": null,
+            "temporal_label_convention": "day_ending",
+            "temporal_reference_timezone": "UTC",
+            "temporal_resolution": "daily",
+            "temporal_support_end_offset": "12h",
+            "temporal_support_known": true,
+            "temporal_support_start_offset": "-12h",
+            "temporal_support_type": "interval",
+            "time_ordered": true,
+            "units": "boolean"
+          },
+          "trace": [
+            {
+              "index": 1,
+              "input": {
+                "category": "climate",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": null,
+                "semantic_kind": "continuous_field",
+                "semantic_name": "temperature",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "degC"
+              },
+              "messages": [],
+              "output": {
+                "category": "state",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "condition",
+                "semantic_name": "unusually warm",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "parameters": {
+                "direction": "above",
+                "name": "unusually_warm",
+                "quantile": 0.8
+              },
+              "verb": "quantile_state"
+            }
+          ],
+          "validate": "Semantic validation: ready\n- INFO: Current result is classified as condition.\n- INFO: Tracked dimensions: time, y, x.\n- INFO: Time coordinates are ordered.\n- INFO: Observation temporal support is declared as interval (day_ending).\n- INFO: Spatial CRS is EPSG:4326.\n- INFO: Units are boolean.\n- INFO: Source provenance metadata is present."
+        },
+        "threshold_degC_range": [
+          31.348499298095703,
+          35.67679977416992
+        ],
+        "true_cell_days": 63
+      },
+      "question": "Where was it unusually warm within the selected data?",
+      "status": "worked"
+    },
+    "Q03": {
+      "exception": "ValueError: overlap mode='require_exact_support' found different known observation intervals. No timestamps or values were changed.",
+      "question": "Where was it both hot and dry?",
+      "status": "failed",
+      "traceback": "Traceback (most recent call last):\n  File \"/rc3_scientific_questions.py\", line 54, in question\n    detail = clean(function())\n                   ^^^^^^^^^^\n  File \"/rc3_scientific_questions.py\", line 124, in q03_hot_and_dry\n    compound = pipe(hot.unwrap()) | v.overlap(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/cubedynamics/piping.py\", line 176, in __or__\n    new_value = func(self.value)\n                ^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/cubedynamics/verbs/combine.py\", line 115, in _op\n    _enforce_temporal_policy(report, policy, caller=\"overlap\")\n  File \"/usr/local/lib/python3.11/site-packages/cubedynamics/verbs/combine.py\", line 182, in _enforce_temporal_policy\n    raise ValueError(\nValueError: overlap mode='require_exact_support' found different known observation intervals. No timestamps or values were changed.\n"
+    },
+    "Q04": {
+      "detail": {
+        "mean_then_threshold": {
+          "meaning": "whether the July mean exceeds 30 degC at each cell",
+          "pipe": {
+            "explain": "Your analysis\n1. Start with temperature (continuous field) from prism.\n2. Average values over time.\n3. Define a condition for values above 30.0.\n\nCurrent result\n- Semantic kind: condition\n- Dimensions: y, x\n- Units: boolean\n\nOrder notes\n- Thresholding a mean defines a condition from an aggregate value, rather than measuring how often individual observations meet the condition.\n\nCubeDynamics executed the verbs exactly in the order written; no step was rewritten.",
+            "state": {
+              "category": "state",
+              "crs": "EPSG:4326",
+              "dimensions": [
+                "y",
+                "x"
+              ],
+              "event_row_meaning": null,
+              "event_scope": null,
+              "geometry_type": null,
+              "has_time_variation": null,
+              "lag_semantics": null,
+              "positive_lag_meaning": null,
+              "provenance": true,
+              "quantile_reference_population": null,
+              "semantic_kind": "condition",
+              "semantic_name": "hot mean",
+              "shape": [
+                3,
+                3
+              ],
+              "source_flavor": "prism",
+              "source_provider": "PRISM Climate Group, Oregon State University",
+              "spatial": true,
+              "temporal": false,
+              "temporal_alignment_coordinates": null,
+              "temporal_alignment_note": null,
+              "temporal_alignment_support": null,
+              "temporal_label_convention": null,
+              "temporal_reference_timezone": null,
+              "temporal_resolution": null,
+              "temporal_support_end_offset": null,
+              "temporal_support_known": null,
+              "temporal_support_start_offset": null,
+              "temporal_support_type": null,
+              "time_ordered": null,
+              "units": "boolean"
+            },
+            "trace": [
+              {
+                "index": 1,
+                "input": {
+                  "category": "climate",
+                  "crs": "EPSG:4326",
+                  "dimensions": [
+                    "time",
+                    "y",
+                    "x"
+                  ],
+                  "event_row_meaning": null,
+                  "event_scope": null,
+                  "geometry_type": null,
+                  "has_time_variation": true,
+                  "lag_semantics": null,
+                  "positive_lag_meaning": null,
+                  "provenance": true,
+                  "quantile_reference_population": null,
+                  "semantic_kind": "continuous_field",
+                  "semantic_name": "temperature",
+                  "shape": [
+                    31,
+                    3,
+                    3
+                  ],
+                  "source_flavor": "prism",
+                  "source_provider": "PRISM Climate Group, Oregon State University",
+                  "spatial": true,
+                  "temporal": true,
+                  "temporal_alignment_coordinates": null,
+                  "temporal_alignment_note": null,
+                  "temporal_alignment_support": null,
+                  "temporal_label_convention": "day_ending",
+                  "temporal_reference_timezone": "UTC",
+                  "temporal_resolution": "daily",
+                  "temporal_support_end_offset": "12h",
+                  "temporal_support_known": true,
+                  "temporal_support_start_offset": "-12h",
+                  "temporal_support_type": "interval",
+                  "time_ordered": true,
+                  "units": "degC"
+                },
+                "messages": [],
+                "output": {
+                  "category": "summary",
+                  "crs": "EPSG:4326",
+                  "dimensions": [
+                    "y",
+                    "x"
+                  ],
+                  "event_row_meaning": null,
+                  "event_scope": null,
+                  "geometry_type": null,
+                  "has_time_variation": false,
+                  "lag_semantics": null,
+                  "positive_lag_meaning": null,
+                  "provenance": true,
+                  "quantile_reference_population": null,
+                  "semantic_kind": "summary",
+                  "semantic_name": "mean of temperature",
+                  "shape": [
+                    3,
+                    3
+                  ],
+                  "source_flavor": "prism",
+                  "source_provider": "PRISM Climate Group, Oregon State University",
+                  "spatial": true,
+                  "temporal": false,
+                  "temporal_alignment_coordinates": null,
+                  "temporal_alignment_note": null,
+                  "temporal_alignment_support": null,
+                  "temporal_label_convention": null,
+                  "temporal_reference_timezone": null,
+                  "temporal_resolution": null,
+                  "temporal_support_end_offset": null,
+                  "temporal_support_known": null,
+                  "temporal_support_start_offset": null,
+                  "temporal_support_type": null,
+                  "time_ordered": null,
+                  "units": "degC"
+                },
+                "parameters": {
+                  "dim": "time",
+                  "keep_dim": false,
+                  "skipna": true
+                },
+                "verb": "mean"
+              },
+              {
+                "index": 2,
+                "input": {
+                  "category": "summary",
+                  "crs": "EPSG:4326",
+                  "dimensions": [
+                    "y",
+                    "x"
+                  ],
+                  "event_row_meaning": null,
+                  "event_scope": null,
+                  "geometry_type": null,
+                  "has_time_variation": false,
+                  "lag_semantics": null,
+                  "positive_lag_meaning": null,
+                  "provenance": true,
+                  "quantile_reference_population": null,
+                  "semantic_kind": "summary",
+                  "semantic_name": "mean of temperature",
+                  "shape": [
+                    3,
+                    3
+                  ],
+                  "source_flavor": "prism",
+                  "source_provider": "PRISM Climate Group, Oregon State University",
+                  "spatial": true,
+                  "temporal": false,
+                  "temporal_alignment_coordinates": null,
+                  "temporal_alignment_note": null,
+                  "temporal_alignment_support": null,
+                  "temporal_label_convention": null,
+                  "temporal_reference_timezone": null,
+                  "temporal_resolution": null,
+                  "temporal_support_end_offset": null,
+                  "temporal_support_known": null,
+                  "temporal_support_start_offset": null,
+                  "temporal_support_type": null,
+                  "time_ordered": null,
+                  "units": "degC"
+                },
+                "messages": [
+                  {
+                    "code": "ORDER_CHANGES_MEANING",
+                    "severity": "ORDER_NOTE",
+                    "text": "Thresholding a mean defines a condition from an aggregate value, rather than measuring how often individual observations meet the condition."
+                  }
+                ],
+                "output": {
+                  "category": "state",
+                  "crs": "EPSG:4326",
+                  "dimensions": [
+                    "y",
+                    "x"
+                  ],
+                  "event_row_meaning": null,
+                  "event_scope": null,
+                  "geometry_type": null,
+                  "has_time_variation": null,
+                  "lag_semantics": null,
+                  "positive_lag_meaning": null,
+                  "provenance": true,
+                  "quantile_reference_population": null,
+                  "semantic_kind": "condition",
+                  "semantic_name": "hot mean",
+                  "shape": [
+                    3,
+                    3
+                  ],
+                  "source_flavor": "prism",
+                  "source_provider": "PRISM Climate Group, Oregon State University",
+                  "spatial": true,
+                  "temporal": false,
+                  "temporal_alignment_coordinates": null,
+                  "temporal_alignment_note": null,
+                  "temporal_alignment_support": null,
+                  "temporal_label_convention": null,
+                  "temporal_reference_timezone": null,
+                  "temporal_resolution": null,
+                  "temporal_support_end_offset": null,
+                  "temporal_support_known": null,
+                  "temporal_support_start_offset": null,
+                  "temporal_support_type": null,
+                  "time_ordered": null,
+                  "units": "boolean"
+                },
+                "parameters": {
+                  "direction": "above",
+                  "name": "hot_mean",
+                  "threshold": 30.0
+                },
+                "verb": "threshold_state"
+              }
+            ],
+            "validate": "Semantic validation: ready\n- INFO: Current result is classified as condition.\n- INFO: Tracked dimensions: y, x.\n- INFO: Spatial CRS is EPSG:4326.\n- INFO: Units are boolean.\n- INFO: Source provenance metadata is present.\n- ORDER_NOTE: Thresholding a mean defines a condition from an aggregate value, rather than measuring how often individual observations meet the condition."
+          },
+          "true_cells": 8
+        },
+        "threshold_then_mean": {
+          "meaning": "fraction of days above 30 degC at each cell",
+          "pipe": {
+            "explain": "Your analysis\n1. Start with temperature (continuous field) from prism.\n2. Define a condition for values above 30.0.\n3. Average values over time.\n\nCurrent result\n- Semantic kind: summary\n- Dimensions: y, x\n- Units: proportion\n\nOrder notes\n- Averaging a thresholded condition measures its prevalence over the reduced dimensions, rather than averaging the source measurements.\n\nCubeDynamics executed the verbs exactly in the order written; no step was rewritten.",
+            "state": {
+              "category": "summary",
+              "crs": "EPSG:4326",
+              "dimensions": [
+                "y",
+                "x"
+              ],
+              "event_row_meaning": null,
+              "event_scope": null,
+              "geometry_type": null,
+              "has_time_variation": false,
+              "lag_semantics": null,
+              "positive_lag_meaning": null,
+              "provenance": true,
+              "quantile_reference_population": null,
+              "semantic_kind": "summary",
+              "semantic_name": "mean of hot day",
+              "shape": [
+                3,
+                3
+              ],
+              "source_flavor": "prism",
+              "source_provider": "PRISM Climate Group, Oregon State University",
+              "spatial": true,
+              "temporal": false,
+              "temporal_alignment_coordinates": null,
+              "temporal_alignment_note": null,
+              "temporal_alignment_support": null,
+              "temporal_label_convention": null,
+              "temporal_reference_timezone": null,
+              "temporal_resolution": null,
+              "temporal_support_end_offset": null,
+              "temporal_support_known": null,
+              "temporal_support_start_offset": null,
+              "temporal_support_type": null,
+              "time_ordered": null,
+              "units": "proportion"
+            },
+            "trace": [
+              {
+                "index": 1,
+                "input": {
+                  "category": "climate",
+                  "crs": "EPSG:4326",
+                  "dimensions": [
+                    "time",
+                    "y",
+                    "x"
+                  ],
+                  "event_row_meaning": null,
+                  "event_scope": null,
+                  "geometry_type": null,
+                  "has_time_variation": true,
+                  "lag_semantics": null,
+                  "positive_lag_meaning": null,
+                  "provenance": true,
+                  "quantile_reference_population": null,
+                  "semantic_kind": "continuous_field",
+                  "semantic_name": "temperature",
+                  "shape": [
+                    31,
+                    3,
+                    3
+                  ],
+                  "source_flavor": "prism",
+                  "source_provider": "PRISM Climate Group, Oregon State University",
+                  "spatial": true,
+                  "temporal": true,
+                  "temporal_alignment_coordinates": null,
+                  "temporal_alignment_note": null,
+                  "temporal_alignment_support": null,
+                  "temporal_label_convention": "day_ending",
+                  "temporal_reference_timezone": "UTC",
+                  "temporal_resolution": "daily",
+                  "temporal_support_end_offset": "12h",
+                  "temporal_support_known": true,
+                  "temporal_support_start_offset": "-12h",
+                  "temporal_support_type": "interval",
+                  "time_ordered": true,
+                  "units": "degC"
+                },
+                "messages": [],
+                "output": {
+                  "category": "state",
+                  "crs": "EPSG:4326",
+                  "dimensions": [
+                    "time",
+                    "y",
+                    "x"
+                  ],
+                  "event_row_meaning": null,
+                  "event_scope": null,
+                  "geometry_type": null,
+                  "has_time_variation": true,
+                  "lag_semantics": null,
+                  "positive_lag_meaning": null,
+                  "provenance": true,
+                  "quantile_reference_population": null,
+                  "semantic_kind": "condition",
+                  "semantic_name": "hot day",
+                  "shape": [
+                    31,
+                    3,
+                    3
+                  ],
+                  "source_flavor": "prism",
+                  "source_provider": "PRISM Climate Group, Oregon State University",
+                  "spatial": true,
+                  "temporal": true,
+                  "temporal_alignment_coordinates": null,
+                  "temporal_alignment_note": null,
+                  "temporal_alignment_support": null,
+                  "temporal_label_convention": "day_ending",
+                  "temporal_reference_timezone": "UTC",
+                  "temporal_resolution": "daily",
+                  "temporal_support_end_offset": "12h",
+                  "temporal_support_known": true,
+                  "temporal_support_start_offset": "-12h",
+                  "temporal_support_type": "interval",
+                  "time_ordered": true,
+                  "units": "boolean"
+                },
+                "parameters": {
+                  "direction": "above",
+                  "name": "hot_day",
+                  "threshold": 30.0
+                },
+                "verb": "threshold_state"
+              },
+              {
+                "index": 2,
+                "input": {
+                  "category": "state",
+                  "crs": "EPSG:4326",
+                  "dimensions": [
+                    "time",
+                    "y",
+                    "x"
+                  ],
+                  "event_row_meaning": null,
+                  "event_scope": null,
+                  "geometry_type": null,
+                  "has_time_variation": true,
+                  "lag_semantics": null,
+                  "positive_lag_meaning": null,
+                  "provenance": true,
+                  "quantile_reference_population": null,
+                  "semantic_kind": "condition",
+                  "semantic_name": "hot day",
+                  "shape": [
+                    31,
+                    3,
+                    3
+                  ],
+                  "source_flavor": "prism",
+                  "source_provider": "PRISM Climate Group, Oregon State University",
+                  "spatial": true,
+                  "temporal": true,
+                  "temporal_alignment_coordinates": null,
+                  "temporal_alignment_note": null,
+                  "temporal_alignment_support": null,
+                  "temporal_label_convention": "day_ending",
+                  "temporal_reference_timezone": "UTC",
+                  "temporal_resolution": "daily",
+                  "temporal_support_end_offset": "12h",
+                  "temporal_support_known": true,
+                  "temporal_support_start_offset": "-12h",
+                  "temporal_support_type": "interval",
+                  "time_ordered": true,
+                  "units": "boolean"
+                },
+                "messages": [
+                  {
+                    "code": "ORDER_CHANGES_MEANING",
+                    "severity": "ORDER_NOTE",
+                    "text": "Averaging a thresholded condition measures its prevalence over the reduced dimensions, rather than averaging the source measurements."
+                  }
+                ],
+                "output": {
+                  "category": "summary",
+                  "crs": "EPSG:4326",
+                  "dimensions": [
+                    "y",
+                    "x"
+                  ],
+                  "event_row_meaning": null,
+                  "event_scope": null,
+                  "geometry_type": null,
+                  "has_time_variation": false,
+                  "lag_semantics": null,
+                  "positive_lag_meaning": null,
+                  "provenance": true,
+                  "quantile_reference_population": null,
+                  "semantic_kind": "summary",
+                  "semantic_name": "mean of hot day",
+                  "shape": [
+                    3,
+                    3
+                  ],
+                  "source_flavor": "prism",
+                  "source_provider": "PRISM Climate Group, Oregon State University",
+                  "spatial": true,
+                  "temporal": false,
+                  "temporal_alignment_coordinates": null,
+                  "temporal_alignment_note": null,
+                  "temporal_alignment_support": null,
+                  "temporal_label_convention": null,
+                  "temporal_reference_timezone": null,
+                  "temporal_resolution": null,
+                  "temporal_support_end_offset": null,
+                  "temporal_support_known": null,
+                  "temporal_support_start_offset": null,
+                  "temporal_support_type": null,
+                  "time_ordered": null,
+                  "units": "proportion"
+                },
+                "parameters": {
+                  "dim": "time",
+                  "keep_dim": false,
+                  "skipna": true
+                },
+                "verb": "mean"
+              }
+            ],
+            "validate": "Semantic validation: ready\n- INFO: Current result is classified as summary.\n- INFO: Tracked dimensions: y, x.\n- INFO: Spatial CRS is EPSG:4326.\n- INFO: Units are proportion.\n- INFO: Source provenance metadata is present.\n- ORDER_NOTE: Averaging a thresholded condition measures its prevalence over the reduced dimensions, rather than averaging the source measurements."
+          },
+          "range": [
+            0.3225806451612903,
+            0.7741935483870968
+          ]
+        }
+      },
+      "question": "Does changing operation order change the scientific meaning?",
+      "status": "worked"
+    },
+    "Q05": {
+      "detail": {
+        "dataset_attrs": {
+          "analysis": "reduction_summary",
+          "semantic_category": "summary",
+          "semantic_kind": "summary",
+          "semantic_name": "mean of values",
+          "summary_dimensions": "time",
+          "summary_operation": "mean"
+        },
+        "input_units": {
+          "precipitation": "mm",
+          "temperature": "degC"
+        },
+        "input_variables": [
+          "temperature",
+          "precipitation"
+        ],
+        "pipe": {
+          "explain": "Your analysis\n1. Start with Dataset (continuous field).\n2. Average values over time.\n\nCurrent result\n- Semantic kind: summary\n- Dimensions: y, x\n- Units: not declared\n\nCubeDynamics executed the verbs exactly in the order written; no step was rewritten.",
+          "state": {
+            "category": "summary",
+            "crs": null,
+            "dimensions": [
+              "y",
+              "x"
+            ],
+            "event_row_meaning": null,
+            "event_scope": null,
+            "geometry_type": null,
+            "has_time_variation": false,
+            "lag_semantics": null,
+            "positive_lag_meaning": null,
+            "provenance": false,
+            "quantile_reference_population": null,
+            "semantic_kind": "summary",
+            "semantic_name": "mean of values",
+            "shape": [
+              3,
+              3
+            ],
+            "source_flavor": null,
+            "source_provider": null,
+            "spatial": true,
+            "temporal": false,
+            "temporal_alignment_coordinates": null,
+            "temporal_alignment_note": null,
+            "temporal_alignment_support": null,
+            "temporal_label_convention": null,
+            "temporal_reference_timezone": null,
+            "temporal_resolution": null,
+            "temporal_support_end_offset": null,
+            "temporal_support_known": null,
+            "temporal_support_start_offset": null,
+            "temporal_support_type": null,
+            "time_ordered": null,
+            "units": null
+          },
+          "trace": [
+            {
+              "index": 1,
+              "input": {
+                "category": null,
+                "crs": null,
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": false,
+                "quantile_reference_population": null,
+                "semantic_kind": "continuous_field",
+                "semantic_name": "Dataset",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": null,
+                "source_provider": null,
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": null,
+                "temporal_reference_timezone": null,
+                "temporal_resolution": null,
+                "temporal_support_end_offset": null,
+                "temporal_support_known": false,
+                "temporal_support_start_offset": null,
+                "temporal_support_type": null,
+                "time_ordered": true,
+                "units": null
+              },
+              "messages": [],
+              "output": {
+                "category": "summary",
+                "crs": null,
+                "dimensions": [
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": false,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": false,
+                "quantile_reference_population": null,
+                "semantic_kind": "summary",
+                "semantic_name": "mean of values",
+                "shape": [
+                  3,
+                  3
+                ],
+                "source_flavor": null,
+                "source_provider": null,
+                "spatial": true,
+                "temporal": false,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": null,
+                "temporal_reference_timezone": null,
+                "temporal_resolution": null,
+                "temporal_support_end_offset": null,
+                "temporal_support_known": null,
+                "temporal_support_start_offset": null,
+                "temporal_support_type": null,
+                "time_ordered": null,
+                "units": null
+              },
+              "parameters": {
+                "dim": "time",
+                "keep_dim": false,
+                "skipna": true
+              },
+              "verb": "mean"
+            }
+          ],
+          "validate": "Semantic validation: ready\n- INFO: Current result is classified as summary.\n- INFO: Tracked dimensions: y, x.\n- CHECK: Spatial dimensions are present, but CRS metadata is not declared.\n- CHECK: Units are not declared for the current result.\n- CHECK: Source provenance metadata is not declared."
+        },
+        "result_means": {
+          "precipitation": 0.4770888686180115,
+          "temperature": 30.950483322143555
+        },
+        "result_units": {
+          "precipitation": "mm",
+          "temperature": "degC"
+        },
+        "result_variables": [
+          "temperature",
+          "precipitation"
+        ]
+      },
+      "question": "Can two variables be compared while retaining their identities?",
+      "status": "worked"
+    },
+    "Q06": {
+      "detail": {
+        "catalog_columns": [
+          "event_id",
+          "y",
+          "x",
+          "y_index",
+          "x_index",
+          "start",
+          "end",
+          "duration",
+          "peak",
+          "mean",
+          "integral",
+          "sequence_index",
+          "time_since_previous_event"
+        ],
+        "duration_range_days": [
+          1,
+          4
+        ],
+        "event_count": 27,
+        "event_scope": "local_cell",
+        "integral_range": [
+          0.0,
+          6.150600433349609
+        ],
+        "pipe": {
+          "explain": "Your analysis\n1. Start with temperature (continuous field) from prism.\n2. Define a condition using quantile 0.8. Reference population: all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate.\n3. Group consecutive true periods into events (minimum duration 1).\n\nCurrent result\n- Semantic kind: event\n- Dimensions: time, y, x\n- Units: boolean\n- Temporal support: interval (day_ending)\n- Event scope: local_cell\n- One event row means one contiguous event instance at one spatial grid cell.\n- Quantile reference population: all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate\n\nOrder notes\n- Event detection groups consecutive true periods, so a condition must be defined first.\n\nCubeDynamics executed the verbs exactly in the order written; no step was rewritten.",
+          "state": {
+            "category": "event",
+            "crs": "EPSG:4326",
+            "dimensions": [
+              "time",
+              "y",
+              "x"
+            ],
+            "event_row_meaning": "one contiguous event instance at one spatial grid cell",
+            "event_scope": "local_cell",
+            "geometry_type": null,
+            "has_time_variation": true,
+            "lag_semantics": null,
+            "positive_lag_meaning": null,
+            "provenance": true,
+            "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+            "semantic_kind": "event",
+            "semantic_name": "detected events",
+            "shape": [
+              31,
+              3,
+              3
+            ],
+            "source_flavor": "prism",
+            "source_provider": "PRISM Climate Group, Oregon State University",
+            "spatial": true,
+            "temporal": true,
+            "temporal_alignment_coordinates": null,
+            "temporal_alignment_note": null,
+            "temporal_alignment_support": null,
+            "temporal_label_convention": "day_ending",
+            "temporal_reference_timezone": "UTC",
+            "temporal_resolution": "daily",
+            "temporal_support_end_offset": "12h",
+            "temporal_support_known": true,
+            "temporal_support_start_offset": "-12h",
+            "temporal_support_type": "interval",
+            "time_ordered": true,
+            "units": "boolean"
+          },
+          "trace": [
+            {
+              "index": 1,
+              "input": {
+                "category": "climate",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": null,
+                "semantic_kind": "continuous_field",
+                "semantic_name": "temperature",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "degC"
+              },
+              "messages": [],
+              "output": {
+                "category": "state",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "condition",
+                "semantic_name": "unusually warm",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "parameters": {
+                "direction": "above",
+                "name": "unusually_warm",
+                "quantile": 0.8
+              },
+              "verb": "quantile_state"
+            },
+            {
+              "index": 2,
+              "input": {
+                "category": "state",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "condition",
+                "semantic_name": "unusually warm",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "messages": [
+                {
+                  "code": "REQUIRED_ORDER",
+                  "severity": "ORDER_NOTE",
+                  "text": "Event detection groups consecutive true periods, so a condition must be defined first."
+                }
+              ],
+              "output": {
+                "category": "event",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": "one contiguous event instance at one spatial grid cell",
+                "event_scope": "local_cell",
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "event",
+                "semantic_name": "detected events",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "parameters": {
+                "magnitude_var": "magnitude",
+                "max_gap": 0,
+                "min_duration": 1,
+                "state_var": "state"
+              },
+              "verb": "detect_events"
+            }
+          ],
+          "validate": "Semantic validation: ready\n- INFO: Current result is classified as event.\n- INFO: Tracked dimensions: time, y, x.\n- INFO: Time coordinates are ordered.\n- INFO: Observation temporal support is declared as interval (day_ending).\n- INFO: Spatial CRS is EPSG:4326.\n- INFO: Units are boolean.\n- INFO: Source provenance metadata is present.\n- INFO: Event catalog scope is local_cell; one row means one contiguous event instance at one spatial grid cell.\n- ORDER_NOTE: Event detection groups consecutive true periods, so a condition must be defined first."
+        },
+        "row_meaning": "one contiguous event instance at one spatial grid cell",
+        "type": "EventResult"
+      },
+      "question": "Can hot events be identified through time?",
+      "status": "worked"
+    },
+    "Q07": {
+      "detail": {
+        "catalog_columns": [
+          "episode_id",
+          "start",
+          "end",
+          "duration",
+          "local_event_count",
+          "participating_cell_count",
+          "peak_participation",
+          "source_event_ids",
+          "peak_severity",
+          "centroid_y",
+          "centroid_x"
+        ],
+        "catalog_preview": [
+          {
+            "centroid_x": -105.25,
+            "centroid_y": 40.0,
+            "duration": 5,
+            "end": "2024-07-16 00:00:00",
+            "episode_id": 1,
+            "local_event_count": 9,
+            "participating_cell_count": 9,
+            "peak_participation": 9,
+            "peak_severity": 3.233898162841797,
+            "source_event_ids": "1,4,7,10,13,16,19,22,25",
+            "start": "2024-07-12 00:00:00"
+          },
+          {
+            "centroid_x": -105.25,
+            "centroid_y": 40.0,
+            "duration": 1,
+            "end": "2024-07-26 00:00:00",
+            "episode_id": 2,
+            "local_event_count": 9,
+            "participating_cell_count": 9,
+            "peak_participation": 9,
+            "peak_severity": 0.7263984680175781,
+            "source_event_ids": "2,5,8,11,14,17,20,23,26",
+            "start": "2024-07-26 00:00:00"
+          },
+          {
+            "centroid_x": -105.25,
+            "centroid_y": 40.0,
+            "duration": 2,
+            "end": "2024-07-31 00:00:00",
+            "episode_id": 3,
+            "local_event_count": 9,
+            "participating_cell_count": 9,
+            "peak_participation": 9,
+            "peak_severity": 1.7361984252929688,
+            "source_event_ids": "3,6,9,12,15,18,21,24,27",
+            "start": "2024-07-30 00:00:00"
+          }
+        ],
+        "event_scope": "regional_episode",
+        "local_event_count": 27,
+        "pipe": {
+          "explain": "Your analysis\n1. Start with temperature (continuous field) from prism.\n2. Define a condition using quantile 0.8. Reference population: all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate.\n3. Group consecutive true periods into events (minimum duration 1).\n4. Consolidate local-cell instances into regional episodes using neighbors and maximum gap 1D.\n\nCurrent result\n- Semantic kind: event\n- Dimensions: episode\n- Units: boolean\n- Event scope: regional_episode\n- One event row means one consolidated regional spatiotemporal episode.\n- Quantile reference population: all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate\n\nOrder notes\n- Event detection groups consecutive true periods, so a condition must be defined first.\n\nCubeDynamics executed the verbs exactly in the order written; no step was rewritten.",
+          "state": {
+            "category": "event",
+            "crs": "EPSG:4326",
+            "dimensions": [
+              "episode"
+            ],
+            "event_row_meaning": "one consolidated regional spatiotemporal episode",
+            "event_scope": "regional_episode",
+            "geometry_type": null,
+            "has_time_variation": null,
+            "lag_semantics": null,
+            "positive_lag_meaning": null,
+            "provenance": true,
+            "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+            "semantic_kind": "event",
+            "semantic_name": "regional episodes",
+            "shape": [
+              3
+            ],
+            "source_flavor": "prism",
+            "source_provider": "PRISM Climate Group, Oregon State University",
+            "spatial": false,
+            "temporal": false,
+            "temporal_alignment_coordinates": null,
+            "temporal_alignment_note": null,
+            "temporal_alignment_support": null,
+            "temporal_label_convention": null,
+            "temporal_reference_timezone": null,
+            "temporal_resolution": null,
+            "temporal_support_end_offset": null,
+            "temporal_support_known": null,
+            "temporal_support_start_offset": null,
+            "temporal_support_type": null,
+            "time_ordered": null,
+            "units": "boolean"
+          },
+          "trace": [
+            {
+              "index": 1,
+              "input": {
+                "category": "climate",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": null,
+                "semantic_kind": "continuous_field",
+                "semantic_name": "temperature",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "degC"
+              },
+              "messages": [],
+              "output": {
+                "category": "state",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "condition",
+                "semantic_name": "unusually warm",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "parameters": {
+                "direction": "above",
+                "name": "unusually_warm",
+                "quantile": 0.8
+              },
+              "verb": "quantile_state"
+            },
+            {
+              "index": 2,
+              "input": {
+                "category": "state",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "condition",
+                "semantic_name": "unusually warm",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "messages": [
+                {
+                  "code": "REQUIRED_ORDER",
+                  "severity": "ORDER_NOTE",
+                  "text": "Event detection groups consecutive true periods, so a condition must be defined first."
+                }
+              ],
+              "output": {
+                "category": "event",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": "one contiguous event instance at one spatial grid cell",
+                "event_scope": "local_cell",
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "event",
+                "semantic_name": "detected events",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "parameters": {
+                "magnitude_var": "magnitude",
+                "max_gap": 0,
+                "min_duration": 1,
+                "state_var": "state"
+              },
+              "verb": "detect_events"
+            },
+            {
+              "index": 3,
+              "input": {
+                "category": "event",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": "one contiguous event instance at one spatial grid cell",
+                "event_scope": "local_cell",
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "event",
+                "semantic_name": "detected events",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "messages": [],
+              "output": {
+                "category": "event",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "episode"
+                ],
+                "event_row_meaning": "one consolidated regional spatiotemporal episode",
+                "event_scope": "regional_episode",
+                "geometry_type": null,
+                "has_time_variation": null,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "event",
+                "semantic_name": "regional episodes",
+                "shape": [
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": false,
+                "temporal": false,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": null,
+                "temporal_reference_timezone": null,
+                "temporal_resolution": null,
+                "temporal_support_end_offset": null,
+                "temporal_support_known": null,
+                "temporal_support_start_offset": null,
+                "temporal_support_type": null,
+                "time_ordered": null,
+                "units": "boolean"
+              },
+              "parameters": {
+                "max_gap": "1D",
+                "min_local_events": 1,
+                "min_participating_cells": 1,
+                "spatial_relation": "neighbors"
+              },
+              "verb": "consolidate_events"
+            }
+          ],
+          "validate": "Semantic validation: ready\n- INFO: Current result is classified as event.\n- INFO: Tracked dimensions: episode.\n- INFO: Units are boolean.\n- INFO: Source provenance metadata is present.\n- INFO: Event catalog scope is regional_episode; one row means one consolidated regional spatiotemporal episode.\n- ORDER_NOTE: Event detection groups consecutive true periods, so a condition must be defined first."
+        },
+        "regional_event_count": 3,
+        "row_meaning": "one consolidated regional spatiotemporal episode"
+      },
+      "question": "Can local-cell events be distinguished from regional episodes?",
+      "status": "worked"
+    },
+    "Q08": {
+      "detail": {
+        "catalog_intensity_summary": {
+          "max_integral": 6.150600433349609,
+          "mean_integral": 2.5765584309895835
+        },
+        "local_metrics": "<xarray.Dataset> Size: 32B\nDimensions:        (month: 1)\nCoordinates:\n  * month          (month) object 8B '2024-07'\nData variables:\n    event_count    (month) int64 8B 27\n    mean_duration  (month) float64 8B 2.333\n    max_duration   (month) int64 8B 4\nAttributes:\n    analysis:                    event_metrics\n    semantic_name:               month event metrics\n    semantic_kind:               summary\n    semantic_category:           event_summary\n    event_scope:                 local_cell\n    event_row_meaning:           one contiguous event instance at one spatial...\n    period:                      month\n    period_assignment_field:     start\n    event_count_interpretation:  counts local cell instances, not independent...",
+        "local_metrics_type": "Dataset",
+        "local_pipe": {
+          "explain": "Your analysis\n1. Start with temperature (continuous field) from prism.\n2. Define a condition using quantile 0.8. Reference population: all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate.\n3. Group consecutive true periods into events (minimum duration 1).\n4. Summarize events by month.\n\nCurrent result\n- Semantic kind: summary\n- Dimensions: month\n- Units: not declared\n- Event scope: local_cell\n- One event row means one contiguous event instance at one spatial grid cell.\n\nOrder notes\n- Event detection groups consecutive true periods, so a condition must be defined first.\n\nCubeDynamics executed the verbs exactly in the order written; no step was rewritten.",
+          "state": {
+            "category": "event_summary",
+            "crs": null,
+            "dimensions": [
+              "month"
+            ],
+            "event_row_meaning": "one contiguous event instance at one spatial grid cell",
+            "event_scope": "local_cell",
+            "geometry_type": null,
+            "has_time_variation": null,
+            "lag_semantics": null,
+            "positive_lag_meaning": null,
+            "provenance": false,
+            "quantile_reference_population": null,
+            "semantic_kind": "summary",
+            "semantic_name": "month event metrics",
+            "shape": [
+              1
+            ],
+            "source_flavor": null,
+            "source_provider": null,
+            "spatial": false,
+            "temporal": false,
+            "temporal_alignment_coordinates": null,
+            "temporal_alignment_note": null,
+            "temporal_alignment_support": null,
+            "temporal_label_convention": null,
+            "temporal_reference_timezone": null,
+            "temporal_resolution": null,
+            "temporal_support_end_offset": null,
+            "temporal_support_known": null,
+            "temporal_support_start_offset": null,
+            "temporal_support_type": null,
+            "time_ordered": null,
+            "units": null
+          },
+          "trace": [
+            {
+              "index": 1,
+              "input": {
+                "category": "climate",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": null,
+                "semantic_kind": "continuous_field",
+                "semantic_name": "temperature",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "degC"
+              },
+              "messages": [],
+              "output": {
+                "category": "state",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "condition",
+                "semantic_name": "unusually warm",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "parameters": {
+                "direction": "above",
+                "name": "unusually_warm",
+                "quantile": 0.8
+              },
+              "verb": "quantile_state"
+            },
+            {
+              "index": 2,
+              "input": {
+                "category": "state",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "condition",
+                "semantic_name": "unusually warm",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "messages": [
+                {
+                  "code": "REQUIRED_ORDER",
+                  "severity": "ORDER_NOTE",
+                  "text": "Event detection groups consecutive true periods, so a condition must be defined first."
+                }
+              ],
+              "output": {
+                "category": "event",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": "one contiguous event instance at one spatial grid cell",
+                "event_scope": "local_cell",
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "event",
+                "semantic_name": "detected events",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "parameters": {
+                "magnitude_var": "magnitude",
+                "max_gap": 0,
+                "min_duration": 1,
+                "state_var": "state"
+              },
+              "verb": "detect_events"
+            },
+            {
+              "index": 3,
+              "input": {
+                "category": "event",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": "one contiguous event instance at one spatial grid cell",
+                "event_scope": "local_cell",
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "event",
+                "semantic_name": "detected events",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "messages": [],
+              "output": {
+                "category": "event_summary",
+                "crs": null,
+                "dimensions": [
+                  "month"
+                ],
+                "event_row_meaning": "one contiguous event instance at one spatial grid cell",
+                "event_scope": "local_cell",
+                "geometry_type": null,
+                "has_time_variation": null,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": false,
+                "quantile_reference_population": null,
+                "semantic_kind": "summary",
+                "semantic_name": "month event metrics",
+                "shape": [
+                  1
+                ],
+                "source_flavor": null,
+                "source_provider": null,
+                "spatial": false,
+                "temporal": false,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": null,
+                "temporal_reference_timezone": null,
+                "temporal_resolution": null,
+                "temporal_support_end_offset": null,
+                "temporal_support_known": null,
+                "temporal_support_start_offset": null,
+                "temporal_support_type": null,
+                "time_ordered": null,
+                "units": null
+              },
+              "parameters": {
+                "date_field": "start",
+                "period": "month",
+                "selected": [
+                  "event_count",
+                  "mean_duration",
+                  "max_duration"
+                ]
+              },
+              "verb": "event_metrics"
+            }
+          ],
+          "validate": "Semantic validation: ready\n- INFO: Current result is classified as summary.\n- INFO: Tracked dimensions: month.\n- CHECK: Units are not declared for the current result.\n- CHECK: Source provenance metadata is not declared.\n- ORDER_NOTE: Event detection groups consecutive true periods, so a condition must be defined first."
+        },
+        "regional_metrics": "<xarray.Dataset> Size: 32B\nDimensions:        (month: 1)\nCoordinates:\n  * month          (month) object 8B '2024-07'\nData variables:\n    event_count    (month) int64 8B 3\n    mean_duration  (month) float64 8B 2.667\n    max_duration   (month) int64 8B 5\nAttributes:\n    analysis:                    event_metrics\n    semantic_name:               month event metrics\n    semantic_kind:               summary\n    semantic_category:           event_summary\n    event_scope:                 regional_episode\n    event_row_meaning:           one consolidated regional spatiotemporal epi...\n    period:                      month\n    period_assignment_field:     start\n    event_count_interpretation:  counts consolidated regional episodes",
+        "regional_metrics_type": "Dataset",
+        "regional_pipe": {
+          "explain": "Your analysis\n1. Start with temperature (continuous field) from prism.\n2. Define a condition using quantile 0.8. Reference population: all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate.\n3. Group consecutive true periods into events (minimum duration 1).\n4. Consolidate local-cell instances into regional episodes using neighbors and maximum gap 1D.\n5. Summarize events by month.\n\nCurrent result\n- Semantic kind: summary\n- Dimensions: month\n- Units: not declared\n- Event scope: regional_episode\n- One event row means one consolidated regional spatiotemporal episode.\n\nOrder notes\n- Event detection groups consecutive true periods, so a condition must be defined first.\n\nCubeDynamics executed the verbs exactly in the order written; no step was rewritten.",
+          "state": {
+            "category": "event_summary",
+            "crs": null,
+            "dimensions": [
+              "month"
+            ],
+            "event_row_meaning": "one consolidated regional spatiotemporal episode",
+            "event_scope": "regional_episode",
+            "geometry_type": null,
+            "has_time_variation": null,
+            "lag_semantics": null,
+            "positive_lag_meaning": null,
+            "provenance": false,
+            "quantile_reference_population": null,
+            "semantic_kind": "summary",
+            "semantic_name": "month event metrics",
+            "shape": [
+              1
+            ],
+            "source_flavor": null,
+            "source_provider": null,
+            "spatial": false,
+            "temporal": false,
+            "temporal_alignment_coordinates": null,
+            "temporal_alignment_note": null,
+            "temporal_alignment_support": null,
+            "temporal_label_convention": null,
+            "temporal_reference_timezone": null,
+            "temporal_resolution": null,
+            "temporal_support_end_offset": null,
+            "temporal_support_known": null,
+            "temporal_support_start_offset": null,
+            "temporal_support_type": null,
+            "time_ordered": null,
+            "units": null
+          },
+          "trace": [
+            {
+              "index": 1,
+              "input": {
+                "category": "climate",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": null,
+                "semantic_kind": "continuous_field",
+                "semantic_name": "temperature",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "degC"
+              },
+              "messages": [],
+              "output": {
+                "category": "state",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "condition",
+                "semantic_name": "unusually warm",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "parameters": {
+                "direction": "above",
+                "name": "unusually_warm",
+                "quantile": 0.8
+              },
+              "verb": "quantile_state"
+            },
+            {
+              "index": 2,
+              "input": {
+                "category": "state",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "condition",
+                "semantic_name": "unusually warm",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "messages": [
+                {
+                  "code": "REQUIRED_ORDER",
+                  "severity": "ORDER_NOTE",
+                  "text": "Event detection groups consecutive true periods, so a condition must be defined first."
+                }
+              ],
+              "output": {
+                "category": "event",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": "one contiguous event instance at one spatial grid cell",
+                "event_scope": "local_cell",
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "event",
+                "semantic_name": "detected events",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "parameters": {
+                "magnitude_var": "magnitude",
+                "max_gap": 0,
+                "min_duration": 1,
+                "state_var": "state"
+              },
+              "verb": "detect_events"
+            },
+            {
+              "index": 3,
+              "input": {
+                "category": "event",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": "one contiguous event instance at one spatial grid cell",
+                "event_scope": "local_cell",
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "event",
+                "semantic_name": "detected events",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "messages": [],
+              "output": {
+                "category": "event",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "episode"
+                ],
+                "event_row_meaning": "one consolidated regional spatiotemporal episode",
+                "event_scope": "regional_episode",
+                "geometry_type": null,
+                "has_time_variation": null,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "event",
+                "semantic_name": "regional episodes",
+                "shape": [
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": false,
+                "temporal": false,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": null,
+                "temporal_reference_timezone": null,
+                "temporal_resolution": null,
+                "temporal_support_end_offset": null,
+                "temporal_support_known": null,
+                "temporal_support_start_offset": null,
+                "temporal_support_type": null,
+                "time_ordered": null,
+                "units": "boolean"
+              },
+              "parameters": {
+                "max_gap": "1D",
+                "min_local_events": 1,
+                "min_participating_cells": 1,
+                "spatial_relation": "neighbors"
+              },
+              "verb": "consolidate_events"
+            },
+            {
+              "index": 4,
+              "input": {
+                "category": "event",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "episode"
+                ],
+                "event_row_meaning": "one consolidated regional spatiotemporal episode",
+                "event_scope": "regional_episode",
+                "geometry_type": null,
+                "has_time_variation": null,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "event",
+                "semantic_name": "regional episodes",
+                "shape": [
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": false,
+                "temporal": false,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": null,
+                "temporal_reference_timezone": null,
+                "temporal_resolution": null,
+                "temporal_support_end_offset": null,
+                "temporal_support_known": null,
+                "temporal_support_start_offset": null,
+                "temporal_support_type": null,
+                "time_ordered": null,
+                "units": "boolean"
+              },
+              "messages": [],
+              "output": {
+                "category": "event_summary",
+                "crs": null,
+                "dimensions": [
+                  "month"
+                ],
+                "event_row_meaning": "one consolidated regional spatiotemporal episode",
+                "event_scope": "regional_episode",
+                "geometry_type": null,
+                "has_time_variation": null,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": false,
+                "quantile_reference_population": null,
+                "semantic_kind": "summary",
+                "semantic_name": "month event metrics",
+                "shape": [
+                  1
+                ],
+                "source_flavor": null,
+                "source_provider": null,
+                "spatial": false,
+                "temporal": false,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": null,
+                "temporal_reference_timezone": null,
+                "temporal_resolution": null,
+                "temporal_support_end_offset": null,
+                "temporal_support_known": null,
+                "temporal_support_start_offset": null,
+                "temporal_support_type": null,
+                "time_ordered": null,
+                "units": null
+              },
+              "parameters": {
+                "date_field": "start",
+                "period": "month",
+                "selected": [
+                  "event_count",
+                  "mean_duration",
+                  "max_duration"
+                ]
+              },
+              "verb": "event_metrics"
+            }
+          ],
+          "validate": "Semantic validation: ready\n- INFO: Current result is classified as summary.\n- INFO: Tracked dimensions: month.\n- CHECK: Units are not declared for the current result.\n- CHECK: Source provenance metadata is not declared.\n- ORDER_NOTE: Event detection groups consecutive true periods, so a condition must be defined first."
+        }
+      },
+      "question": "Can event frequency, duration, and intensity be summarized?",
+      "status": "worked"
+    },
+    "Q09": {
+      "detail": {
+        "attrs": {
+          "analysis": "timing_synchrony",
+          "event_anchor": "start",
+          "event_row_meaning": "one contiguous event instance at one spatial grid cell",
+          "event_scope": "local_cell",
+          "event_time_alignment": "event_start_label",
+          "lag_semantics": "difference_between_selected_event_anchor_labels",
+          "match_tolerance": "4D",
+          "observation_support_alignment": "separate_not_performed",
+          "score": "exponential",
+          "spatial_mode": "neighbors",
+          "timescale": "3D"
+        },
+        "pipe": {
+          "explain": "Your analysis\n1. Start with temperature (continuous field) from prism.\n2. Define a condition using quantile 0.8. Reference population: all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate.\n3. Group consecutive true periods into events (minimum duration 1).\n4. Compare the timing of detected events.\n\nCurrent result\n- Semantic kind: relationship\n- Dimensions: time_window_end, y, x\n- Units: not declared\n- Temporal support: not verified\n- Event scope: local_cell\n- One event row means one contiguous event instance at one spatial grid cell.\n- Lag semantics: difference_between_selected_event_anchor_labels\n\nOrder notes\n- Event detection groups consecutive true periods, so a condition must be defined first.\n\nCubeDynamics executed the verbs exactly in the order written; no step was rewritten.",
+          "state": {
+            "category": null,
+            "crs": null,
+            "dimensions": [
+              "time_window_end",
+              "y",
+              "x"
+            ],
+            "event_row_meaning": "one contiguous event instance at one spatial grid cell",
+            "event_scope": "local_cell",
+            "geometry_type": null,
+            "has_time_variation": false,
+            "lag_semantics": "difference_between_selected_event_anchor_labels",
+            "positive_lag_meaning": null,
+            "provenance": false,
+            "quantile_reference_population": null,
+            "semantic_kind": "relationship",
+            "semantic_name": "Dataset",
+            "shape": [
+              1,
+              3,
+              3
+            ],
+            "source_flavor": null,
+            "source_provider": null,
+            "spatial": true,
+            "temporal": true,
+            "temporal_alignment_coordinates": null,
+            "temporal_alignment_note": null,
+            "temporal_alignment_support": null,
+            "temporal_label_convention": null,
+            "temporal_reference_timezone": null,
+            "temporal_resolution": null,
+            "temporal_support_end_offset": null,
+            "temporal_support_known": false,
+            "temporal_support_start_offset": null,
+            "temporal_support_type": null,
+            "time_ordered": true,
+            "units": null
+          },
+          "trace": [
+            {
+              "index": 1,
+              "input": {
+                "category": "climate",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": null,
+                "semantic_kind": "continuous_field",
+                "semantic_name": "temperature",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "degC"
+              },
+              "messages": [],
+              "output": {
+                "category": "state",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "condition",
+                "semantic_name": "unusually warm",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "parameters": {
+                "direction": "above",
+                "name": "unusually_warm",
+                "quantile": 0.8
+              },
+              "verb": "quantile_state"
+            },
+            {
+              "index": 2,
+              "input": {
+                "category": "state",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "condition",
+                "semantic_name": "unusually warm",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "messages": [
+                {
+                  "code": "REQUIRED_ORDER",
+                  "severity": "ORDER_NOTE",
+                  "text": "Event detection groups consecutive true periods, so a condition must be defined first."
+                }
+              ],
+              "output": {
+                "category": "event",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": "one contiguous event instance at one spatial grid cell",
+                "event_scope": "local_cell",
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "event",
+                "semantic_name": "detected events",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "parameters": {
+                "magnitude_var": "magnitude",
+                "max_gap": 0,
+                "min_duration": 1,
+                "state_var": "state"
+              },
+              "verb": "detect_events"
+            },
+            {
+              "index": 3,
+              "input": {
+                "category": "event",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": "one contiguous event instance at one spatial grid cell",
+                "event_scope": "local_cell",
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": "all 31 selected observations pooled across 'time', estimated independently at each remaining coordinate",
+                "semantic_kind": "event",
+                "semantic_name": "detected events",
+                "shape": [
+                  31,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "messages": [],
+              "output": {
+                "category": null,
+                "crs": null,
+                "dimensions": [
+                  "time_window_end",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": "one contiguous event instance at one spatial grid cell",
+                "event_scope": "local_cell",
+                "geometry_type": null,
+                "has_time_variation": false,
+                "lag_semantics": "difference_between_selected_event_anchor_labels",
+                "positive_lag_meaning": null,
+                "provenance": false,
+                "quantile_reference_population": null,
+                "semantic_kind": "relationship",
+                "semantic_name": "Dataset",
+                "shape": [
+                  1,
+                  3,
+                  3
+                ],
+                "source_flavor": null,
+                "source_provider": null,
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": null,
+                "temporal_reference_timezone": null,
+                "temporal_resolution": null,
+                "temporal_support_end_offset": null,
+                "temporal_support_known": false,
+                "temporal_support_start_offset": null,
+                "temporal_support_type": null,
+                "time_ordered": true,
+                "units": null
+              },
+              "parameters": {
+                "event_anchor": "start",
+                "match_tolerance": "4D",
+                "score": "exponential",
+                "spatial_mode": "neighbors",
+                "timescale": "3D"
+              },
+              "verb": "timing_synchrony"
+            }
+          ],
+          "validate": "Semantic validation: ready\n- INFO: Current result is classified as relationship.\n- INFO: Tracked dimensions: time_window_end, y, x.\n- INFO: Time coordinates are ordered.\n- CHECK: A time coordinate is present, but observation temporal support is not verified.\n- CHECK: Spatial dimensions are present, but CRS metadata is not declared.\n- CHECK: Units are not declared for the current result.\n- CHECK: Source provenance metadata is not declared.\n- ORDER_NOTE: Event detection groups consecutive true periods, so a condition must be defined first."
+        },
+        "sizes": {
+          "time_window_end": 1,
+          "x": 3,
+          "y": 3
+        },
+        "summaries": {
+          "matched_event_count": 3.0,
+          "mean_lag": 0.037037037037037035,
+          "median_absolute_lag": 0.0,
+          "source_unmatched_event_count": 0.0,
+          "target_unmatched_event_count": 0.0,
+          "timing_synchrony": 0.9790023193017622
+        },
+        "type": "Dataset",
+        "variables": [
+          "timing_synchrony",
+          "matched_event_count",
+          "mean_lag",
+          "median_absolute_lag",
+          "source_unmatched_event_count",
+          "target_unmatched_event_count"
+        ]
+      },
+      "question": "Can event timing or synchrony be compared among locations?",
+      "status": "worked"
+    },
+    "Q10": {
+      "exception": "KeyError: 'hot_pipe'",
+      "question": "Can a lagged relationship be investigated without implying causality?",
+      "status": "failed",
+      "traceback": "Traceback (most recent call last):\n  File \"/rc3_scientific_questions.py\", line 54, in question\n    detail = clean(function())\n                   ^^^^^^^^^^\n  File \"/rc3_scientific_questions.py\", line 283, in q10_lagged_processes\n    hot = OBJECTS[\"hot_pipe\"]\n          ~~~~~~~^^^^^^^^^^^^\nKeyError: 'hot_pipe'\n"
+    },
+    "Q11": {
+      "detail": {
+        "alignment_pipe": {
+          "explain": "Your analysis\n1. Start with vpd (continuous field) from gridmet.\n2. Align a field to a reference cube.\n\nCurrent result\n- Semantic kind: continuous field\n- Dimensions: time, y, x\n- Units: kPa\n- Temporal support: interval (calendar_day_starting)\n\nCubeDynamics executed the verbs exactly in the order written; no step was rewritten.",
+          "state": {
+            "category": "climate",
+            "crs": "EPSG:4326",
+            "dimensions": [
+              "time",
+              "y",
+              "x"
+            ],
+            "event_row_meaning": null,
+            "event_scope": null,
+            "geometry_type": null,
+            "has_time_variation": true,
+            "lag_semantics": null,
+            "positive_lag_meaning": null,
+            "provenance": true,
+            "quantile_reference_population": null,
+            "semantic_kind": "continuous_field",
+            "semantic_name": "vpd",
+            "shape": [
+              10,
+              3,
+              3
+            ],
+            "source_flavor": "gridmet",
+            "source_provider": "gridMET / University of California, Merced",
+            "spatial": true,
+            "temporal": true,
+            "temporal_alignment_coordinates": null,
+            "temporal_alignment_note": null,
+            "temporal_alignment_support": null,
+            "temporal_label_convention": "calendar_day_starting",
+            "temporal_reference_timezone": "UTC",
+            "temporal_resolution": "daily mean",
+            "temporal_support_end_offset": "31h",
+            "temporal_support_known": true,
+            "temporal_support_start_offset": "7h",
+            "temporal_support_type": "interval",
+            "time_ordered": true,
+            "units": "kPa"
+          },
+          "trace": [
+            {
+              "index": 1,
+              "input": {
+                "category": "climate",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": null,
+                "semantic_kind": "continuous_field",
+                "semantic_name": "vpd",
+                "shape": [
+                  10,
+                  2,
+                  2
+                ],
+                "source_flavor": "gridmet",
+                "source_provider": "gridMET / University of California, Merced",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "calendar_day_starting",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily mean",
+                "temporal_support_end_offset": "31h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "7h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "kPa"
+              },
+              "messages": [],
+              "output": {
+                "category": "climate",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": null,
+                "semantic_kind": "continuous_field",
+                "semantic_name": "vpd",
+                "shape": [
+                  10,
+                  3,
+                  3
+                ],
+                "source_flavor": "gridmet",
+                "source_provider": "gridMET / University of California, Merced",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "calendar_day_starting",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily mean",
+                "temporal_support_end_offset": "31h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "7h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "kPa"
+              },
+              "parameters": {
+                "spatial_method": "nearest",
+                "temporal_method": "nearest"
+              },
+              "verb": "align_cube"
+            }
+          ],
+          "validate": "Semantic validation: ready\n- INFO: Current result is classified as continuous field.\n- INFO: Tracked dimensions: time, y, x.\n- INFO: Time coordinates are ordered.\n- INFO: Observation temporal support is declared as interval (calendar_day_starting).\n- INFO: Spatial CRS is EPSG:4326.\n- INFO: Units are kPa.\n- INFO: Source provenance metadata is present."
+        },
+        "comparison": "TemporalAlignmentReport(coordinates='exact', temporal_support='different', left=TemporalSupport(resolution='daily', support_type='interval', label_convention='day_ending', reference_timezone='UTC', start_offset='-12h', end_offset='12h', known=True, evidence='https://data.prism.oregonstate.edu/PRISM_datasets.pdf'), right=TemporalSupport(resolution='daily mean', support_type='interval', label_convention='calendar_day_starting', reference_timezone='UTC', start_offset='7h', end_offset='31h', known=True, evidence='https://www.climatologylab.org/gridmet.html'), left_source='prism', right_source='gridmet')",
+        "comparison_public": {
+          "coordinates": "exact",
+          "exact": false,
+          "left": "TemporalSupport(resolution='daily', support_type='interval', label_convention='day_ending', reference_timezone='UTC', start_offset='-12h', end_offset='12h', known=True, evidence='https://data.prism.oregonstate.edu/PRISM_datasets.pdf')",
+          "left_source": "prism",
+          "right": "TemporalSupport(resolution='daily mean', support_type='interval', label_convention='calendar_day_starting', reference_timezone='UTC', start_offset='7h', end_offset='31h', known=True, evidence='https://www.climatologylab.org/gridmet.html')",
+          "right_source": "gridmet",
+          "temporal_support": "different"
+        },
+        "comparison_type": "TemporalAlignmentReport",
+        "gridmet_first_interval": {
+          "observation_end": "2024-07-02T07:00:00.000000000",
+          "observation_start": "2024-07-01T07:00:00.000000000"
+        },
+        "labels_overlap_attrs": {
+          "access_backend": "thredds_ncss",
+          "access_state": "remote_lazy",
+          "adapter_version": "0.1.0rc3",
+          "alignment": "exact",
+          "analysis": "state_cube",
+          "bounded_access": 1,
+          "condition_operation": "aligned_boolean_overlap",
+          "crs": "EPSG:4326",
+          "data_state": "normalized",
+          "direction": "above",
+          "freq": "D",
+          "is_synthetic": 0,
+          "left_condition": "hot_prism",
+          "left_variable": "state",
+          "live_health": "STALE",
+          "long_name": "label aligned hot high vpd",
+          "normalization": "renamed 'tmax' to scientific noun 'temperature'",
+          "product_version": "current AN81d/AN91d provider revision",
+          "qa_profile": "climate_continuous_daily",
+          "requested_end": "2024-07-31T00:00:00",
+          "requested_start": "2024-07-01T00:00:00",
+          "retrieved_at": "2026-09-03T14:11:45.992427+00:00",
+          "revision_status": "VALIDATED",
+          "right_condition": "high_vpd_gridmet",
+          "right_variable": "state",
+          "schema_fingerprint": "sha256:f5ae8ff2d55fc2a3fa9845f2dcf3a7e09bd40127741ad4a0e68cd38d7e86e9bc",
+          "scientific_noun": "temperature",
+          "semantic_category": "state",
+          "semantic_dimensions": "[\"time\", \"y\", \"x\"]",
+          "semantic_kind": "condition",
+          "semantic_name": "label_aligned_hot_high_vpd",
+          "semantic_temporal": 1,
+          "semantic_units": "boolean",
+          "serving_revision": "temperature.prism@2026-08-26.1",
+          "source": "prism_streaming",
+          "source_backend": "prism_streaming",
+          "source_endpoint": "https://thredds.climate.ncsu.edu/thredds/catalog/prism/daily/combo/catalog.html",
+          "source_flavor": "prism",
+          "source_mode": "rolling",
+          "source_product": "PRISM AN81d/AN91d daily time series",
+          "source_provider": "PRISM Climate Group, Oregon State University",
+          "source_variable": "temperature",
+          "source_variables": "[\"tmax\"]",
+          "spatial_query": "{\"bbox\": [-105.3, 39.95, -105.2, 40.05]}",
+          "spatial_resolution": "approximately 4 km",
+          "state_name": "label_aligned_hot_high_vpd",
+          "streaming_protocol": "NCSCO THREDDS NetCDF Subset Service",
+          "streaming_service": "NCSCO THREDDS NetCDF Subset Service",
+          "temporal_alignment_coordinates": "exact",
+          "temporal_alignment_left_source": "prism",
+          "temporal_alignment_modified_coordinates": 0,
+          "temporal_alignment_modified_values": 0,
+          "temporal_alignment_note": "prism and gridmet have matching date labels but different declared observation intervals; policy 'labels' does not make those intervals equal.",
+          "temporal_alignment_policy": "labels",
+          "temporal_alignment_right_source": "gridmet",
+          "temporal_alignment_support": "different",
+          "temporal_label_convention": "paired_by_labels",
+          "temporal_query": "{\"end\": \"2024-07-31\", \"start\": \"2024-07-01\"}",
+          "temporal_reference_timezone": "UTC",
+          "temporal_resolution": "daily",
+          "temporal_support_end_offset": "12h",
+          "temporal_support_evidence": "https://data.prism.oregonstate.edu/PRISM_datasets.pdf",
+          "temporal_support_known": 0,
+          "temporal_support_start_offset": "-12h",
+          "temporal_support_type": "composite",
+          "threshold_method": "threshold",
+          "threshold_value": 30.0,
+          "units": "degC",
+          "update_cadence": "daily observations with provider historical revisions",
+          "upstream_identity": "{\"endpoint\": \"https://thredds.climate.ncsu.edu/thredds/catalog/prism/daily/combo/catalog.html\", \"observed\": {}, \"product\": \"PRISM AN81d/AN91d daily time series\", \"provider\": \"PRISM Climate Group, Oregon State University\", \"retrieved_at\": \"2026-09-03T14:11:45.992427+00:00\", \"strategy\": {\"fields\": [\"catalog_url\", \"dataset_url\", \"last_modified\", \"time_coverage\"], \"kind\": \"provider_catalog_and_asset_metadata\"}}",
+          "upstream_identity_status": "strategy_declared_identity_not_exposed_by_adapter"
+        },
+        "labels_overlap_true_cell_days": 4,
+        "labels_pipe": {
+          "explain": "Your analysis\n1. Start with hot prism (condition) from prism.\n2. Identify coincident truth in two exactly aligned conditions.\n\nCurrent result\n- Semantic kind: condition\n- Dimensions: time, y, x\n- Units: boolean\n- Temporal support: not verified\n\nTemporal alignment\n- Coordinate labels: exact\n- Observation support: different\n- prism and gridmet have matching date labels but different declared observation intervals; policy 'labels' does not make those intervals equal.\n\nCubeDynamics executed the verbs exactly in the order written; no step was rewritten.",
+          "state": {
+            "category": "state",
+            "crs": "EPSG:4326",
+            "dimensions": [
+              "time",
+              "y",
+              "x"
+            ],
+            "event_row_meaning": null,
+            "event_scope": null,
+            "geometry_type": null,
+            "has_time_variation": true,
+            "lag_semantics": null,
+            "positive_lag_meaning": null,
+            "provenance": true,
+            "quantile_reference_population": null,
+            "semantic_kind": "condition",
+            "semantic_name": "label aligned hot high vpd",
+            "shape": [
+              10,
+              3,
+              3
+            ],
+            "source_flavor": "prism",
+            "source_provider": "PRISM Climate Group, Oregon State University",
+            "spatial": true,
+            "temporal": true,
+            "temporal_alignment_coordinates": "exact",
+            "temporal_alignment_note": "prism and gridmet have matching date labels but different declared observation intervals; policy 'labels' does not make those intervals equal.",
+            "temporal_alignment_support": "different",
+            "temporal_label_convention": "paired_by_labels",
+            "temporal_reference_timezone": "UTC",
+            "temporal_resolution": "daily",
+            "temporal_support_end_offset": "12h",
+            "temporal_support_known": false,
+            "temporal_support_start_offset": "-12h",
+            "temporal_support_type": "composite",
+            "time_ordered": true,
+            "units": "boolean"
+          },
+          "trace": [
+            {
+              "index": 1,
+              "input": {
+                "category": "state",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": null,
+                "semantic_kind": "condition",
+                "semantic_name": "hot prism",
+                "shape": [
+                  10,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": null,
+                "temporal_alignment_note": null,
+                "temporal_alignment_support": null,
+                "temporal_label_convention": "day_ending",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": true,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "interval",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "messages": [],
+              "output": {
+                "category": "state",
+                "crs": "EPSG:4326",
+                "dimensions": [
+                  "time",
+                  "y",
+                  "x"
+                ],
+                "event_row_meaning": null,
+                "event_scope": null,
+                "geometry_type": null,
+                "has_time_variation": true,
+                "lag_semantics": null,
+                "positive_lag_meaning": null,
+                "provenance": true,
+                "quantile_reference_population": null,
+                "semantic_kind": "condition",
+                "semantic_name": "label aligned hot high vpd",
+                "shape": [
+                  10,
+                  3,
+                  3
+                ],
+                "source_flavor": "prism",
+                "source_provider": "PRISM Climate Group, Oregon State University",
+                "spatial": true,
+                "temporal": true,
+                "temporal_alignment_coordinates": "exact",
+                "temporal_alignment_note": "prism and gridmet have matching date labels but different declared observation intervals; policy 'labels' does not make those intervals equal.",
+                "temporal_alignment_support": "different",
+                "temporal_label_convention": "paired_by_labels",
+                "temporal_reference_timezone": "UTC",
+                "temporal_resolution": "daily",
+                "temporal_support_end_offset": "12h",
+                "temporal_support_known": false,
+                "temporal_support_start_offset": "-12h",
+                "temporal_support_type": "composite",
+                "time_ordered": true,
+                "units": "boolean"
+              },
+              "parameters": {
+                "name": "label_aligned_hot_high_vpd",
+                "policy": "labels",
+                "right_condition": "high_vpd_gridmet"
+              },
+              "verb": "overlap"
+            }
+          ],
+          "validate": "Semantic validation: ready\n- INFO: Current result is classified as condition.\n- INFO: Tracked dimensions: time, y, x.\n- INFO: Time coordinates are ordered.\n- CHECK: A time coordinate is present, but observation temporal support is not verified.\n- INFO: Spatial CRS is EPSG:4326.\n- INFO: Units are boolean.\n- INFO: Source provenance metadata is present.\n- WARNING: prism and gridmet have matching date labels but different declared observation intervals; policy 'labels' does not make those intervals equal."
+        },
+        "prism_first_interval": {
+          "observation_end": "2024-07-01T12:00:00.000000000",
+          "observation_start": "2024-06-30T12:00:00.000000000"
+        },
+        "strict_overlap_error": "ValueError: overlap mode='require_exact_support' found different known observation intervals. No timestamps or values were changed."
+      },
+      "question": "Can equal labels be distinguished from equal observation support?",
+      "status": "worked"
+    }
+  },
+  "worked": 9
+}

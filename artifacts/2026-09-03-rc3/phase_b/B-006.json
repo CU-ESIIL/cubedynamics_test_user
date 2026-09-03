@@ -1,0 +1,20 @@
+{
+  "id": "B-006",
+  "phase": "B",
+  "timestamp": "2026-09-03T14:12:32.951355+00:00",
+  "goal": "Preserve structured results from the first eleven-question systematic pass",
+  "documentation_consulted": [],
+  "command": [
+    "docker",
+    "cp",
+    "cubedynamics-rc3-naive-20260903:/rc3_phase_b",
+    "artifacts/2026-09-03-rc3/phase_b/outputs"
+  ],
+  "expected_behavior": "The JSON question results are copied from the isolated container into Phase B evidence",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "status": "succeeded",
+  "runtime_seconds": 0.024246,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}

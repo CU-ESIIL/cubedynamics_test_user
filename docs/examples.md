@@ -1,6 +1,6 @@
 # Testing workflow
 
-This is the coordinator's workflow for a future acceptance run. It is not a record of completed tests or an implemented test runner.
+This is the coordinator's workflow for acceptance runs. Completed evidence and reports are run-specific; the current rc3 result is linked from [Project notes](project.md). The recorder and freeze utilities exist, while scientific run scripts remain release-specific rather than a universal test runner.
 
 ## 1. Establish the boundary and environment
 
@@ -46,6 +46,6 @@ Report actual coverage, what worked, confusion, breakages, documentation gaps, s
 
 Freeze the final black-box report and evidence before maintainer triage. Source-based diagnosis requires separate explicit authorization after the freeze. Do not fix CubeDynamics, submit issues, or open pull requests during naive testing. Any proposed issue plan remains a draft for review.
 
-## Before the first run
+## Current implementation boundary
 
-The external artifact, clean Linux environment, evidence recorder, and any reusable acceptance runner still need to be established. This page documents the process; the [current project state](project.md) lists what actually exists.
+`acceptance/capture.py` records commands and `acceptance/freeze.py` creates and verifies SHA-256 manifests. Release-specific scientific scripts may be retained for reproduction, but they do not replace chronological Phase A or establish a universal acceptance suite. The [current project state](project.md) lists completed runs.

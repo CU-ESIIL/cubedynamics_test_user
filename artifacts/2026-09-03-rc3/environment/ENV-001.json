@@ -1,0 +1,38 @@
+{
+  "id": "ENV-001",
+  "phase": "environment",
+  "timestamp": "2026-09-03T14:00:01.042708+00:00",
+  "goal": "Create a fresh isolated Python 3.11 Linux container with no repository mount or inherited Python path",
+  "documentation_consulted": [
+    "https://hub.docker.com/_/python"
+  ],
+  "command": [
+    "docker",
+    "run",
+    "-d",
+    "--name",
+    "cubedynamics-rc3-naive-20260903",
+    "--network",
+    "bridge",
+    "--memory",
+    "2g",
+    "--pids-limit",
+    "512",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--tmpfs",
+    "/tmp:rw,noexec,nosuid,size=512m",
+    "python:3.11-slim",
+    "sleep",
+    "infinity"
+  ],
+  "expected_behavior": "A new source-free container starts from the official cached Python image",
+  "returncode": 0,
+  "stdout": "4e2e0c378a17836cf57271fee41616a8ddab322d453ec223e26a727e5584cf2d\n",
+  "stderr": "",
+  "status": "succeeded",
+  "runtime_seconds": 0.133316,
+  "interpretation": "Exit status only; scientific/acceptance interpretation belongs in the report."
+}
